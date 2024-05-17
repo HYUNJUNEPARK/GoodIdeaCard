@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">GoodIdeaCard</string>
+    <string name="app_name">좋은 생각 카드</string>
+    <string name="app_name_dev">좋은 생각 카드.dev</string>
+    <string name="app_name_rel">좋은 생각 카드.rel</string>
 </resources>

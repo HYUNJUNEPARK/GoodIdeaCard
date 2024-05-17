@@ -12,24 +12,52 @@ android {
         minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false //proguard
+            isDebuggable = true
+            signingConfig = signingConfigs.getByName("debug")
+        }
+
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isMinifyEnabled = true
+            isDebuggable = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("debug") //TODO Change signingConfig
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        flavorDimensions += "version"
+    }
+
+    productFlavors {
+        create("dev") {
+            dimension = "version"
+            manifestPlaceholders += mapOf("appName" to "@string/app_name_dev")
+            applicationIdSuffix = ".dev"
+        }
+        create("rel") {
+            dimension = "version"
+            manifestPlaceholders += mapOf("appName" to "@string/app_name_rel")
+            applicationIdSuffix = ".rel"
+        }
+        create("prod") {
+            dimension = "version"
+            manifestPlaceholders += mapOf("appName" to "@string/app_name")
+        }
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
