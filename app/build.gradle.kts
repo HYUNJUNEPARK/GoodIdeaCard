@@ -39,6 +39,8 @@ android {
 
     buildFeatures {
         flavorDimensions += "version"
+        viewBinding = true
+        buildConfig = true
     }
 
     productFlavors {
@@ -64,7 +66,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -73,4 +74,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    //Timber
+    implementation(libs.timber) //https://github.com/JakeWharton/timber
 }

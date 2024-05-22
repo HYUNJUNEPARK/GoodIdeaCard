@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="app_theme">#A1B4FF</color>
+
+    <color name="black_ff000000">#FF000000</color>
+    <color name="white_ffffffff">#FFFFFFFF</color>
+    <color name="gray_d1d1d1">#D1D1D1</color>
+    <color name="gray_424141">#424141</color>
+
+    <!--day/night mode-->
+    <color name="day_night_gray_d1d1d1_gray_424141">@color/gray_d1d1d1</color> <!--division line-->
+    <color name="day_night_black_ff000000_white_ffffffff">@color/black_ff000000</color>
 </resources>
