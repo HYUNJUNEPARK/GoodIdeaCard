@@ -11,7 +11,7 @@ android {
         applicationId = "com.aos.goodideacard"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
+        versionCode = 240000
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -74,10 +74,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //navigation
+    // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    //Timber
+    // Module
+    implementation(project(":cardstackview")) //custom cardstackview cf. origin:https://github.com/yuyakaido/CardStackView
+
+    // Timber
     implementation(libs.timber) //https://github.com/JakeWharton/timber
 }

@@ -10,6 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentMainBinding
 import com.aos.goodideacard.features.base.BaseFragment
+import com.aos.goodideacard.model.CardItem
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager
+import com.yuyakaido.android.cardstackview.CardStackListener
+import com.yuyakaido.android.cardstackview.Direction
 import timber.log.Timber
 
 class MainFragment : BaseFragment() {
@@ -19,6 +23,10 @@ class MainFragment : BaseFragment() {
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
     }
+
+    private val cardItemAdapter = CardItemAdapter()
+    private lateinit var manager : CardStackLayoutManager
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -33,6 +41,59 @@ class MainFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addToolbarIconClickedListener()
+
+
+        manager = CardStackLayoutManager(
+            requireContext(),
+            object : CardStackListener {
+                override fun onCardDragging(direction: Direction?, ratio: Float) {
+                    Timber.d("onCardDragging $direction / $ratio")
+                }
+                override fun onCardSwiped(direction: Direction?) {
+                    Timber.d("onCardSwiped $direction")
+                }
+                override fun onCardRewound() {
+                    Timber.d("onCardRewound")
+                }
+                override fun onCardCanceled() {
+                    Timber.d("onCardCanceled")
+                }
+                override fun onCardAppeared(view: View?, position: Int) {
+                    Timber.d("onCardAppeared $view / $position")
+                }
+                override fun onCardDisappeared(view: View?, position: Int) {
+                    Timber.d("onCardDisappeared $view / $position")
+                }
+            }
+        )
+        binding.cardStackView.adapter = cardItemAdapter
+        binding.cardStackView.layoutManager = manager
+
+
+        val list = listOf(
+            CardItem(
+                id = 1,
+                content = "ABC",
+                whose = "abc"
+            ),
+            CardItem(
+                id = 2,
+                content = "222",
+                whose = "222"
+            ),
+            CardItem(
+                id = 3,
+                content = "333",
+                whose = "333"
+            ),
+            CardItem(
+                id = 4,
+                content = "444",
+                whose = "444"
+            ),
+        )
+
+        cardItemAdapter.submitList(list)
     }
 
     override fun onDestroyView() {

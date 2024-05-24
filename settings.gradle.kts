@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "GoodIdeaCard"
 include(":app")
+include(":cardstackview")
