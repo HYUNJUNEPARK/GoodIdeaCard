@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.aos.goodideacard.features.MainFragment"
+        android:name="com.aos.goodideacard.features.goodidea.GoodIdeaFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_good_idea" >
         <action
             android:id="@+id/action_mainFragment_to_settingFragment"
             app:destination="@id/settingFragment"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.aos.goodideacard.features.SettingFragment"
+        android:name="com.aos.goodideacard.features.setting.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
 </navigation>

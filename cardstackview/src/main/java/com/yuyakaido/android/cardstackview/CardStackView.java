@@ -72,6 +72,13 @@ public class CardStackView extends RecyclerView {
     public void rewind() {
         if (getLayoutManager() instanceof CardStackLayoutManager) {
             CardStackLayoutManager manager = (CardStackLayoutManager) getLayoutManager();
+            smoothScrollToPosition(manager.getTopPosition() + 1);
+        }
+    }
+
+    public void pickCard() {
+        if (getLayoutManager() instanceof CardStackLayoutManager) {
+            CardStackLayoutManager manager = (CardStackLayoutManager) getLayoutManager();
             smoothScrollToPosition(manager.getTopPosition() - 1);
         }
     }

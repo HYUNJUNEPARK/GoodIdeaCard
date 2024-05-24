@@ -15,7 +15,7 @@
         tools:targetApi="34">
 
         <activity
-            android:name=".features.SplashActivity"
+            android:name=".features.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".features.MainActivity"
+            android:name=".features.main.MainActivity"
             android:exported="false" />
     </application>
 </manifest>

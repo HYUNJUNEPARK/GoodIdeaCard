@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features
+package com.aos.goodideacard.features.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivitySplashBinding
+import com.aos.goodideacard.features.main.MainActivity
 import com.aos.goodideacard.features.base.BaseActivity
 import timber.log.Timber
 
