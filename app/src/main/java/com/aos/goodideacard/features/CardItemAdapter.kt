@@ -11,7 +11,8 @@ import com.aos.goodideacard.model.CardItem
 class CardItemAdapter: ListAdapter<CardItem, CardItemAdapter.ViewHolder>(diffUtil) {
     inner class ViewHolder(private val binding: AdapterCardItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: CardItem) = with(binding) {
-            testTextView.text = data.content
+            cardViewContent.text = data.content
+            cardViewWhose.text = data.whose
         }
     }
 

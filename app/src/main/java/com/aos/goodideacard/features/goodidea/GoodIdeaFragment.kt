@@ -65,7 +65,7 @@ class GoodIdeaFragment : BaseFragment() {
         viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
             Timber.d("submit goodIdeas: $goodIdeas /// ${viewModel.cardPosition}")
             cardItemAdapter.submitList(goodIdeas)
-            binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 1)
+            binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
         }
     }
 
@@ -107,7 +107,7 @@ class GoodIdeaFragment : BaseFragment() {
             }
         ).apply {
             setStackFrom(StackFrom.Top)
-            setVisibleCount(5)
+            setVisibleCount(3)
             setTranslationInterval(4.0f) //4dp cf. default 8dp
         }
 

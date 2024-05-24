@@ -3,6 +3,11 @@
     <style name="Base.Theme.GoodIdeaCard" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/app_theme</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.GoodIdeaCard" parent="Base.Theme.GoodIdeaCard" />

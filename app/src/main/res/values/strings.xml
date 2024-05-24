@@ -8,4 +8,8 @@
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="sample_test_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A erat nam at lectus urna duis. Sed blandit libero volutpat sed cras ornare arcu dui. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Dui faucibus in ornare quam viverra orci sagittis eu. Duis tristique sollicitudin nibh sit amet commodo. Venenatis a condimentum vitae sapien pellentesque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Pellentesque nec nam aliquam sem et tortor consequat id. Sed euismod nisi porta lorem mollis aliquam ut.
+
+Eget aliquet nibh praesent tristique magna sit amet purus gravida. In hac habitasse platea dictumst. Accumsan sit amet nulla facilisi. Nunc eget lorem dolor sed. Aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Eget nullam non nisi est sit amet facilisis magna etiam. Sit amet consectetur adipiscing elit ut. Risus feugiat in ante metus dictum at. Neque ornare aenean euismod elementum nisi quis eleifend. Pellentesque nec nam aliquam sem et. Condimentum id venenatis a condimentum.</string>
+    <string name="sample_text_2">Lorem Ipsum Generator Lorem Ipsum Generator</string>
 </resources>
