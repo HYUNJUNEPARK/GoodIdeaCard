@@ -5,7 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/app_theme</item>
+        <item name="android:statusBarColor">@color/black_ff000000</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">false</item>
     </style>
