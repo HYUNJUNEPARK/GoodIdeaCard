@@ -21,10 +21,7 @@
             android:layout_height="wrap_content"
             android:background="@color/day_night_white_ffffffff_black_ff000000"
             app:contentInsetStart="10dp"
-            app:menu="@menu/menu_toolbar">
-
-
-        </com.google.android.material.appbar.MaterialToolbar>
+            app:menu="@menu/menu_toolbar"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <View
