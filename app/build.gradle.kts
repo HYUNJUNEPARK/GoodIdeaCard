@@ -83,4 +83,7 @@ dependencies {
 
     // Timber
     implementation(libs.timber) //https://github.com/JakeWharton/timber
+
+    // Lottie
+    implementation (libs.lottie) //https://github.com/airbnb/lottie-android/releases
 }

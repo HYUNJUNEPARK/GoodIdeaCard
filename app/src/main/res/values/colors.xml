@@ -7,6 +7,7 @@
     <color name="gray_d1d1d1">#D1D1D1</color>
     <color name="gray_424141">#424141</color>
     <color name="purple_a1b4ff">#A1B4FF</color>
+    <color name="yellow_f6d06a">#F6D06A</color>
 
     <!--day/night mode-->
     <color name="day_night_gray_d1d1d1_gray_424141">@color/gray_d1d1d1</color> <!--division line-->
