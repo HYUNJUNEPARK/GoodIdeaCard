@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -13,23 +14,27 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.AppDatabase
 import com.aos.goodideacard.databinding.FragmentGoodIdeaBinding
+import com.aos.goodideacard.di.DatabaseModule
 import com.aos.goodideacard.features.base.BaseFragment
+import com.aos.goodideacard.repository.CardRepository
 import com.aos.goodideacard.repository.CardRepositoryImpl
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class GoodIdeaFragment : BaseFragment() {
     private var _binding: FragmentGoodIdeaBinding? = null
     private val binding get() = _binding!!
 
-
-    private var cardRepositoryImpl: CardRepositoryImpl? = null
+    @Inject lateinit var cardRepository: CardRepository
 
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
@@ -54,23 +59,15 @@ class GoodIdeaFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         addToolbarIconClickedListener()
 
-
         //TODO 임시 코드
-        val database = Room.databaseBuilder(
-            context = requireContext(),
-            klass = AppDatabase::class.java,
-            name = AppConst.MAIN_DB
-        ).build()
-
-        val cardDao = database.cardDao()
-
-        cardRepositoryImpl = CardRepositoryImpl(cardDao)
-        //TODO 임시 코드
-
-
+        CoroutineScope(Dispatchers.IO).launch {
+            val value = cardRepository.getAll()
+            Timber.d("Test Value : $value")
+        }
 
         initCardStackView()
 
+        
         binding.btnRewind.setOnClickListener {
             viewModel.updateCardPosition(GoodIdeaViewModel.CardAction.REWIND)
             binding.cardStackView.rewind()

@@ -2,8 +2,10 @@ package com.aos.goodideacard.application
 
 import android.app.Application
 import com.aos.goodideacard.BuildConfig
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
+@HiltAndroidApp
 class AppApplication: Application() {
     override fun onCreate() {
         super.onCreate()

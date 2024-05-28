@@ -8,30 +8,17 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.enitiy.CardItem
+import com.aos.goodideacard.di.DatabaseModule
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CardDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun save(data: CardItem)
 
-    @Query("SELECT * FROM ${AppConst.CARD_DATABASE}")
+    @Query("SELECT * FROM ${DatabaseModule.CARD_DATABASE}")
     suspend fun getAll(): List<CardItem>
 
-    @Delete
-    suspend fun delete(data: CardItem)
-
-    @Query("DELETE FROM ${AppConst.CARD_DATABASE}")
+    @Query("DELETE FROM ${DatabaseModule.CARD_DATABASE}")
     suspend fun clear()
-
-    @Transaction
-    suspend fun saveAndRefresh(data: CardItem): List<CardItem> {
-        save(data)
-        return getAll()
-    }
-
-    @Transaction
-    suspend fun deleteAndRefresh(data: CardItem): List<CardItem> {
-        delete(data)
-        return getAll()
-    }
 }
