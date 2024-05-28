@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.goodidea
+package com.aos.goodideacard.features.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

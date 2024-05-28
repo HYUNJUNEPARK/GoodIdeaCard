@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.goodidea
+package com.aos.goodideacard.features.main
 
 import android.content.Context
 import android.os.Bundle
@@ -13,8 +13,8 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.AppDatabase
 import com.aos.goodideacard.databinding.FragmentGoodIdeaBinding
-import com.aos.goodideacard.features.CardItemAdapter
 import com.aos.goodideacard.features.base.BaseFragment
+import com.aos.goodideacard.repository.CardRepositoryImpl
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -28,7 +28,8 @@ class GoodIdeaFragment : BaseFragment() {
     private var _binding: FragmentGoodIdeaBinding? = null
     private val binding get() = _binding!!
 
-    private var database: AppDatabase? = null
+
+    private var cardRepositoryImpl: CardRepositoryImpl? = null
 
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
@@ -55,11 +56,17 @@ class GoodIdeaFragment : BaseFragment() {
 
 
         //TODO 임시 코드
-        database = Room.databaseBuilder(
+        val database = Room.databaseBuilder(
             context = requireContext(),
             klass = AppDatabase::class.java,
             name = AppConst.MAIN_DB
         ).build()
+
+        val cardDao = database.cardDao()
+
+        cardRepositoryImpl = CardRepositoryImpl(cardDao)
+        //TODO 임시 코드
+
 
 
         initCardStackView()

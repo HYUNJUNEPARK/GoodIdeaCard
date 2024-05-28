@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivitySplashBinding
-import com.aos.goodideacard.features.main.MainActivity
+import com.aos.goodideacard.features.MainActivity
 import com.aos.goodideacard.features.base.BaseActivity
 import timber.log.Timber
 

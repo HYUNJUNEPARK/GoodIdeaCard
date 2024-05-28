@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.aos.goodideacard.features.goodidea.GoodIdeaFragment"
+        android:name="com.aos.goodideacard.features.main.GoodIdeaFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_good_idea" >
         <action

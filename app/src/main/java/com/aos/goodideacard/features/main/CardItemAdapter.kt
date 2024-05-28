@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features
+package com.aos.goodideacard.features.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

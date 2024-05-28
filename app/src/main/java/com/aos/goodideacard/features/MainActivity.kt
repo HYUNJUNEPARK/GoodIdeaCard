@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.main
+package com.aos.goodideacard.features
 
 import android.os.Bundle
 import com.aos.goodideacard.consts.AppConst
