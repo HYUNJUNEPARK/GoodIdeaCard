@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp) //id("com.google.devtools.ksp")
 }
 
 android {
@@ -86,4 +87,9 @@ dependencies {
 
     // Lottie
     implementation (libs.lottie) //https://github.com/airbnb/lottie-android/releases
+
+    // Room Database
+    implementation(libs.androidx.room.ktx)
+    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
 }
