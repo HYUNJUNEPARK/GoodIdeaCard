@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.aos.goodideacard.R
+import com.aos.goodideacard.consts.AppConst
+import com.aos.goodideacard.database.AppDatabase
 import com.aos.goodideacard.databinding.FragmentGoodIdeaBinding
 import com.aos.goodideacard.features.CardItemAdapter
 import com.aos.goodideacard.features.base.BaseFragment
@@ -16,11 +19,16 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.StackFrom
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class GoodIdeaFragment : BaseFragment() {
     private var _binding: FragmentGoodIdeaBinding? = null
     private val binding get() = _binding!!
+
+    private var database: AppDatabase? = null
 
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
@@ -30,7 +38,6 @@ class GoodIdeaFragment : BaseFragment() {
 
     private val cardItemAdapter = CardItemAdapter()
     private lateinit var cardStackManager : CardStackLayoutManager
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -45,6 +52,15 @@ class GoodIdeaFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addToolbarIconClickedListener()
+
+
+        //TODO 임시 코드
+        database = Room.databaseBuilder(
+            context = requireContext(),
+            klass = AppDatabase::class.java,
+            name = AppConst.MAIN_DB
+        ).build()
+
 
         initCardStackView()
 

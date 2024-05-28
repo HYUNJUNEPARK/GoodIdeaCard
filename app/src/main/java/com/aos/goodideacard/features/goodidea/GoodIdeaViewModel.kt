@@ -3,7 +3,7 @@ package com.aos.goodideacard.features.goodidea
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.aos.goodideacard.features.base.BaseViewModel
-import com.aos.goodideacard.model.CardItem
+import com.aos.goodideacard.database.enitiy.CardItem
 import timber.log.Timber
 
 class GoodIdeaViewModel : BaseViewModel() {
