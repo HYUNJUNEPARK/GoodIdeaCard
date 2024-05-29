@@ -9,16 +9,12 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.aos.goodideacard.R
-import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.database.AppDatabase
-import com.aos.goodideacard.databinding.FragmentGoodIdeaBinding
-import com.aos.goodideacard.di.DatabaseModule
+import com.aos.goodideacard.databinding.FragmentMainBinding
+import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.features.MainActivity
 import com.aos.goodideacard.features.base.BaseFragment
 import com.aos.goodideacard.repository.CardRepository
-import com.aos.goodideacard.repository.CardRepositoryImpl
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -28,14 +24,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class GoodIdeaFragment : BaseFragment() {
-    private var _binding: FragmentGoodIdeaBinding? = null
+class MainFragment : BaseFragment() {
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
     @Inject lateinit var cardRepository: CardRepository
@@ -51,11 +45,11 @@ class GoodIdeaFragment : BaseFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        requireActivity().onBackPressedDispatcher.addCallback(this@GoodIdeaFragment, backPressedCallback)
+        requireActivity().onBackPressedDispatcher.addCallback(this@MainFragment, backPressedCallback)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentGoodIdeaBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -92,12 +86,12 @@ class GoodIdeaFragment : BaseFragment() {
 
     private fun buttonClickListener() {
         binding.btnRewind.setOnClickListener {
-            viewModel.updateCardPosition(GoodIdeaViewModel.CardAction.REWIND)
+            viewModel.updateCardPosition(CardAction.REWIND)
             binding.cardStackView.rewind()
         }
 
         binding.btnPick.setOnClickListener {
-            viewModel.updateCardPosition(GoodIdeaViewModel.CardAction.PICK)
+            viewModel.updateCardPosition(CardAction.PICK)
             binding.cardStackView.pickCard()
         }
 

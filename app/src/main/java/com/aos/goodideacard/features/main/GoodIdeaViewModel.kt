@@ -5,17 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.aos.goodideacard.features.base.BaseViewModel
 import com.aos.goodideacard.database.enitiy.CardItem
+import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.util.CardUtil
 import timber.log.Timber
-
 
 class GoodIdeaViewModel : BaseViewModel() {
 
     var cardPosition: Int? = null
-
-    enum class CardAction {
-        PICK, REWIND
-    }
 
     private var _goodIdeaList = MutableLiveData<List<CardItem>>()
     val goodIdeaList: LiveData<List<CardItem>> get() = _goodIdeaList
