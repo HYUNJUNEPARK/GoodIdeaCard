@@ -20,14 +20,13 @@ class MainViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val cardRepository: CardRepository
 ): BaseViewModel() {
-
     var cardPosition: Int? = null
 
     private var _goodIdeaList = MutableLiveData<List<CardItem>>()
     val goodIdeaList: LiveData<List<CardItem>> get() = _goodIdeaList
 
-    private var _message = MutableLiveData<String>()
-    val message: LiveData<String> get() = _message
+    private var _message = MutableLiveData<String?>()
+    val message: LiveData<String?> get() = _message
 
     init {
         getData()
@@ -108,5 +107,12 @@ class MainViewModel @Inject constructor(
             }
         }
         return cardList.shuffled()
+    }
+
+    /**
+     * MainFragment 에서 이동했다가 돌아오는 경우 message 가 중복해서 띄워지는 현상 블럭
+     */
+    fun clearMessage() {
+        _message.postValue(null)
     }
 }

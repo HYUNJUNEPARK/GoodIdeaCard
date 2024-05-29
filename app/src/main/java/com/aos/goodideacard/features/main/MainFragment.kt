@@ -1,5 +1,6 @@
 package com.aos.goodideacard.features.main
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -27,21 +28,24 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class MainFragment : BaseFragment() {
-    //binding
-    private var _binding: FragmentMainBinding? = null
-    private val binding get() = _binding!!
+    companion object {
+        private const val BACK_BUTTON_DELAY_MILLIS_2000 = 2000L
+        private const val CARD_BUTTON_DELAY_MILLIS_200 = 200L
+    }
 
-    //vm
-    private val viewModel: MainViewModel by viewModels()
-
-    //adapter
-    private val cardItemAdapter = CardItemAdapter()
-    private lateinit var cardStackManager : CardStackLayoutManager
-
-    //callback
+    private var cardButtonPressedTime = 0L
+    private var backButtonPressedTime = 0L
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
     }
+
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: MainViewModel by viewModels()
+
+    private val cardItemAdapter = CardItemAdapter()
+    private lateinit var cardStackManager : CardStackLayoutManager
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -59,16 +63,7 @@ class MainFragment : BaseFragment() {
 
         initCardStackView()
         buttonClickListener()
-
-        viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
-            Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
-            cardItemAdapter.submitList(goodIdeas)
-            binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
-        }
-
-        viewModel.message.observe(viewLifecycleOwner) { message ->
-            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-        }
+        observeLiveData()
     }
 
     override fun onDestroyView() {
@@ -96,18 +91,51 @@ class MainFragment : BaseFragment() {
         }
     }
 
+    /**
+     * 하단 버튼을 연속해서 빠르게 누르면 생기는 UI 버그를 막기위해 버튼 press delay time 설정
+     */
+    private fun clickable(): Boolean {
+        val currentTimeMillis = System.currentTimeMillis()
+        return if (currentTimeMillis > cardButtonPressedTime + CARD_BUTTON_DELAY_MILLIS_200) {
+            cardButtonPressedTime = currentTimeMillis
+            true
+        } else {
+            false
+        }
+    }
+
+    /**
+     * 2초 내에 클릭을 백버튼을 두번 눌러야 앱이 종료되는 콜백
+     */
+    private fun doubleBackPressedCallback(activity: Activity) : OnBackPressedCallback {
+        return object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val currentTimeMillis = System.currentTimeMillis()
+                if (currentTimeMillis > backButtonPressedTime + BACK_BUTTON_DELAY_MILLIS_2000) {
+                    backButtonPressedTime = currentTimeMillis
+                    Toast.makeText(activity.applicationContext, activity.applicationContext.getString(R.string.msg_app_close_msg), Toast.LENGTH_SHORT).show()
+                } else if (currentTimeMillis <= backButtonPressedTime + BACK_BUTTON_DELAY_MILLIS_2000) {
+                    activity.finish()
+                }
+            }
+        }
+    }
+
     private fun buttonClickListener() {
         binding.btnRewind.setOnClickListener {
+            if (!clickable()) return@setOnClickListener
             viewModel.updateCardPosition(CardAction.REWIND)
             binding.cardStackView.rewind()
         }
 
         binding.btnPick.setOnClickListener {
+            if (!clickable()) return@setOnClickListener
             viewModel.updateCardPosition(CardAction.PICK)
             binding.cardStackView.pickCard()
         }
 
         binding.btnShuffle.setOnClickListener {
+            if (!clickable()) return@setOnClickListener
             CoroutineScope(Dispatchers.Main).launch {
                 (requireActivity() as MainActivity).showLoading()
                 cardItemAdapter.submitList(null)
@@ -138,6 +166,19 @@ class MainFragment : BaseFragment() {
         binding.cardStackView.apply {
             adapter = cardItemAdapter
             layoutManager = cardStackManager
+        }
+    }
+
+    private fun observeLiveData() {
+        viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
+            Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
+            cardItemAdapter.submitList(goodIdeas)
+            binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
+        }
+
+        viewModel.message.observe(viewLifecycleOwner) { message ->
+            if (message != null) Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+            viewModel.clearMessage()
         }
     }
 }
