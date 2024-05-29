@@ -20,6 +20,8 @@ class GoodIdeaViewModel : BaseViewModel() {
     private var _goodIdeaList = MutableLiveData<List<CardItem>>()
     val goodIdeaList: LiveData<List<CardItem>> get() = _goodIdeaList
 
+    private var _message = MutableLiveData<String>()
+    val message: LiveData<String> get() = _message
 
     fun getData(context: Context) {
         val cardSet = CardUtil.createCardList(context)
@@ -38,6 +40,7 @@ class GoodIdeaViewModel : BaseViewModel() {
             CardAction.PICK -> {
                 if (cardPosition == 0) {
                     Timber.i("Block update Card Position : $cardPosition")
+                    _message.postValue("마지막 카드")
                     return
                 }
                 cardPosition!!.minus(1)

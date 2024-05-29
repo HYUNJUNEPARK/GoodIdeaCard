@@ -57,8 +57,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/good_idea_card"
                 android:gravity="center"
+                android:text="@string/good_idea_card"
                 android:textColor="@color/black_ff000000"
                 android:textSize="28dp" />
         </androidx.cardview.widget.CardView>
@@ -80,6 +80,7 @@
         android:background="@color/day_night_white_ffffffff_black_ff000000"
         android:gravity="center"
         android:orientation="horizontal"
+        android:paddingBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

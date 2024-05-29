@@ -1,6 +1,7 @@
 package com.aos.goodideacard.features
 
 import android.os.Bundle
+import android.view.View
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivityMainBinding
 import com.aos.goodideacard.features.base.BaseActivity
@@ -17,4 +18,8 @@ class MainActivity : BaseActivity() {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("MainActivity onCreate()")
         setContentView(binding.root)
     }
+
+    fun showLoading() { binding.lottieLoading.visibility = View.VISIBLE }
+
+    fun hideLoading() { binding.lottieLoading.visibility = View.GONE }
 }
