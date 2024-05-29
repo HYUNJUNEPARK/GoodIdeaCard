@@ -5,6 +5,51 @@
 
     <!--noun-->
     <string name="setting">설정</string>
+    <string name="good_idea_card">좋은 생각\n카드</string>
+
+    <!--good Idea-->
+    <string name="idea_1_content">idea_1_content</string>
+    <string name="idea_1_whose">idea_1_whose</string>
+    <string name="idea_2_content">idea_2_content</string>
+    <string name="idea_2_whose">idea_2_whose</string>
+    <string name="idea_3_content">idea_3_content</string>
+    <string name="idea_3_whose">idea_3_whose</string>
+    <string name="idea_4_content">idea_4_content</string>
+    <string name="idea_4_whose">idea_4_whose</string>
+    <string name="idea_5_content">idea_5_content</string>
+    <string name="idea_5_whose">idea_5_whose</string>
+    <string name="idea_6_content">idea_6_content</string>
+    <string name="idea_6_whose">idea_6_whose</string>
+    <string name="idea_7_content">idea_7_content</string>
+    <string name="idea_7_whose">idea_7_whose</string>
+    <string name="idea_8_content">idea_8_content</string>
+    <string name="idea_8_whose">idea_8_whose</string>
+    <string name="idea_9_content">idea_9_content</string>
+    <string name="idea_9_whose">idea_9_whose</string>
+    <string name="idea_10_content">idea_10_content</string>
+    <string name="idea_10_whose">idea_10_whose</string>
+    <string name="idea_11_content">idea_11_content</string>
+    <string name="idea_11_whose">idea_11_whose</string>
+    <string name="idea_12_content">idea_12_content</string>
+    <string name="idea_12_whose">idea_12_whose</string>
+    <string name="idea_13_content">idea_13_content</string>
+    <string name="idea_13_whose">idea_13_whose</string>
+    <string name="idea_14_content">idea_14_content</string>
+    <string name="idea_14_whose">idea_14_whose</string>
+    <string name="idea_15_content">idea_15_content</string>
+    <string name="idea_15_whose">idea_15_whose</string>
+    <string name="idea_16_content">idea_16_content</string>
+    <string name="idea_16_whose">idea_16_whose</string>
+    <string name="idea_17_content">idea_17_content</string>
+    <string name="idea_17_whose">idea_17_whose</string>
+    <string name="idea_18_content">idea_18_content</string>
+    <string name="idea_18_whose">idea_18_whose</string>
+    <string name="idea_19_content">idea_19_content</string>
+    <string name="idea_19_whose">idea_19_whose</string>
+    <string name="idea_20_content">idea_20_content</string>
+    <string name="idea_20_whose">idea_20_whose</string>
+
+
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
@@ -12,4 +57,5 @@
 
 Eget aliquet nibh praesent tristique magna sit amet purus gravida. In hac habitasse platea dictumst. Accumsan sit amet nulla facilisi. Nunc eget lorem dolor sed. Aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Eget nullam non nisi est sit amet facilisis magna etiam. Sit amet consectetur adipiscing elit ut. Risus feugiat in ante metus dictum at. Neque ornare aenean euismod elementum nisi quis eleifend. Pellentesque nec nam aliquam sem et. Condimentum id venenatis a condimentum.</string>
     <string name="sample_text_2">Lorem Ipsum Generator Lorem Ipsum Generator</string>
+
 </resources>

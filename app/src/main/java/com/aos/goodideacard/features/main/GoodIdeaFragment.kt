@@ -59,6 +59,8 @@ class GoodIdeaFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         addToolbarIconClickedListener()
 
+        viewModel.getData(requireContext())
+
         //TODO 임시 코드
         CoroutineScope(Dispatchers.IO).launch {
             val value = cardRepository.getAll()
@@ -83,7 +85,6 @@ class GoodIdeaFragment : BaseFragment() {
         }
 
         viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
-            Timber.d("submit goodIdeas: $goodIdeas /// ${viewModel.cardPosition}")
             cardItemAdapter.submitList(goodIdeas)
             binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
         }
