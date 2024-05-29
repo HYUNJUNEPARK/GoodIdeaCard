@@ -17,10 +17,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
     private const val MAIN_DB = "good_idea_card_db"
-    //const val CARD_DATABASE = "example"
-   // const val CATEGORY_TABLE = "passguard_table_category"
     const val CARD_DATABASE = "good_idea_card_table_card"
-
 
     @Provides
     @Singleton

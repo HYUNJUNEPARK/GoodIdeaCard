@@ -14,7 +14,6 @@ import com.aos.goodideacard.databinding.FragmentMainBinding
 import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.features.MainActivity
 import com.aos.goodideacard.features.base.BaseFragment
-import com.aos.goodideacard.repository.CardRepository
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
@@ -25,23 +24,24 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment : BaseFragment() {
+    //binding
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    @Inject lateinit var cardRepository: CardRepository
+    //vm
+    private val viewModel: MainViewModel by viewModels()
 
+    //adapter
+    private val cardItemAdapter = CardItemAdapter()
+    private lateinit var cardStackManager : CardStackLayoutManager
+
+    //callback
     private val backPressedCallback: OnBackPressedCallback by lazy {
         doubleBackPressedCallback(requireActivity())
     }
-
-    private val viewModel: GoodIdeaViewModel by viewModels()
-
-    private val cardItemAdapter = CardItemAdapter()
-    private lateinit var cardStackManager : CardStackLayoutManager
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -57,20 +57,17 @@ class MainFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         addToolbarIconClickedListener()
 
-        viewModel.getData(requireContext())
-
         initCardStackView()
         buttonClickListener()
 
         viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
             Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
-
             cardItemAdapter.submitList(goodIdeas)
             binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
         }
 
         viewModel.message.observe(viewLifecycleOwner) { message ->
-            Toast.makeText(requireContext(), "$message", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -82,6 +79,21 @@ class MainFragment : BaseFragment() {
     override fun onDestroy() {
         super.onDestroy()
         backPressedCallback.remove()
+    }
+
+    private fun addToolbarIconClickedListener() {
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId) {
+                R.id.item_setting -> {
+                    findNavController().navigate(R.id.action_mainFragment_to_settingFragment)
+                    true
+                }
+                else -> {
+                    Timber.e("Exception:Unknown menuItem(${menuItem.itemId})")
+                    false
+                }
+            }
+        }
     }
 
     private fun buttonClickListener() {
@@ -102,21 +114,6 @@ class MainFragment : BaseFragment() {
                 delay(1000)
                 viewModel.shuffleCard()
                 (requireActivity() as MainActivity).hideLoading()
-            }
-        }
-    }
-
-    private fun addToolbarIconClickedListener() {
-        binding.toolbar.setOnMenuItemClickListener { menuItem ->
-            when(menuItem.itemId) {
-                R.id.item_setting -> {
-                    findNavController().navigate(R.id.action_mainFragment_to_settingFragment)
-                    true
-                }
-                else -> {
-                    Timber.e("Exception:Unknown menuItem(${menuItem.itemId})")
-                    false
-                }
             }
         }
     }

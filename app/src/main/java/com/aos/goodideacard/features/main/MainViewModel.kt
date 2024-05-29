@@ -1,15 +1,25 @@
 package com.aos.goodideacard.features.main
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.aos.goodideacard.features.base.BaseViewModel
+import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.enitiy.CardItem
 import com.aos.goodideacard.enums.CardAction
-import com.aos.goodideacard.util.CardUtil
+import com.aos.goodideacard.features.base.BaseViewModel
+import com.aos.goodideacard.repository.CardRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import timber.log.Timber
+import javax.inject.Inject
 
-class GoodIdeaViewModel : BaseViewModel() {
+@HiltViewModel
+@SuppressLint("StaticFieldLeak")
+class MainViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
+    private val cardRepository: CardRepository
+): BaseViewModel() {
 
     var cardPosition: Int? = null
 
@@ -19,8 +29,12 @@ class GoodIdeaViewModel : BaseViewModel() {
     private var _message = MutableLiveData<String>()
     val message: LiveData<String> get() = _message
 
-    fun getData(context: Context) {
-        val cardSet = CardUtil.createCardList(context)
+    init {
+        getData()
+    }
+
+    private fun getData() {
+        val cardSet = createCardList(context)
 
         //마지막 카드를 처음 위치로 설정
         if (cardPosition == null) cardPosition = cardSet.size - 1
@@ -62,5 +76,37 @@ class GoodIdeaViewModel : BaseViewModel() {
 
         cardPosition = shuffleCardSet.size -1
         _goodIdeaList.postValue(shuffleCardSet)
+    }
+
+    @SuppressLint("DiscouragedApi")
+    private fun createCardList(context: Context): List<CardItem> {
+        /**
+         * val cardResources = mapOf(
+         *      1 to Pair(R.string.idea_1_content, R.string.idea_1_whose)
+         *      ...
+         * )
+         */
+        val cardResources = (1..AppConst.TOTAL_CARD_20).associateWith { id ->
+            Pair(
+                context.resources.getIdentifier("idea_${id}_content", "string", context.packageName),
+                context.resources.getIdentifier("idea_${id}_whose", "string", context.packageName)
+            )
+        }
+
+        val cardList = mutableListOf<CardItem>()
+        for (i in 1..AppConst.TOTAL_CARD_20) {
+            val resources = cardResources[i]
+
+            if (resources != null) {
+                cardList.add(
+                    CardItem(
+                        id = i.toLong(),
+                        content = context.getString(resources.first),
+                        whose = context.getString(resources.second)
+                    )
+                )
+            }
+        }
+        return cardList.shuffled()
     }
 }

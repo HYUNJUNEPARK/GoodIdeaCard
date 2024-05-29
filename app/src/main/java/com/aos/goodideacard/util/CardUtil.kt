@@ -3,7 +3,6 @@ package com.aos.goodideacard.util
 import android.annotation.SuppressLint
 import android.content.Context
 import com.aos.goodideacard.database.enitiy.CardItem
-import timber.log.Timber
 
 object CardUtil {
     private const val TOTAL_CARD_20 = 20
@@ -37,7 +36,6 @@ object CardUtil {
                 )
             }
         }
-        Timber.d("CardList : $cardList")
         return cardList.shuffled()
     }
 }
