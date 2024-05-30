@@ -1,14 +1,19 @@
 package com.aos.goodideacard.repository
 
-import com.aos.goodideacard.database.CardDao
-import com.aos.goodideacard.database.enitiy.CardItem
-import kotlinx.coroutines.flow.Flow
+import com.aos.goodideacard.database.DefaultCardDao
+import com.aos.goodideacard.database.UserCardDao
+import com.aos.goodideacard.database.enitiy.CombinedCardItem
+import com.aos.goodideacard.database.enitiy.UserCardItem
 import javax.inject.Inject
 
 class CardRepositoryImpl @Inject constructor(
-    private val cardDao: CardDao,
+    private val defaultCardDao: DefaultCardDao,
+    private val userCardDao: UserCardDao
 ) : CardRepository {
-    override suspend fun save(data: CardItem) = cardDao.save(data)
-    override suspend fun getAll(): List<CardItem> = cardDao.getAll()
-    override suspend fun clear() = cardDao.clear()
+    override suspend fun saveCombinedCard(card: CombinedCardItem) = defaultCardDao.save(card)
+    override suspend fun getAllFromCombinedCardDeck(): List<CombinedCardItem> = defaultCardDao.getAll()
+    override suspend fun clearCombinedCardDeck() = defaultCardDao.clear()
+    override suspend fun saveUserCard(card: UserCardItem) = userCardDao.save(card)
+    override suspend fun getAllFromUserCardDeck(): List<UserCardItem> = userCardDao.getAll()
+    override suspend fun clearUserCardDeck() = userCardDao.clear()
 }

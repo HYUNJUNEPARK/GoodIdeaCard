@@ -4,14 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.database.enitiy.CardItem
+import com.aos.goodideacard.database.enitiy.CardEntityInterface
+import com.aos.goodideacard.database.enitiy.EmbeddedCardEntity
+import com.aos.goodideacard.database.enitiy.CombinedCardItem
+import com.aos.goodideacard.database.enitiy.DefaultCardItem
 import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.features.base.BaseViewModel
 import com.aos.goodideacard.repository.CardRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -23,8 +29,8 @@ class MainViewModel @Inject constructor(
 ): BaseViewModel() {
     var cardPosition: Int? = null
 
-    private var _goodIdeaList = MutableLiveData<List<CardItem>>()
-    val goodIdeaList: LiveData<List<CardItem>> get() = _goodIdeaList
+    private var _goodIdeaList = MutableLiveData<List<CombinedCardItem>>()
+    val goodIdeaList: LiveData<List<CombinedCardItem>> get() = _goodIdeaList
 
     private var _message = MutableLiveData<String?>()
     val message: LiveData<String?> get() = _message
@@ -33,15 +39,51 @@ class MainViewModel @Inject constructor(
         getData()
     }
 
-    private fun getData() {
-        val cardSet = createCardList(context)
+    private fun getData() = viewModelScope.launch(Dispatchers.IO) {
+        //기존에 만든 카드 덱이 있다면 그대로 사용
+        val localCards = cardRepository.getAllFromCombinedCardDeck()
+        if (localCards.isNotEmpty()) {
+            Timber.i("local cards not empty")
+            _goodIdeaList.postValue(localCards)
+        }
+
+
+        fun convertToEntityOne(entity: CardEntityInterface): CombinedCardItem {
+            return CombinedCardItem(
+                id = entity.cardId,
+                embeddedCardEntity = EmbeddedCardEntity(
+                    content = entity.content,
+                    whose = entity.whose
+                ),
+                cardType = entity.cardType
+            )
+        }
+
+
+
+
+
+        val defaultCards = createDefaultCardList(context)
+        val userCards = cardRepository.getAllFromUserCardDeck()
+
+        Timber.d("기본 카드 덱 :${defaultCards.size}\n" +
+                "사용자 카드덱 : ${userCards.size}")
+
+
+        val tt = defaultCards + userCards
+        val tt2 = tt.map { convertToEntityOne(it) }
+
 
         //마지막 카드를 처음 위치로 설정
-        if (cardPosition == null) cardPosition = cardSet.size - 1
+        if (cardPosition == null) cardPosition = defaultCards.size - 1
 
         //submit
-        _goodIdeaList.postValue(cardSet)
+        _goodIdeaList.postValue(tt2)
     }
+
+
+
+
 
     fun updateCardPosition(action: CardAction) {
         Timber.d("$action 업데이트 전 cardPosition : $cardPosition | cardSize : ${goodIdeaList.value!!.size}")
@@ -70,7 +112,7 @@ class MainViewModel @Inject constructor(
     }
 
     @SuppressLint("DiscouragedApi")
-    private fun createCardList(context: Context): List<CardItem> {
+    private fun createDefaultCardList(context: Context): List<DefaultCardItem> {
         /**
          * val cardResources = mapOf(
          *      1 to Pair(R.string.idea_1_content, R.string.idea_1_whose)
@@ -84,16 +126,18 @@ class MainViewModel @Inject constructor(
             )
         }
 
-        val cardList = mutableListOf<CardItem>()
+        val cardList = mutableListOf<DefaultCardItem>()
         for (i in 1..AppConst.TOTAL_CARD_50) {
             val resources = cardResources[i]
 
             if (resources != null) {
                 cardList.add(
-                    CardItem(
+                    DefaultCardItem(
                         id = i.toLong(),
-                        content = context.getString(resources.first),
-                        whose = context.getString(resources.second)
+                        EmbeddedCardEntity(
+                            content = context.getString(resources.first),
+                            whose = context.getString(resources.second)
+                        )
                     )
                 )
             }
