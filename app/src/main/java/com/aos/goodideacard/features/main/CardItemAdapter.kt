@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.aos.goodideacard.databinding.AdapterCardItemBinding
-import com.aos.goodideacard.database.enitiy.CombinedCardItem
+import com.aos.goodideacard.database.enitiy.MergedCardDeckItem
 
-class CardItemAdapter: ListAdapter<CombinedCardItem, CardItemAdapter.ViewHolder>(diffUtil) {
+class CardItemAdapter: ListAdapter<MergedCardDeckItem, CardItemAdapter.ViewHolder>(diffUtil) {
     inner class ViewHolder(private val binding: AdapterCardItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: CombinedCardItem) = with(binding) {
+        fun bind(data: MergedCardDeckItem) = with(binding) {
             cardViewContent.text = data.embeddedCardEntity.content
             cardViewWhose.text = data.embeddedCardEntity.whose
         }
@@ -26,11 +26,11 @@ class CardItemAdapter: ListAdapter<CombinedCardItem, CardItemAdapter.ViewHolder>
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<CombinedCardItem>() {
-            override fun areItemsTheSame(oldItem: CombinedCardItem, newItem: CombinedCardItem): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<MergedCardDeckItem>() {
+            override fun areItemsTheSame(oldItem: MergedCardDeckItem, newItem: MergedCardDeckItem): Boolean {
                 return oldItem.id == newItem.id
             }
-            override fun areContentsTheSame(oldItem: CombinedCardItem, newItem: CombinedCardItem): Boolean {
+            override fun areContentsTheSame(oldItem: MergedCardDeckItem, newItem: MergedCardDeckItem): Boolean {
                 return oldItem == newItem
             }
         }

@@ -1,14 +1,14 @@
 package com.aos.goodideacard.repository
 
-import com.aos.goodideacard.database.enitiy.CombinedCardItem
-import com.aos.goodideacard.database.enitiy.UserCardItem
+import com.aos.goodideacard.database.enitiy.MergedCardDeckItem
+import com.aos.goodideacard.database.enitiy.UserCardDeckItem
 
 interface CardRepository {
-    suspend fun saveCombinedCard(card: CombinedCardItem)
-    suspend fun getAllFromCombinedCardDeck(): List<CombinedCardItem>
+    suspend fun saveCombinedCard(card: MergedCardDeckItem)
+    suspend fun getAllFromCombinedCardDeck(): List<MergedCardDeckItem>
     suspend fun clearCombinedCardDeck()
 
-    suspend fun saveUserCard(card: UserCardItem)
-    suspend fun getAllFromUserCardDeck(): List<UserCardItem>
+    suspend fun saveUserCard(card: UserCardDeckItem)
+    suspend fun getAllFromUserCardDeck(): List<UserCardDeckItem>
     suspend fun clearUserCardDeck()
 }

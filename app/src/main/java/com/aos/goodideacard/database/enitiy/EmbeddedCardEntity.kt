@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
  * @param whose
  */
 open class EmbeddedCardEntity (
-    //@PrimaryKey(autoGenerate = true) val id: Long = 0,
     val content: String,
     val whose: String
 )
