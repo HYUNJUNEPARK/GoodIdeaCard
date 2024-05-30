@@ -30,7 +30,7 @@ import timber.log.Timber
 class MainFragment : BaseFragment() {
     companion object {
         private const val BACK_BUTTON_DELAY_MILLIS_2000 = 2000L
-        private const val CARD_BUTTON_DELAY_MILLIS_200 = 200L
+        private const val CARD_BUTTON_DELAY_MILLIS_350 = 350L
     }
 
     private var cardButtonPressedTime = 0L
@@ -96,7 +96,7 @@ class MainFragment : BaseFragment() {
      */
     private fun clickable(): Boolean {
         val currentTimeMillis = System.currentTimeMillis()
-        return if (currentTimeMillis > cardButtonPressedTime + CARD_BUTTON_DELAY_MILLIS_200) {
+        return if (currentTimeMillis > cardButtonPressedTime + CARD_BUTTON_DELAY_MILLIS_350) {
             cardButtonPressedTime = currentTimeMillis
             true
         } else {
