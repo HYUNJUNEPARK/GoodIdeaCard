@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.enitiy.CardItem
 import com.aos.goodideacard.enums.CardAction
@@ -43,26 +44,17 @@ class MainViewModel @Inject constructor(
     }
 
     fun updateCardPosition(action: CardAction) {
-        Timber.d("업데이트 전 cardPosition : $cardPosition | cardSize : ${goodIdeaList.value!!.size}")
+        Timber.d("$action 업데이트 전 cardPosition : $cardPosition | cardSize : ${goodIdeaList.value!!.size}")
 
         cardPosition = when(action) {
-            CardAction.PICK -> {
-                if (cardPosition == 0) {
-                    Timber.i("Block update Card Position : $cardPosition")
-                    _message.postValue("마지막 카드")
-                    return
-                }
-                cardPosition!!.minus(1)
-            }
-            CardAction.REWIND -> {
-                if (cardPosition == goodIdeaList.value!!.size) {
-                    Timber.i("Block update Card Position : $cardPosition")
-                    return
-                }
-                cardPosition!!.plus(1)
-            }
+            CardAction.PICK -> cardPosition!!.minus(1)
+            CardAction.REWIND -> cardPosition!!.plus(1)
         }
         Timber.d("$action 업데이트 후 updateCardPosition : $cardPosition")
+        if (cardPosition == 0) {
+            Timber.e("마지막 카드")
+            _message.postValue(context.getString(R.string.msg_last_card))
+        }
     }
 
     fun shuffleCard() {

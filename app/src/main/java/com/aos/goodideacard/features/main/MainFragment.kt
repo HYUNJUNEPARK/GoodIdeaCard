@@ -124,13 +124,11 @@ class MainFragment : BaseFragment() {
     private fun buttonClickListener() {
         binding.btnRewind.setOnClickListener {
             if (!clickable()) return@setOnClickListener
-            viewModel.updateCardPosition(CardAction.REWIND)
             binding.cardStackView.rewind()
         }
 
         binding.btnPick.setOnClickListener {
             if (!clickable()) return@setOnClickListener
-            viewModel.updateCardPosition(CardAction.PICK)
             binding.cardStackView.pickCard()
         }
 
@@ -151,11 +149,15 @@ class MainFragment : BaseFragment() {
             requireContext(),
             object : CardStackListener {
                 override fun onCardDragging(direction: Direction?, ratio: Float) {}
-                override fun onCardSwiped(direction: Direction?) {}
-                override fun onCardRewound() {}
                 override fun onCardCanceled() {}
                 override fun onCardAppeared(view: View?, position: Int) {}
                 override fun onCardDisappeared(view: View?, position: Int) {}
+                override fun onCardSwiped(direction: Direction?) {
+                    viewModel.updateCardPosition(CardAction.REWIND)
+                }
+                override fun onCardRewound() {
+                    viewModel.updateCardPosition(CardAction.PICK)
+                }
             }
         ).apply {
             setStackFrom(StackFrom.Top)
