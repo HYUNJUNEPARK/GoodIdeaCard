@@ -77,7 +77,7 @@ class MainViewModel @Inject constructor(
          *      ...
          * )
          */
-        val cardResources = (1..AppConst.TOTAL_CARD_20).associateWith { id ->
+        val cardResources = (1..AppConst.TOTAL_CARD_50).associateWith { id ->
             Pair(
                 context.resources.getIdentifier("idea_${id}_content", "string", context.packageName),
                 context.resources.getIdentifier("idea_${id}_whose", "string", context.packageName)
@@ -85,7 +85,7 @@ class MainViewModel @Inject constructor(
         }
 
         val cardList = mutableListOf<CardItem>()
-        for (i in 1..AppConst.TOTAL_CARD_20) {
+        for (i in 1..AppConst.TOTAL_CARD_50) {
             val resources = cardResources[i]
 
             if (resources != null) {
