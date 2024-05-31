@@ -12,6 +12,8 @@
     <color name="yellow_f6d06a">#F6D06A</color>
     <color name="sky_5bc9fa">#5BC9FA</color>
     <color name="purple_764dbb">#764DBB</color>
+    <color name="white_fafafa">#FAFAFA</color>
+    <color name="black_1c1c1c">#1C1C1C</color>
 
     <!--day/night mode-->
     <color name="day_night_black_ff000000_white_ffffffff">@color/black_ff000000</color>
@@ -19,4 +21,6 @@
     <color name="day_night_white_ffffffff_black_ff000000">@color/white_ffffffff</color> <!--background-->
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/white_ffffffff</color> <!--button background-->
     <color name="day_night_white_f3f2f2_gray_d1d1d1">@color/white_f3f2f2</color> <!--button stroke-->
+    <color name="day_night_mode_black_ff000000_white_ffffffff">@color/black_ff000000</color>
+    <color name="day_night_mode_white_fafafa_back_1c1c1c">@color/white_fafafa</color> <!--division weak line-->
 </resources>

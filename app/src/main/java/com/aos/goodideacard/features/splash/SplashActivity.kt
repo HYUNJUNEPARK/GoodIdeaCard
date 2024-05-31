@@ -49,7 +49,7 @@ class SplashActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
-        handler.postDelayed(runnable, 1000)
+        handler.postDelayed(runnable, 1500)
     }
 
     /**
@@ -78,7 +78,6 @@ class SplashActivity : BaseActivity() {
             subContentString,
             subContentType
         )
-        splashSubContent.gravity = subContent.first
         splashSubContent.text = subContent.second
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:paddingHorizontal">14dp</item>
+        <item name="android:paddingVertical">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+        <item name="android:drawablePadding">14dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/day_night_mode_black_ff000000_white_ffffffff</item>
+    </style>
+
+<!--    <style name="division_horiz_weak_line">-->
+<!--        <item name="android:layout_width">match_parent</item>-->
+<!--        <item name="android:layout_height">1dp</item>-->
+<!--        <item name="android:background">"@color/day_night_gray_d1d1d1_gray_424141</item>-->
+<!--    </style>-->
+</resources>

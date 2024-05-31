@@ -24,22 +24,13 @@
             app:menu="@menu/menu_toolbar" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <View
-        android:id="@+id/toolbar_underline"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/day_night_gray_d1d1d1_gray_424141"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar_layout" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="280dp"
         android:layout_height="453dp"
         app:layout_constraintBottom_toTopOf="@id/button_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_underline">
+        app:layout_constraintTop_toBottomOf="@id/appbar_layout">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -71,7 +62,7 @@
         app:layout_constraintBottom_toTopOf="@id/button_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_underline" />
+        app:layout_constraintTop_toBottomOf="@id/appbar_layout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_layout"
