@@ -30,22 +30,22 @@ class MainViewModel @Inject constructor(
 ): BaseViewModel() {
     var cardPosition: Int? = null
 
-    private var _goodIdeaList = MutableLiveData<List<MergedCardDeckItem>>()
-    val goodIdeaList: LiveData<List<MergedCardDeckItem>> get() = _goodIdeaList
+    private var _cardList = MutableLiveData<List<MergedCardDeckItem>>()
+    val cardList: LiveData<List<MergedCardDeckItem>> get() = _cardList
 
     private var _message = MutableLiveData<String?>()
     val message: LiveData<String?> get() = _message
 
-    init {
-        getData()
-    }
+//    init {
+//        getData()
+//    }
 
-    private fun getData() = viewModelScope.launch(Dispatchers.IO) {
+    fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
         //기존에 만든 카드 덱이 있다면 그대로 사용
         val localCards = cardRepository.getAllFromCombinedCardDeck()
         if (localCards.isNotEmpty()) {
             Timber.i("local cards not empty")
-            _goodIdeaList.postValue(localCards)
+            _cardList.postValue(localCards)
         }
 
         val defaultCardDeck = createDefaultDeck(context)
@@ -61,11 +61,11 @@ class MainViewModel @Inject constructor(
         if (cardPosition == null) cardPosition = defaultCardDeck.size - 1
 
         //submit
-        _goodIdeaList.postValue(mergedCardDeck)
+        _cardList.postValue(mergedCardDeck)
     }
 
     fun updateCardPosition(action: CardAction) {
-        Timber.d("$action 업데이트 전 cardPosition : $cardPosition | cardSize : ${goodIdeaList.value!!.size}")
+        Timber.d("$action 업데이트 전 cardPosition : $cardPosition | cardSize : ${cardList.value!!.size}")
 
         cardPosition = when(action) {
             CardAction.PICK -> cardPosition!!.minus(1)
@@ -79,15 +79,15 @@ class MainViewModel @Inject constructor(
     }
 
     fun shuffleCard() {
-        if (goodIdeaList.value.isNullOrEmpty()) {
+        if (cardList.value.isNullOrEmpty()) {
             Timber.e("Exception: ShuffleCardSet is null")
             return
         }
 
-        val shuffleCardSet = goodIdeaList.value!!.shuffled()
+        val shuffleCardSet = cardList.value!!.shuffled()
 
         cardPosition = shuffleCardSet.size -1
-        _goodIdeaList.postValue(shuffleCardSet)
+        _cardList.postValue(shuffleCardSet)
     }
 
     /**

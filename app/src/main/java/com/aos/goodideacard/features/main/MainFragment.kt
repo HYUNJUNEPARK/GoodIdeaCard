@@ -129,7 +129,12 @@ class MainFragment : BaseFragment() {
 
         binding.btnPick.setOnClickListener {
             if (!clickable()) return@setOnClickListener
-            binding.cardStackView.pickCard()
+
+            if (viewModel.cardList.value.isNullOrEmpty()) {
+                viewModel.getCardDeck()
+            } else {
+                binding.cardStackView.pickCard()
+            }
         }
 
         binding.btnShuffle.setOnClickListener {
@@ -172,7 +177,7 @@ class MainFragment : BaseFragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.goodIdeaList.observe(viewLifecycleOwner) { goodIdeas ->
+        viewModel.cardList.observe(viewLifecycleOwner) { goodIdeas ->
             Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
             cardItemAdapter.submitList(goodIdeas)
             binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
