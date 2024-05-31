@@ -45,13 +45,24 @@
 
             <TextView
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
-                android:text="카드 추가"
+                android:text="@string/add_card"
                 app:drawableStartCompat="@drawable/icon_bulb_24dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/day_night_mode_white_fafafa_back_1c1c1c" />
+            <View style="@style/division_horiz_weak_line" />
+
+            <TextView
+                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
+                android:text="@string/background"
+                app:drawableStartCompat="@drawable/icon_day_night_24dp" />
+
+            <View style="@style/division_horiz_weak_line" />
+
+            <TextView
+                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
+                android:text="@string/language"
+                app:drawableStartCompat="@drawable/icon_languages_24dp" />
+
+            <View style="@style/division_horiz_weak_line" />
 
         </LinearLayout>
     </ScrollView>
