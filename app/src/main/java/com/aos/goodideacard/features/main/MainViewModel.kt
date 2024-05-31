@@ -48,7 +48,7 @@ class MainViewModel @Inject constructor(
             _goodIdeaList.postValue(localCards)
         }
 
-        val defaultCardDeck = createDefaultCardList(context)
+        val defaultCardDeck = createDefaultDeck(context)
         val userCardDeck = cardRepository.getAllFromUserCardDeck()
 
         val mergedCardDeck = mergeCardDecks(
@@ -93,20 +93,20 @@ class MainViewModel @Inject constructor(
     /**
      * string.xml 리스트에서 기본 카드덱을 생성한다.
      *
-     * @param context string resource 가져올 때 사용된다.
+     * @param context string resource 가져올 때 사용
      */
     @SuppressLint("DiscouragedApi")
-    private fun createDefaultCardList(context: Context): List<DefaultCardDeckItem> {
+    private fun createDefaultDeck(context: Context): List<DefaultCardDeckItem> {
         /**
           val cardResources = mapOf(
                1 to Pair(R.string.idea_1_content, R.string.idea_1_whose)
                ...
           )
          */
-        val cardResources = (1..AppConst.TOTAL_CARD_50).associateWith { id ->
+        val cardResources = (1..AppConst.TOTAL_CARD_50).associateWith { cardId ->
             Pair(
-                context.resources.getIdentifier("idea_${id}_content", "string", context.packageName),
-                context.resources.getIdentifier("idea_${id}_whose", "string", context.packageName)
+                context.resources.getIdentifier(context.getString(R.string.format_main_content, cardId.toString()), "string", context.packageName),
+                context.resources.getIdentifier(context.getString(R.string.format_sub_content, cardId.toString()), "string", context.packageName)
             )
         }
 

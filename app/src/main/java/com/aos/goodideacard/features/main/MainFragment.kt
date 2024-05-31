@@ -30,7 +30,7 @@ import timber.log.Timber
 class MainFragment : BaseFragment() {
     companion object {
         private const val BACK_BUTTON_DELAY_MILLIS_2000 = 2000L
-        private const val CARD_BUTTON_DELAY_MILLIS_350 = 350L
+        private const val CARD_BUTTON_DELAY_MILLIS_350 = 300L
     }
 
     private var cardButtonPressedTime = 0L

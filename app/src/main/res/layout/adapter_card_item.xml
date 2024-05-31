@@ -35,7 +35,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/sample_test_1" />
+                tools:text="@string/sample_text_1" />
 
             <TextView
                 android:id="@+id/card_view_whose"
