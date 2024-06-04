@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/item_setting"
-        android:icon="@drawable/ic_setting_24_day_night"
+        android:icon="@drawable/ic_setting_24dp_day_night"
         android:title="@string/setting"
         app:showAsAction="always" />
 </menu>
