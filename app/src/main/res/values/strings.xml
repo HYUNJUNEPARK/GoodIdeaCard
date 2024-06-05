@@ -18,7 +18,7 @@
     <string name="card_2_sub_content">Gilbert K. Chesterton</string>
     <string name="card_2_sub_content_type" />
 
-    <string name="card_3_main_content" translatable="false">All work and no play\nmakes jack a dull boy</string>
+    <string name="card_3_main_content" translatable="false">All work and no play\nmakes jack a dull boy.</string>
     <string name="card_3_sub_content" translatable="false" />
     <string name="card_3_sub_content_type" translatable="false" />
 
@@ -111,24 +111,29 @@
     <string name="card_25_sub_content_type" />
 
     <string name="card_26_main_content">Sometimes the right path is\nnot the easiest one.</string>
-    <string name="card_26_sub_content"/>
+    <string name="card_26_sub_content" />
     <string name="card_26_sub_content_type" />
 
-    <string name="card_27_main_content">card_27_content</string>
-    <string name="card_27_sub_content">card_27_sub_content</string>
+    <string name="card_27_main_content">Better late than never.</string>
+    <string name="card_27_sub_content" />
     <string name="card_27_sub_content_type" />
-    <string name="card_28_main_content">card_28_content</string>
-    <string name="card_28_sub_content">card_28_sub_content</string>
+
+    <string name="card_28_main_content">Every wall is a door. </string>
+    <string name="card_28_sub_content" />
     <string name="card_28_sub_content_type" />
-    <string name="card_29_main_content">card_29_content</string>
-    <string name="card_29_sub_content">card_29_sub_content</string>
+
+    <string name="card_29_main_content">We can give advice,\nbut we cannot give conduct.</string>
+    <string name="card_29_sub_content" />
     <string name="card_29_sub_content_type" />
-    <string name="card_30_main_content">card_30_content</string>
-    <string name="card_30_sub_content">card_30_sub_content</string>
+
+    <string name="card_30_main_content">You will never know\nuntil you try.</string>
+    <string name="card_30_sub_content" />
     <string name="card_30_sub_content_type" />
-    <string name="card_31_main_content">card_31_content</string>
-    <string name="card_31_sub_content">card_31_sub_content</string>
+
+    <string name="card_31_main_content">There are better starters\nthan me but I’m a strong finisher.</string>
+    <string name="card_31_sub_content">Usain Bolt</string>
     <string name="card_31_sub_content_type" />
+
     <string name="card_32_main_content">card_32_content</string>
     <string name="card_32_sub_content">card_32_sub_content</string>
     <string name="card_32_sub_content_type" />

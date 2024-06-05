@@ -36,7 +36,7 @@
     <string name="card_7_sub_content_type" />
 
     <string name="card_8_main_content">初心不忘 磨斧作針\n초심불망 마부작침</string>
-    <string name="card_8_sub_content">초심을 잊지 않고,\n쇠도끼를 갈아 바늘을 만든다</string>
+    <string name="card_8_sub_content">초심을 잊지 않고,\n쇠도끼를 갈아 바늘을 만든다.</string>
     <string name="card_8_sub_content_type">0</string>
 
     <string name="card_9_main_content">잘 살아라 그게 최고의 복수다.</string>
@@ -75,7 +75,7 @@
     <string name="card_17_sub_content">마하트마 간디</string>
     <string name="card_17_sub_content_type" />
 
-    <string name="card_18_main_content">이 또한 지나가리라</string>
+    <string name="card_18_main_content">이 또한 지나가리라.</string>
     <string name="card_18_sub_content" />
     <string name="card_18_sub_content_type" />
 
@@ -99,7 +99,7 @@
     <string name="card_23_sub_content">공자</string>
     <string name="card_23_sub_content_type" />
 
-    <string name="card_24_main_content">나를 죽이지 못하는 고통은\n나를 더욱 강하게 만든다</string>
+    <string name="card_24_main_content">나를 죽이지 못하는 고통은\n나를 더욱 강하게 만든다.</string>
     <string name="card_24_sub_content">니체</string>
     <string name="card_24_sub_content_type" />
 
@@ -107,24 +107,29 @@
     <string name="card_25_sub_content_type" />
 
     <string name="card_26_main_content">때때로, 올바른 길이\n가장 쉬운 길은 아니다.</string>
-    <string name="card_26_sub_content"/>
+    <string name="card_26_sub_content" />
     <string name="card_26_sub_content_type" />
 
-    <string name="card_27_main_content">card_27_content</string>
-    <string name="card_27_sub_content">card_27_sub_content</string>
+    <string name="card_27_main_content">아예 안하는 것보단\n늦게라도 하는 게 낫다.</string>
+    <string name="card_27_sub_content" />
     <string name="card_27_sub_content_type" />
-    <string name="card_28_main_content">card_28_content</string>
-    <string name="card_28_sub_content">card_28_sub_content</string>
+
+    <string name="card_28_main_content">모든 벽에는 문이 있다.</string>
+    <string name="card_28_sub_content" />
     <string name="card_28_sub_content_type" />
-    <string name="card_29_main_content">card_29_content</string>
-    <string name="card_29_sub_content">card_29_sub_content</string>
+
+    <string name="card_29_main_content">충고는 해 줄 수 있으나,\n행동하게 할 수는 없다.</string>
+    <string name="card_29_sub_content" />
     <string name="card_29_sub_content_type" />
-    <string name="card_30_main_content">card_30_content</string>
-    <string name="card_30_sub_content">card_30_sub_content</string>
+
+    <string name="card_30_main_content">해보기 전에는\n결코 알 수 없을 것이다.</string>
+    <string name="card_30_sub_content" />
     <string name="card_30_sub_content_type" />
-    <string name="card_31_main_content">card_31_content</string>
-    <string name="card_31_sub_content">card_31_sub_content</string>
+
+    <string name="card_31_main_content">나보다 시작이 나은\n선수들이 있겠지만,\n나는 끝이 강한 선수다.</string>
+    <string name="card_31_sub_content">우사인 볼트</string>
     <string name="card_31_sub_content_type" />
+
     <string name="card_32_main_content">card_32_content</string>
     <string name="card_32_sub_content">card_32_sub_content</string>
     <string name="card_32_sub_content_type" />

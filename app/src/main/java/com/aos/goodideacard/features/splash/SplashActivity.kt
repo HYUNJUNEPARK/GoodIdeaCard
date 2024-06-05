@@ -49,7 +49,7 @@ class SplashActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
-        handler.postDelayed(runnable, 1500)
+        handler.postDelayed(runnable, 1700)
     }
 
     /**
