@@ -81,7 +81,7 @@
             android:background="@drawable/bg_oval_white"
             android:elevation="2dp"
             android:foreground="@drawable/ripple_effect_circle_icon_purple"
-            android:padding="8dp"
+            android:padding="10dp"
             android:src="@drawable/ic_shuffle_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_pick"
