@@ -194,7 +194,7 @@
 
     <!--msg-->
     <string name="msg_app_close_msg">Press \'Back\' again to exit.</string>
-    <string name="msg_last_card">마지막 카드</string>
+    <string name="msg_last_card">Here is the last card.\nPlease shuffle the cards</string>
 
     <!--format-->
     <string name="format_splash_sub_content">- %1$s -</string>

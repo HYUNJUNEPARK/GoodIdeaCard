@@ -190,7 +190,7 @@
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
-    <string name="msg_last_card">마지막 카드</string>
+    <string name="msg_last_card">마지막 카드입니다.\n카드를 섞은 후 다시 뽑아주세요.</string>
 
     <!--format-->
     <string name="format_splash_sub_content">- %1$s -</string>
