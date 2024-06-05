@@ -139,11 +139,13 @@ class MainFragment : BaseFragment() {
         binding.btnShuffle.setOnClickListener {
             if (!clickable()) return@setOnClickListener
             CoroutineScope(Dispatchers.Main).launch {
-                (requireActivity() as MainActivity).showLoading()
+                binding.lottieLoading.playAnimation()
+
                 cardItemAdapter.submitList(null)
                 delay(1000)
                 viewModel.shuffleCard()
-                (requireActivity() as MainActivity).hideLoading()
+
+                binding.lottieLoading.cancelAnimation()
             }
         }
     }

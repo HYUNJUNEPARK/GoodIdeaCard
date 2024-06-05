@@ -18,8 +18,4 @@ class MainActivity : BaseActivity() {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("MainActivity onCreate()")
         setContentView(binding.root)
     }
-
-    fun showLoading() { binding.lottieLoading.visibility = View.VISIBLE }
-
-    fun hideLoading() { binding.lottieLoading.visibility = View.GONE }
 }
