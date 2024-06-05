@@ -21,8 +21,7 @@ class SettingFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        initClickListeners()
+        setClickListeners()
     }
 
     override fun onDestroyView() {
@@ -30,11 +29,9 @@ class SettingFragment : BaseFragment() {
         _binding = null
     }
 
-    private fun initClickListeners() {
-        binding.makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_makeMyCardFragment) }
-
-        binding.appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
-
-        binding.appBackground.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_backgroundFragment) }
+    private fun setClickListeners() = with(binding) {
+        makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_makeMyCardFragment) }
+        appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
+        appBackground.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_backgroundFragment) }
     }
 }

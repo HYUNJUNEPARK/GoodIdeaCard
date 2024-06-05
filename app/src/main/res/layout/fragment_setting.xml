@@ -33,14 +33,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="@string/setting" />
                 </com.google.android.material.appbar.MaterialToolbar>
             </com.google.android.material.appbar.AppBarLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/day_night_gray_d1d1d1_gray_424141" />
+            <View style="@style/division_horiz_toolbar_bottom_line"/>
 
             <TextView
                 android:id="@+id/make_my_card"

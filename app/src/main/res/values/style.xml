@@ -17,4 +17,11 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/day_night_mode_white_fafafa_back_1c1c1c</item>
     </style>
+
+    <style name="division_horiz_toolbar_bottom_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/day_night_gray_d1d1d1_gray_424141</item>
+    </style>
+
 </resources>

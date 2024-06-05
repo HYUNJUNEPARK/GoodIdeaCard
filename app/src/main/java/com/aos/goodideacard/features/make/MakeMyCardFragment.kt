@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.databinding.FragmentMakeMyCardBinding
 import com.aos.goodideacard.features.base.BaseFragment
 
@@ -13,6 +14,7 @@ class MakeMyCardFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMakeMyCardBinding.inflate(inflater, container, false)
+        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         return binding.root
     }
 
