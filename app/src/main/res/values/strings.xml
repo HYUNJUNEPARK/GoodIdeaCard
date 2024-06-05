@@ -9,16 +9,16 @@
 
     <!--good Idea-->
     <string name="card_1_main_content">설득의 3요소\n\n에토스\n파토스\n그리고\n로고스</string>
-    <string name="card_1_sub_content"/>
-    <string name="card_1_sub_content_type"/>
+    <string name="card_1_sub_content" />
+    <string name="card_1_sub_content_type" />
 
     <string name="card_2_main_content">기회는\n오지 않는다.\n기회는\n만드는 것이다.</string>
     <string name="card_2_sub_content">브루스 리</string>
-    <string name="card_2_sub_content_type"/>
+    <string name="card_2_sub_content_type" />
 
     <string name="card_3_main_content">All work and no play\nmakes jack a dull boy</string>
-    <string name="card_3_sub_content"/>
-    <string name="card_3_sub_content_type"/>
+    <string name="card_3_sub_content" />
+    <string name="card_3_sub_content_type" />
 
     <string name="card_4_main_content">盡人事待天命\n진인사대천명</string>
     <string name="card_4_sub_content">해야 할 일을 다 하고 나서\n하늘의 명을 기다린다.</string>
@@ -26,15 +26,15 @@
 
     <string name="card_5_main_content">승리하면 조금 배울 수 있고,\n패배하면 모든 것을 배울 수 있다.</string>
     <string name="card_5_sub_content">매튜슨</string>
-    <string name="card_5_sub_content_type"/>
+    <string name="card_5_sub_content_type" />
 
     <string name="card_6_main_content">가장 하기 힘든 일은\n아무 일도 안하는 것이다.</string>
-    <string name="card_6_sub_content"/>
-    <string name="card_6_sub_content_type"/>
+    <string name="card_6_sub_content" />
+    <string name="card_6_sub_content_type" />
 
     <string name="card_7_main_content">두려운 때문에 갖는\n존경심만큼 비열한 것은 없다.</string>
     <string name="card_7_sub_content">카뮈</string>
-    <string name="card_7_sub_content_type"/>
+    <string name="card_7_sub_content_type" />
 
     <string name="card_8_main_content">初心不忘 磨斧作針\n초심불망 마부작침</string>
     <string name="card_8_sub_content">초심을 잊지 않고,\n쇠도끼를 갈아 바늘을 만든다</string>
@@ -42,144 +42,144 @@
 
     <string name="card_9_main_content">잘 살아라 그게 최고의 복수다.</string>
     <string name="card_9_sub_content">탈무드</string>
-    <string name="card_9_sub_content_type"/>
+    <string name="card_9_sub_content_type" />
 
     <string name="card_10_main_content">평화를 원한다면\n전쟁을 준비하라</string>
-    <string name="card_10_sub_content"/>
-    <string name="card_10_sub_content_type"/>
+    <string name="card_10_sub_content" />
+    <string name="card_10_sub_content_type" />
 
     <string name="card_11_main_content">사람은 오로지 가슴으로만 올바로 볼 수 있다.\n본질적인 것은 눈에 보이지 않는다.</string>
     <string name="card_11_sub_content">생텍쥐페리</string>
-    <string name="card_11_sub_content_type"/>
+    <string name="card_11_sub_content_type" />
 
     <string name="card_12_main_content">빛을 퍼뜨릴 수 있는\n두 가지 방법이 있다.\n\n촛불이 되거나\n또는 그것을 비추는\n거울이 되는 것이다.</string>
     <string name="card_12_sub_content">이디스 워튼</string>
-    <string name="card_12_sub_content_type"/>
+    <string name="card_12_sub_content_type" />
 
     <string name="card_13_main_content">스스로를 신뢰하는 사람만이\n다른 사람들에게 성실할 수 있다.</string>
     <string name="card_13_sub_content">에릭 프롬</string>
-    <string name="card_13_sub_content_type"/>
+    <string name="card_13_sub_content_type" />
 
     <string name="card_14_main_content">힘 있을 때 친구는 친구가 아니다.</string>
     <string name="card_14_sub_content">헨리 애덤스</string>
-    <string name="card_14_sub_content_type"/>
+    <string name="card_14_sub_content_type" />
 
     <string name="card_15_main_content">원한은 강직으로 갚고,\n은덕은 은덕으로 갚아야 하느니라.</string>
     <string name="card_15_sub_content">공자</string>
-    <string name="card_15_sub_content_type"/>
+    <string name="card_15_sub_content_type" />
 
     <string name="card_16_main_content">나는 만 가지 킥을\n연습한 사람은 두렵지 않지만,\n한 가지 킥을\n만 번 연습한 사람은 두렵다.</string>
     <string name="card_16_sub_content">브루스 리</string>
-    <string name="card_16_sub_content_type"/>
+    <string name="card_16_sub_content_type" />
 
     <string name="card_17_main_content">지식이란 무릇 알면 적용하고,\n모르면 모름을 인정하는 것이니라.</string>
     <string name="card_17_sub_content">공자</string>
-    <string name="card_17_sub_content_type"/>
+    <string name="card_17_sub_content_type" />
 
     <string name="card_18_main_content">이 또한 지나가리라</string>
-    <string name="card_18_sub_content"/>
-    <string name="card_18_sub_content_type"/>
+    <string name="card_18_sub_content" />
+    <string name="card_18_sub_content_type" />
 
     <string name="card_19_main_content">너 자신을 알라</string>
     <string name="card_19_sub_content">소크라테스</string>
-    <string name="card_19_sub_content_type"/>
+    <string name="card_19_sub_content_type" />
 
     <string name="card_20_main_content">믿는 도끼에 발등 찍힌다.</string>
-    <string name="card_20_sub_content"/>
-    <string name="card_20_sub_content_type"/>
+    <string name="card_20_sub_content" />
+    <string name="card_20_sub_content_type" />
 
     <string name="card_21_main_content">승리는 가장 끈기 있는\n자에게 돌아간다.</string>
     <string name="card_21_sub_content">나폴레옹</string>
-    <string name="card_21_sub_content_type"/>
+    <string name="card_21_sub_content_type" />
 
     <string name="card_22_main_content">사람은 망설이지만\n시간은 망설이지\n않는다.\n\n잃어버린 시간은\n되돌아오지 않는다.</string>
     <string name="card_22_sub_content">벤자민 프랭클린</string>
-    <string name="card_22_sub_content_type"/>
+    <string name="card_22_sub_content_type" />
 
     <string name="card_23_main_content">card_23_content</string>
     <string name="card_23_sub_content">card_23_sub_content</string>
-    <string name="card_23_sub_content_type"/>
+    <string name="card_23_sub_content_type" />
     <string name="card_24_main_content">card_24_content</string>
     <string name="card_24_sub_content">card_24_sub_content</string>
-    <string name="card_24_sub_content_type"/>
+    <string name="card_24_sub_content_type" />
     <string name="card_25_main_content">card_25_content</string>
     <string name="card_25_sub_content">card_25_sub_content</string>
-    <string name="card_25_sub_content_type"/>
+    <string name="card_25_sub_content_type" />
     <string name="card_26_main_content">card_26_content</string>
     <string name="card_26_sub_content">card_26_sub_content</string>
-    <string name="card_26_sub_content_type"/>
+    <string name="card_26_sub_content_type" />
     <string name="card_27_main_content">card_27_content</string>
     <string name="card_27_sub_content">card_27_sub_content</string>
-    <string name="card_27_sub_content_type"/>
+    <string name="card_27_sub_content_type" />
     <string name="card_28_main_content">card_28_content</string>
     <string name="card_28_sub_content">card_28_sub_content</string>
-    <string name="card_28_sub_content_type"/>
+    <string name="card_28_sub_content_type" />
     <string name="card_29_main_content">card_29_content</string>
     <string name="card_29_sub_content">card_29_sub_content</string>
-    <string name="card_29_sub_content_type"/>
+    <string name="card_29_sub_content_type" />
     <string name="card_30_main_content">card_30_content</string>
     <string name="card_30_sub_content">card_30_sub_content</string>
-    <string name="card_30_sub_content_type"/>
+    <string name="card_30_sub_content_type" />
     <string name="card_31_main_content">card_31_content</string>
     <string name="card_31_sub_content">card_31_sub_content</string>
-    <string name="card_31_sub_content_type"/>
+    <string name="card_31_sub_content_type" />
     <string name="card_32_main_content">card_32_content</string>
     <string name="card_32_sub_content">card_32_sub_content</string>
-    <string name="card_32_sub_content_type"/>
+    <string name="card_32_sub_content_type" />
     <string name="card_33_main_content">card_33_content</string>
     <string name="card_33_sub_content">card_33_sub_content</string>
-    <string name="card_33_sub_content_type"/>
+    <string name="card_33_sub_content_type" />
     <string name="card_34_main_content">card_34_content</string>
     <string name="card_34_sub_content">card_34_sub_content</string>
-    <string name="card_34_sub_content_type"/>
+    <string name="card_34_sub_content_type" />
     <string name="card_35_main_content">card_35_content</string>
     <string name="card_35_sub_content">card_35_sub_content</string>
-    <string name="card_35_sub_content_type"/>
+    <string name="card_35_sub_content_type" />
     <string name="card_36_main_content">card_36_content</string>
     <string name="card_36_sub_content">card_36_sub_content</string>
-    <string name="card_36_sub_content_type"/>
+    <string name="card_36_sub_content_type" />
     <string name="card_37_main_content">card_37_content</string>
     <string name="card_37_sub_content">card_37_sub_content</string>
-    <string name="card_37_sub_content_type"/>
+    <string name="card_37_sub_content_type" />
     <string name="card_38_main_content">card_38_content</string>
     <string name="card_38_sub_content">card_38_sub_content</string>
-    <string name="card_38_sub_content_type"/>
+    <string name="card_38_sub_content_type" />
     <string name="card_39_main_content">card_39_content</string>
     <string name="card_39_sub_content">card_39_sub_content</string>
-    <string name="card_39_sub_content_type"/>
+    <string name="card_39_sub_content_type" />
     <string name="card_40_main_content">card_40_content</string>
     <string name="card_40_sub_content">card_40_sub_content</string>
-    <string name="card_40_sub_content_type"/>
+    <string name="card_40_sub_content_type" />
     <string name="card_41_main_content">card_41_content</string>
     <string name="card_41_sub_content">card_41_sub_content</string>
-    <string name="card_41_sub_content_type"/>
+    <string name="card_41_sub_content_type" />
     <string name="card_42_main_content">card_42_content</string>
     <string name="card_42_sub_content">card_42_sub_content</string>
-    <string name="card_42_sub_content_type"/>
+    <string name="card_42_sub_content_type" />
     <string name="card_43_main_content">card_43_content</string>
     <string name="card_43_sub_content">card_43_sub_content</string>
-    <string name="card_43_sub_content_type"/>
+    <string name="card_43_sub_content_type" />
     <string name="card_44_main_content">card_44_content</string>
     <string name="card_44_sub_content">card_44_sub_content</string>
-    <string name="card_44_sub_content_type"/>
+    <string name="card_44_sub_content_type" />
     <string name="card_45_main_content">card_45_content</string>
     <string name="card_45_sub_content">card_45_sub_content</string>
-    <string name="card_45_sub_content_type"/>
+    <string name="card_45_sub_content_type" />
     <string name="card_46_main_content">card_46_content</string>
     <string name="card_46_sub_content">card_46_sub_content</string>
-    <string name="card_46_sub_content_type"/>
+    <string name="card_46_sub_content_type" />
     <string name="card_47_main_content">card_47_content</string>
     <string name="card_47_sub_content">card_47_sub_content</string>
-    <string name="card_47_sub_content_type"/>
+    <string name="card_47_sub_content_type" />
     <string name="card_48_main_content">card_48_content</string>
     <string name="card_48_sub_content">card_48_sub_content</string>
-    <string name="card_48_sub_content_type"/>
+    <string name="card_48_sub_content_type" />
     <string name="card_49_main_content">card_49_content</string>
     <string name="card_49_sub_content">card_49_sub_content</string>
-    <string name="card_49_sub_content_type"/>
+    <string name="card_49_sub_content_type" />
     <string name="card_50_main_content">card_50_content</string>
     <string name="card_50_sub_content">card_50_sub_content</string>
-    <string name="card_50_sub_content_type"/>
+    <string name="card_50_sub_content_type" />
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
@@ -198,8 +198,10 @@ Eget aliquet nibh praesent tristique magna sit amet purus gravida. In hac habita
     <string name="sample_text_2">Lorem Ipsum Generator Lorem Ipsum Generator</string>
     <string name="sample_text_3">Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator Lorem Ipsum Generator</string>
     <string name="language">언어</string>
-    <string name="add_card">카드 추가</string>
+    <string name="make_my_card">내 카드 만들기</string>
     <string name="background">배경화면</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

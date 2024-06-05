@@ -22,5 +22,42 @@
         android:id="@+id/settingFragment"
         android:name="com.aos.goodideacard.features.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_cardMakeFragment"
+            app:destination="@id/cardMakeFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_languageFragment"
+            app:destination="@id/languageFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_backgroundFragment"
+            app:destination="@id/backgroundFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cardMakeFragment"
+        android:name="com.aos.goodideacard.features.make.CardMakeFragment"
+        android:label="fragment_card_make"
+        tools:layout="@layout/fragment_card_make" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.aos.goodideacard.features.setting.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" />
+    <fragment
+        android:id="@+id/backgroundFragment"
+        android:name="com.aos.goodideacard.features.setting.BackgroundFragment"
+        android:label="fragment_background"
+        tools:layout="@layout/fragment_background" />
 </navigation>

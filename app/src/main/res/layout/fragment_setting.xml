@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/day_night_white_ffffffff_black_ff000000"
     tools:context=".features.setting.SettingFragment">
 
     <ScrollView
@@ -27,8 +26,8 @@
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:background="@color/day_night_white_ffffffff_black_ff000000"
+                    android:layout_height="wrap_content"
                     app:navigationIcon="@drawable/ic_arrow_point_left_24_day_night">
 
                     <TextView
@@ -44,23 +43,26 @@
                 android:background="@color/day_night_gray_d1d1d1_gray_424141" />
 
             <TextView
+                android:id="@+id/make_my_card"
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
-                android:text="@string/add_card"
-                app:drawableStartCompat="@drawable/icon_bulb_24dp" />
+                android:text="@string/make_my_card"
+                app:drawableStartCompat="@drawable/ic_cards_24dp_day_night" />
 
             <View style="@style/division_horiz_weak_line" />
 
             <TextView
+                android:id="@+id/app_background"
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
                 android:text="@string/background"
-                app:drawableStartCompat="@drawable/icon_day_night_24dp" />
+                app:drawableStartCompat="@drawable/ic_background_24dp_day_night" />
 
             <View style="@style/division_horiz_weak_line" />
 
             <TextView
+                android:id="@+id/app_language"
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
                 android:text="@string/language"
-                app:drawableStartCompat="@drawable/icon_languages_24dp" />
+                app:drawableStartCompat="@drawable/ic_language_24dp_day_night" />
 
             <View style="@style/division_horiz_weak_line" />
 

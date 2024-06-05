@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/day_night_white_ffffffff_black_ff000000"
     tools:context=".features.main.MainFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -68,7 +67,6 @@
         android:id="@+id/button_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/day_night_white_ffffffff_black_ff000000"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingBottom="15dp"
@@ -84,7 +82,7 @@
             android:elevation="2dp"
             android:foreground="@drawable/ripple_effect_circle_icon_purple"
             android:padding="8dp"
-            android:src="@drawable/icon_shuffle_24dp"
+            android:src="@drawable/ic_shuffle_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_pick"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +97,7 @@
             android:elevation="2dp"
             android:foreground="@drawable/ripple_effect_circle_icon_yellow"
             android:padding="5dp"
-            android:src="@drawable/icon_bulb_24dp"
+            android:src="@drawable/ic_bulb_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +111,7 @@
             android:elevation="2dp"
             android:foreground="@drawable/ripple_effect_circle_icon_sky"
             android:padding="8dp"
-            android:src="@drawable/icon_rewind_24dp"
+            android:src="@drawable/ic_rewind_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_pick"
