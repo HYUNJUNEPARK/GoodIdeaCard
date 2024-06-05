@@ -15,36 +15,36 @@
     <string name="card_1_sub_content" />
     <string name="card_1_sub_content_type" />
 
-    <string name="card_2_main_content">기회는\n오지 않는다.\n기회는\n만드는 것이다.</string>
-    <string name="card_2_sub_content">브루스 리</string>
+    <string name="card_2_main_content">Without the rain,\nthere would be no rainbow.</string>
+    <string name="card_2_sub_content">Gilbert K. Chesterton</string>
     <string name="card_2_sub_content_type" />
 
     <string name="card_3_main_content" translatable="false">All work and no play\nmakes jack a dull boy</string>
     <string name="card_3_sub_content" translatable="false" />
     <string name="card_3_sub_content_type" translatable="false" />
 
-    <string name="card_4_main_content">盡人事待天命\n진인사대천명</string>
-    <string name="card_4_sub_content">해야 할 일을 다 하고 나서\n하늘의 명을 기다린다.</string>
+    <string name="card_4_main_content">盡人事待天命</string>
+    <string name="card_4_sub_content">Do your best and\nleave the rest to fate.</string>
     <string name="card_4_sub_content_type">0</string>
 
-    <string name="card_5_main_content">승리하면 조금 배울 수 있고,\n패배하면 모든 것을 배울 수 있다.</string>
-    <string name="card_5_sub_content">매튜슨</string>
+    <string name="card_5_main_content">Success is where preparation\nand opportunity meet.</string>
+    <string name="card_5_sub_content">Seneca</string>
     <string name="card_5_sub_content_type" />
 
-    <string name="card_6_main_content">가장 하기 힘든 일은\n아무 일도 안하는 것이다.</string>
-    <string name="card_6_sub_content" />
+    <string name="card_6_main_content">The secret of success is\nconstancy of purpose.</string>
+    <string name="card_6_sub_content">Benjamin Disraeli</string>
     <string name="card_6_sub_content_type" />
 
-    <string name="card_7_main_content">두려운 때문에 갖는\n존경심만큼 비열한 것은 없다.</string>
-    <string name="card_7_sub_content">카뮈</string>
+    <string name="card_7_main_content">Nothing is more despicable than respect based on fear.</string>
+    <string name="card_7_sub_content">Albert Camus</string>
     <string name="card_7_sub_content_type" />
 
     <string name="card_8_main_content">初心不忘 磨斧作針</string>
     <string name="card_8_sub_content">Never forget\nyour original intention,\nand you can grind\nan axe into a needle.</string>
     <string name="card_8_sub_content_type">0</string>
 
-    <string name="card_9_main_content">잘 살아라 그게 최고의 복수다.</string>
-    <string name="card_9_sub_content">탈무드</string>
+    <string name="card_9_main_content">Living well is best revenge.</string>
+    <string name="card_9_sub_content">Talmud</string>
     <string name="card_9_sub_content_type" />
 
     <string name="card_10_main_content">If you want peace,\nprepare for war.</string>
@@ -55,20 +55,20 @@
     <string name="card_11_sub_content">Zig Ziglar</string>
     <string name="card_11_sub_content_type" />
 
-    <string name="card_12_main_content">빛을 퍼뜨릴 수 있는\n두 가지 방법이 있다.\n\n촛불이 되거나\n또는 그것을 비추는\n거울이 되는 것이다.</string>
-    <string name="card_12_sub_content">이디스 워튼</string>
+    <string name="card_12_main_content">The die is cast</string>
+    <string name="card_12_sub_content">Julius caesar</string>
     <string name="card_12_sub_content_type" />
 
     <string name="card_13_main_content">If you don\'t live as you think,\nyou will think as you live.</string>
     <string name="card_13_sub_content">Paul Valéry</string>
     <string name="card_13_sub_content_type" />
 
-    <string name="card_14_main_content">힘 있을 때 친구는 친구가 아니다.</string>
-    <string name="card_14_sub_content">헨리 애덤스</string>
+    <string name="card_14_main_content">Never, never, never give up.</string>
+    <string name="card_14_sub_content">Winston Churchill</string>
     <string name="card_14_sub_content_type" />
 
-    <string name="card_15_main_content">원한은 강직으로 갚고,\n은덕은 은덕으로 갚아야 하느니라.</string>
-    <string name="card_15_sub_content">공자</string>
+    <string name="card_15_main_content">Life can only\nbe understood backwards;\nbut it must be lived forwards.</string>
+    <string name="card_15_sub_content">Søren Kierkegaard</string>
     <string name="card_15_sub_content_type" />
 
     <string name="card_16_main_content">I fear not the man\nwho has practiced 10,000 kicks once,\nbut I fear the man\nwho has practiced one kick 10,000 times.</string>
@@ -91,27 +91,30 @@
     <string name="card_20_sub_content">Latin Proverb</string>
     <string name="card_20_sub_content_type" />
 
-    <string name="card_21_main_content">승리는 가장 끈기 있는\n자에게 돌아간다.</string>
-    <string name="card_21_sub_content">나폴레옹</string>
+    <string name="card_21_main_content">It ain’t over till it’s over.</string>
+    <string name="card_21_sub_content" />
     <string name="card_21_sub_content_type" />
 
-    <string name="card_22_main_content">사람은 망설이지만\n시간은 망설이지\n않는다.\n\n잃어버린 시간은\n되돌아오지 않는다.</string>
-    <string name="card_22_sub_content">벤자민 프랭클린</string>
+    <string name="card_22_main_content">Age is no guarantee of maturity.</string>
+    <string name="card_22_sub_content">Lawana Blackwell</string>
     <string name="card_22_sub_content_type" />
 
     <string name="card_23_main_content">It is better to light a candle\nthan curse the darkness.</string>
     <string name="card_23_sub_content">Confucius</string>
     <string name="card_23_sub_content_type" />
 
-    <string name="card_24_main_content">card_24_content</string>
-    <string name="card_24_sub_content">card_24_sub_content</string>
+    <string name="card_24_main_content">What does not kill me\nmakes me stronger.</string>
+    <string name="card_24_sub_content">Friedrich Nietzsche</string>
     <string name="card_24_sub_content_type" />
-    <string name="card_25_main_content">card_25_content</string>
-    <string name="card_25_sub_content">card_25_sub_content</string>
+
+    <string name="card_25_main_content" translatable="false">No pain no gain.</string>
+    <string name="card_25_sub_content" />
     <string name="card_25_sub_content_type" />
-    <string name="card_26_main_content">card_26_content</string>
-    <string name="card_26_sub_content">card_26_sub_content</string>
+
+    <string name="card_26_main_content">Sometimes the right path is\nnot the easiest one.</string>
+    <string name="card_26_sub_content"/>
     <string name="card_26_sub_content_type" />
+
     <string name="card_27_main_content">card_27_content</string>
     <string name="card_27_sub_content">card_27_sub_content</string>
     <string name="card_27_sub_content_type" />

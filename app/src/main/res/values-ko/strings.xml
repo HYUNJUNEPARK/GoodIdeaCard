@@ -16,27 +16,24 @@
     <string name="card_1_sub_content" />
     <string name="card_1_sub_content_type" />
 
-    <string name="card_2_main_content">기회는\n오지 않는다.\n기회는\n만드는 것이다.</string>
-    <string name="card_2_sub_content">브루스 리</string>
+    <string name="card_2_main_content">비가 온 뒤에 무지개가 뜬다.</string>
+    <string name="card_2_sub_content">길버트 K. 체스터튼</string>
     <string name="card_2_sub_content_type" />
-
-    <string name="card_3_sub_content" />
-    <string name="card_3_sub_content_type" />
 
     <string name="card_4_main_content">盡人事待天命\n진인사대천명</string>
     <string name="card_4_sub_content">해야 할 일을 다 하고 나서\n하늘의 명을 기다린다.</string>
     <string name="card_4_sub_content_type">0</string>
 
-    <string name="card_5_main_content">승리하면 조금 배울 수 있고,\n패배하면 모든 것을 배울 수 있다.</string>
-    <string name="card_5_sub_content">매튜슨</string>
+    <string name="card_5_main_content">성공은 준비와 기회의 만남이다.</string>
+    <string name="card_5_sub_content">세네카</string>
     <string name="card_5_sub_content_type" />
 
-    <string name="card_6_main_content">가장 하기 힘든 일은\n아무 일도 안하는 것이다.</string>
-    <string name="card_6_sub_content" />
+    <string name="card_6_main_content">성공의 비결은\n목표를 바꾸지 않는 것이다.</string>
+    <string name="card_6_sub_content">벤자민 디즈레일리</string>
     <string name="card_6_sub_content_type" />
 
     <string name="card_7_main_content">두려운 때문에 갖는\n존경심만큼 비열한 것은 없다.</string>
-    <string name="card_7_sub_content">카뮈</string>
+    <string name="card_7_sub_content">알베르 카뮈</string>
     <string name="card_7_sub_content_type" />
 
     <string name="card_8_main_content">初心不忘 磨斧作針\n초심불망 마부작침</string>
@@ -55,20 +52,20 @@
     <string name="card_11_sub_content">지그 지글러</string>
     <string name="card_11_sub_content_type" />
 
-    <string name="card_12_main_content">빛을 퍼뜨릴 수 있는\n두 가지 방법이 있다.\n\n촛불이 되거나\n또는 그것을 비추는\n거울이 되는 것이다.</string>
-    <string name="card_12_sub_content">이디스 워튼</string>
+    <string name="card_12_main_content">주사위는 던져졌다.</string>
+    <string name="card_12_sub_content">줄리어스 시저</string>
     <string name="card_12_sub_content_type" />
 
-    <string name="card_13_main_content">생각하는 대로 살지 않으면, 사는 대로 생각하게 된다.</string>
+    <string name="card_13_main_content">생각하는 대로 살지 않으면,\n사는 대로 생각하게 된다.</string>
     <string name="card_13_sub_content">폴 발레리</string>
     <string name="card_13_sub_content_type" />
 
-    <string name="card_14_main_content">힘 있을 때 친구는 친구가 아니다.</string>
-    <string name="card_14_sub_content">헨리 애덤스</string>
+    <string name="card_14_main_content">힘들어도 포기하지 마라.\n성공은 바로 그 다음 단계에 있다.</string>
+    <string name="card_14_sub_content">윈스턴 처칠</string>
     <string name="card_14_sub_content_type" />
 
-    <string name="card_15_main_content">원한은 강직으로 갚고,\n은덕은 은덕으로 갚아야 하느니라.</string>
-    <string name="card_15_sub_content">공자</string>
+    <string name="card_15_main_content">인생은 거꾸로만 이해되지만\n앞으로 살아야 한다.</string>
+    <string name="card_15_sub_content">쇠렌 키에르케고르</string>
     <string name="card_15_sub_content_type" />
 
     <string name="card_16_main_content">나는 만 가지 킥을\n연습한 사람은 두렵지 않지만,\n한 가지 킥을\n만 번 연습한 사람은 두렵다.</string>
@@ -83,7 +80,7 @@
     <string name="card_18_sub_content" />
     <string name="card_18_sub_content_type" />
 
-    <string name="card_19_main_content">너 자신을 알라</string>
+    <string name="card_19_main_content">너 자신을 알라.</string>
     <string name="card_19_sub_content">소크라테스</string>
     <string name="card_19_sub_content_type" />
 
@@ -91,27 +88,29 @@
     <string name="card_20_sub_content">라틴 속담</string>
     <string name="card_20_sub_content_type" />
 
-    <string name="card_21_main_content">승리는 가장 끈기 있는\n자에게 돌아간다.</string>
-    <string name="card_21_sub_content">나폴레옹</string>
+    <string name="card_21_main_content">끝날 때까지 끝난 게 아니다.</string>
+    <string name="card_21_sub_content" />
     <string name="card_21_sub_content_type" />
 
-    <string name="card_22_main_content">사람은 망설이지만\n시간은 망설이지\n않는다.\n\n잃어버린 시간은\n되돌아오지 않는다.</string>
-    <string name="card_22_sub_content">벤자민 프랭클린</string>
+    <string name="card_22_main_content">나이가 성숙을\n보장하지는 않는다.</string>
+    <string name="card_22_sub_content">라와나 블랙웰</string>
     <string name="card_22_sub_content_type" />
 
     <string name="card_23_main_content">어둠을 저주하기보다는\n촛불을 켜라.</string>
     <string name="card_23_sub_content">공자</string>
     <string name="card_23_sub_content_type" />
 
-    <string name="card_24_main_content">card_24_content</string>
-    <string name="card_24_sub_content">card_24_sub_content</string>
+    <string name="card_24_main_content">나를 죽이지 못하는 고통은\n나를 더욱 강하게 만든다</string>
+    <string name="card_24_sub_content">니체</string>
     <string name="card_24_sub_content_type" />
-    <string name="card_25_main_content">card_25_content</string>
-    <string name="card_25_sub_content">card_25_sub_content</string>
+
+    <string name="card_25_sub_content" />
     <string name="card_25_sub_content_type" />
-    <string name="card_26_main_content">card_26_content</string>
-    <string name="card_26_sub_content">card_26_sub_content</string>
+
+    <string name="card_26_main_content">때때로, 올바른 길이\n가장 쉬운 길은 아니다.</string>
+    <string name="card_26_sub_content"/>
     <string name="card_26_sub_content_type" />
+
     <string name="card_27_main_content">card_27_content</string>
     <string name="card_27_sub_content">card_27_sub_content</string>
     <string name="card_27_sub_content_type" />
