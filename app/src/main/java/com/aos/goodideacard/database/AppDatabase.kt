@@ -15,6 +15,6 @@ import com.aos.goodideacard.database.enitiy.UserCardDeckItem
 )
 abstract class AppDatabase: RoomDatabase() {
     abstract fun defaultCardDao(): DefaultCardDao
-    abstract fun userCardDao(): UserCardDao
+    abstract fun userCardDao(): MyCardDao
 }
 

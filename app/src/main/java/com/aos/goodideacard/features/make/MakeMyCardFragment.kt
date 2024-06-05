@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.aos.goodideacard.databinding.FragmentCardMakeBinding
+import com.aos.goodideacard.databinding.FragmentMakeMyCardBinding
 import com.aos.goodideacard.features.base.BaseFragment
 
-class CardMakeFragment : BaseFragment() {
-    private var _binding: FragmentCardMakeBinding? = null
+class MakeMyCardFragment : BaseFragment() {
+    private var _binding: FragmentMakeMyCardBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentCardMakeBinding.inflate(inflater, container, false)
+        _binding = FragmentMakeMyCardBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -9,7 +9,7 @@ import com.aos.goodideacard.enums.CardType
 /**
  * 사용자 등록 카드덱
  */
-@Entity(tableName = DatabaseModule.USER_CARD_TABLE)
+@Entity(tableName = DatabaseModule.MY_CARD_TABLE)
 data class UserCardDeckItem(
     @PrimaryKey val id: Long,
     @Embedded val embeddedCardEntity: EmbeddedCardEntity,

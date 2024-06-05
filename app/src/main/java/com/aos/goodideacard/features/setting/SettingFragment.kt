@@ -31,7 +31,7 @@ class SettingFragment : BaseFragment() {
     }
 
     private fun initClickListeners() {
-        binding.makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_cardMakeFragment) }
+        binding.makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_makeMyCardFragment) }
 
         binding.appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
 

@@ -13,7 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentMainBinding
 import com.aos.goodideacard.enums.CardAction
-import com.aos.goodideacard.features.MainActivity
 import com.aos.goodideacard.features.base.BaseFragment
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener

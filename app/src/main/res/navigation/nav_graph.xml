@@ -24,8 +24,8 @@
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" >
         <action
-            android:id="@+id/action_settingFragment_to_cardMakeFragment"
-            app:destination="@id/cardMakeFragment"
+            android:id="@+id/action_settingFragment_to_makeMyCardFragment"
+            app:destination="@id/MakeMyCardFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
@@ -46,10 +46,10 @@
             app:popExitAnim="@anim/to_right"/>
     </fragment>
     <fragment
-        android:id="@+id/cardMakeFragment"
-        android:name="com.aos.goodideacard.features.make.CardMakeFragment"
-        android:label="fragment_card_make"
-        tools:layout="@layout/fragment_card_make" />
+        android:id="@+id/MakeMyCardFragment"
+        android:name="com.aos.goodideacard.features.make.MakeMyCardFragment"
+        android:label="fragment_make_my_card"
+        tools:layout="@layout/fragment_make_my_card" />
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.aos.goodideacard.features.setting.LanguageFragment"

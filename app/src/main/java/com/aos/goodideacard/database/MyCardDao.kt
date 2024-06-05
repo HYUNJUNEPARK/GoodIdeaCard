@@ -8,13 +8,13 @@ import com.aos.goodideacard.database.enitiy.UserCardDeckItem
 import com.aos.goodideacard.di.DatabaseModule
 
 @Dao
-interface UserCardDao {
+interface MyCardDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun save(data: UserCardDeckItem)
 
-    @Query("SELECT * FROM ${DatabaseModule.USER_CARD_TABLE}")
+    @Query("SELECT * FROM ${DatabaseModule.MY_CARD_TABLE}")
     suspend fun getAll(): List<UserCardDeckItem>
 
-    @Query("DELETE FROM ${DatabaseModule.USER_CARD_TABLE}")
+    @Query("DELETE FROM ${DatabaseModule.MY_CARD_TABLE}")
     suspend fun clear()
 }

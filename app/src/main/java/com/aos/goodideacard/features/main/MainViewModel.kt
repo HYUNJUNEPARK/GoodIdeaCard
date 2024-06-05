@@ -36,10 +36,6 @@ class MainViewModel @Inject constructor(
     private var _message = MutableLiveData<String?>()
     val message: LiveData<String?> get() = _message
 
-//    init {
-//        getData()
-//    }
-
     fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
         //기존에 만든 카드 덱이 있다면 그대로 사용
         val localCards = cardRepository.getAllFromCombinedCardDeck()
