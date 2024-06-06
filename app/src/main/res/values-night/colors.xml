@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="day_night_black_ff000000_white_ffffffff">@color/white_ffffffff</color>
+    <color name="day_night_mode_white_ffffffff_black_191919">@color/black_191919</color>
     <color name="day_night_gray_d1d1d1_gray_424141">@color/gray_424141</color>
     <color name="day_night_white_ffffffff_black_ff000000">@color/black_ff000000</color>
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/gray_3a3a3a</color>

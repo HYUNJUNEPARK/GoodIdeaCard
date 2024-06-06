@@ -8,6 +8,11 @@
     <string name="language">Language</string>
     <string name="make_my_card">Make My Cards</string>
     <string name="background">Background</string>
+    <string name="default_">Default</string>
+    <string name="user_settings">User Settings</string>
+    <string name="korean" translatable="false">한국어</string>
+    <string name="english" translatable="false">English</string>
+    <string name="system_default_language">Default System Language</string>
 
     <!--good Idea-->
     <string name="card_1_main_content">The three elements of persuasion\n\nEthos,\nPathos,\nand Logos.</string>
@@ -195,6 +200,7 @@
     <!--msg-->
     <string name="msg_app_close_msg">Press \'Back\' again to exit.</string>
     <string name="msg_last_card">Here is the last card.\nPlease shuffle the cards</string>
+    <string name="msg_language_guide">If your preferred language is not added under \'Settings > General management > Language\',\nthe feature might not function properly.</string>
 
     <!--format-->
     <string name="format_splash_sub_content">- %1$s -</string>

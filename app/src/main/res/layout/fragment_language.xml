@@ -32,4 +32,67 @@
 
     <View style="@style/division_horiz_toolbar_bottom_line" />
 
+    <ScrollView style="@style/scroll_view_match_pad_14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rectangle_white_black_rad_8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/msg_language_guide"
+                android:textColor="@color/day_night_mode_black_ff000000_white_ffffffff"
+                android:textSize="12dp" />
+
+            <RadioGroup
+                android:id="@+id/language_radio_group"
+                style="@style/group_radio_ori_vert">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/default_"
+                    android:textSize="@dimen/standard_text_size_12sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/language_btn_system_language"
+                    style="@style/radio_btn_app_theme_standard_size"
+                    android:text="@string/system_default_language" />
+
+                <View
+                    style="@style/division_horiz_weak_line"
+                    android:layout_marginVertical="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/user_settings"
+                    android:textSize="@dimen/standard_text_size_12sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/language_btn_english"
+                    style="@style/radio_btn_app_theme_standard_size"
+                    android:text="@string/english" />
+
+                <RadioButton
+                    android:id="@+id/language_btn_korean"
+                    style="@style/radio_btn_app_theme_standard_size"
+                    android:text="@string/korean" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
