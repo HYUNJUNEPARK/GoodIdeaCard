@@ -6,6 +6,6 @@
     <color name="day_night_white_ffffffff_black_ff000000">@color/black_ff000000</color>
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/gray_3a3a3a</color>
     <color name="day_night_white_f3f2f2_gray_d1d1d1">@color/gray_3a3a3a</color>
-    <color name="day_night_mode_black_ff000000_white_ffffffff">@color/white_ffffffff</color>
-    <color name="day_night_mode_white_fafafa_back_1c1c1c">@color/black_1c1c1c</color>
+
+    <color name="day_night_white_fafafa_back_1c1c1c">@color/black_1c1c1c</color>
 </resources>

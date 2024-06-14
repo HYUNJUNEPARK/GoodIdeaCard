@@ -202,6 +202,7 @@
     <string name="format_main_content">card_%1$s_main_content</string>
     <string name="format_sub_content">card_%1$s_sub_content</string>
     <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
+    <string name="add_card_deck">카드덱 추가하기</string>
 
 
 </resources>

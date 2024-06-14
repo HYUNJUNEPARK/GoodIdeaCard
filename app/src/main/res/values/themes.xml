@@ -19,4 +19,12 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:navigationBarColor">@color/app_theme</item>
     </style>
+
+    <style name="FullScreenDialogThemeTransparent" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/day_night_mode_white_ffffffff_black_191919</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
 </resources>

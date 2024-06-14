@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="@string/msg_language_guide"
-                android:textColor="@color/day_night_mode_black_ff000000_white_ffffffff"
+                android:textColor="@color/day_night_black_ff000000_white_ffffffff"
                 android:textSize="12dp" />
 
             <RadioGroup

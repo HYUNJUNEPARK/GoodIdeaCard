@@ -3,4 +3,5 @@
 
     <dimen name="navigation_bar_height_48dp">48dp</dimen>
     <dimen name="standard_text_size_12sp">12sp</dimen>
+    <dimen name="button_text_size_14dp">14dp</dimen>
 </resources>

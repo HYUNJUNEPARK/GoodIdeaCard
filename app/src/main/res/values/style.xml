@@ -9,13 +9,13 @@
         <item name="android:textSize">@dimen/standard_text_size_12sp</item>
         <item name="android:drawablePadding">14dp</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textColor">@color/day_night_mode_black_ff000000_white_ffffffff</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
     </style>
 
     <style name="division_horiz_weak_line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/day_night_mode_white_fafafa_back_1c1c1c</item>
+        <item name="android:background">@color/day_night_white_fafafa_back_1c1c1c</item>
     </style>
 
     <style name="division_horiz_toolbar_bottom_line">
@@ -42,4 +42,45 @@
         <item name="android:textSize">@dimen/standard_text_size_12sp</item>
         <item name="android:buttonTint">@color/app_theme</item>
     </style>
+
+    <style name="iv_20dp_pad_3dp_bg_square_blue">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:background">@drawable/bg_square_rad_4dp_purple_ffbb86fc</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="popup_menu_text_style_16dp_bold">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_standard_size_bold_day_night">
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
+    </style>
+
+    <style name="text_match_wrap_standard_size_day_night">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/transparent_00ff0000</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:textColorHint">@color/gray_555555</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
+    </style>
+
+    <style name="button_app_them_radius_10dp">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textSize">@dimen/button_text_size_14dp</item>
+        <item name="android:backgroundTint">@color/app_theme</item>
+        <item name="android:textColor">@color/white_ffffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
 </resources>

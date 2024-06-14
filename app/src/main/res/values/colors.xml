@@ -2,6 +2,7 @@
 <resources>
     <color name="app_theme">@color/purple_764dbb</color>
 
+    <color name="transparent_00ff0000">#00FF0000</color>
     <color name="black_ff000000">#FF000000</color>
     <color name="black_191919">#191919</color>
     <color name="white_ffffffff">#FFFFFFFF</color>
@@ -9,12 +10,18 @@
     <color name="gray_d1d1d1">#D1D1D1</color>
     <color name="gray_424141">#424141</color>
     <color name="gray_3a3a3a">#3A3A3A</color>
+    <color name="gray_555555">#555555</color>
     <color name="purple_a1b4ff">#A1B4FF</color>
     <color name="yellow_f6d06a">#F6D06A</color>
     <color name="sky_5bc9fa">#5BC9FA</color>
     <color name="purple_764dbb">#764DBB</color>
     <color name="white_fafafa">#FAFAFA</color>
     <color name="black_1c1c1c">#1C1C1C</color>
+    <color name="purple_ffbb86fc">#FFBB86FC</color>
+    <color name="gray_818181">#818181</color>
+    <color name="brown_453A37">#453A37</color>
+
+    <color name="hint_color">@color/gray_818181</color>
 
     <!--day/night mode-->
     <color name="day_night_black_ff000000_white_ffffffff">@color/black_ff000000</color>
@@ -23,7 +30,7 @@
     <color name="day_night_white_ffffffff_black_ff000000">@color/white_ffffffff</color> <!--background-->
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/white_ffffffff</color> <!--button background-->
     <color name="day_night_white_f3f2f2_gray_d1d1d1">@color/white_f3f2f2</color> <!--button stroke-->
-    <color name="day_night_mode_black_ff000000_white_ffffffff">@color/black_ff000000</color>
-    <color name="day_night_mode_white_fafafa_back_1c1c1c">@color/white_fafafa</color> <!--division weak line-->
+
+    <color name="day_night_white_fafafa_back_1c1c1c">@color/white_fafafa</color> <!--division weak line-->
 
 </resources>
