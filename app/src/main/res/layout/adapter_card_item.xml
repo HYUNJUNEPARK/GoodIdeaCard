@@ -32,7 +32,7 @@
                 android:maxLines="10"
                 android:textSize="18dp"
                 android:textColor="@color/black_ff000000"
-                app:layout_constraintBottom_toTopOf="@id/card_view_whose"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
