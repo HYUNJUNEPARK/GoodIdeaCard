@@ -21,14 +21,16 @@ android {
 
     buildTypes {
         debug {
-            isMinifyEnabled = false //proguard
+            isMinifyEnabled = false
             isDebuggable = true
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("debug")
         }
 
         release {
             isMinifyEnabled = true
             isDebuggable = false
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("debug") //TODO Change signingConfig
         }
@@ -99,5 +101,5 @@ dependencies {
     ksp (libs.hilt.compiler)
 
     // DataStore
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation(libs.androidx.datastore.preferences)
 }
