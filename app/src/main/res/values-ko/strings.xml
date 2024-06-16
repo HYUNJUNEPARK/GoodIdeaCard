@@ -202,7 +202,10 @@
     <string name="format_main_content">card_%1$s_main_content</string>
     <string name="format_sub_content">card_%1$s_sub_content</string>
     <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
-    <string name="add_card_deck">카드덱 추가하기</string>
 
+    <string name="make_card_pack">카드팩 만들기</string>
+    <string name="card_pack_name">카드팩 이름</string>
+    <string name="card_pack_description">카드팩 설명</string>
+    <string name="make">만들기</string>
 
 </resources>

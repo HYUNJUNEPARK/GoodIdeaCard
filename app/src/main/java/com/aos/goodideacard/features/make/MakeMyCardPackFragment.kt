@@ -15,7 +15,7 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentMakeMyCardBinding
 import com.aos.goodideacard.features.base.BaseFragment
 
-class MakeMyCardFragment : BaseFragment() {
+class MakeMyCardPackFragment : BaseFragment() {
     private var _binding: FragmentMakeMyCardBinding? = null
     private val binding get() = _binding!!
 

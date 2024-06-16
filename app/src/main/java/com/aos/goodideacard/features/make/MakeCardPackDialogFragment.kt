@@ -16,8 +16,6 @@ class MakeCardPackDialogFragment: BaseDialogFragment() {
     private var _binding: FragmentMakeCardPackBinding? = null
     private val binding get() = _binding!!
 
-    //private var iconType: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

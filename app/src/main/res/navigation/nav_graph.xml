@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/MakeMyCardFragment"
-        android:name="com.aos.goodideacard.features.make.MakeMyCardFragment"
+        android:name="com.aos.goodideacard.features.make.MakeMyCardPackFragment"
         android:label="fragment_make_my_card"
         tools:layout="@layout/fragment_make_my_card" />
     <fragment

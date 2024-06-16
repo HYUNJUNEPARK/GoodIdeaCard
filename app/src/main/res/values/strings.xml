@@ -207,7 +207,11 @@
     <string name="format_main_content">card_%1$s_main_content</string>
     <string name="format_sub_content">card_%1$s_sub_content</string>
     <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
-    <string name="add_card_deck">Add Card Deck</string>
+
+    <string name="make_card_pack">Make Card Pack</string>
+    <string name="card_pack_name">Card Pack Name</string>
+    <string name="card_pack_description">Card Pack Description</string>
+    <string name="make">Make</string>
 
 
 </resources>

@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="@string/add_card_deck"
+                android:text="@string/make_card_pack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -79,16 +79,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
-                        android:text="Card Deck Name" />
+                        android:text="@string/card_pack_name" />
 
                     <EditText
                         android:id="@+id/add_memo_et_title"
-                        style="@style/text_match_wrap_standard_size_day_night"
-                        android:ellipsize="end"
+                        style="@style/custom_edit_text_view_max_line_1"
                         android:hint="card deck name"
                         android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:inputType="text"/>
                 </LinearLayout>
 
                 <View style="@style/division_horiz_weak_line" />
@@ -103,16 +101,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
-                        android:text="Card Deck Name" />
+                        android:text="@string/card_pack_description" />
 
                     <EditText
                         android:id="@+id/add_memo_et_title2"
-                        style="@style/text_match_wrap_standard_size_day_night"
-                        android:ellipsize="end"
+                        style="@style/custom_edit_text_view_max_line_1"
                         android:hint="card deck name"
                         android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:inputType="text" />
                 </LinearLayout>
 
                 <Button
@@ -122,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
                     android:paddingVertical="8dp"
-                    android:text="Add" />
+                    android:text="@string/make" />
 
             </LinearLayout>
 
