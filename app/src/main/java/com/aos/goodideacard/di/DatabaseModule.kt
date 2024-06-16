@@ -3,8 +3,7 @@ package com.aos.goodideacard.di
 import android.content.Context
 import androidx.room.Room
 import com.aos.goodideacard.database.AppDatabase
-import com.aos.goodideacard.database.DefaultCardDao
-import com.aos.goodideacard.database.MyCardDao
+import com.aos.goodideacard.database.dao.MyCardDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,10 +16,7 @@ import javax.inject.Singleton
 object DatabaseModule {
     private const val MAIN_DATABASE = "good_idea_db"
 
-    const val COMBINED_CARD_TABLE = "good_idea_table_local_card"
-
-    const val MY_CARD_TABLE = "good_idea_table_my_card"
-    const val DOWNLOAD_CARD_PACK_TABLE = "good_idea_table_download_card_pack"
+    const val MY_CARD_PACK_TABLE = "good_idea_table_my_card_pack"
 
     @Provides
     @Singleton
@@ -30,12 +26,6 @@ object DatabaseModule {
             klass = AppDatabase::class.java,
             name = MAIN_DATABASE
         ).build()
-    }
-
-    @Provides
-    @Singleton
-    fun defaultCardDao(appDatabase: AppDatabase): DefaultCardDao {
-        return appDatabase.defaultCardDao()
     }
 
     @Provides

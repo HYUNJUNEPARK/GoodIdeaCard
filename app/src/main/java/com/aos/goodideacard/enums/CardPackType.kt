@@ -1,7 +1,7 @@
 package com.aos.goodideacard.enums
 
-enum class CardType(val code: Int) {
+enum class CardPackType(val code: Int) {
     DEFAULT(0),
-    USER(1),
+    My(1),
     DOWNLOAD(2)
 }

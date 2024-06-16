@@ -1,11 +1,11 @@
-package com.aos.goodideacard.database.enitiy
+package com.aos.goodideacard.model
 
 /**
- * @param id
  * @param content
  * @param whose
  */
-open class EmbeddedCardEntity (
+open class CommonCardContent (
+    val cardPackId: Int,
     val content: String,
     val whose: String
 )
