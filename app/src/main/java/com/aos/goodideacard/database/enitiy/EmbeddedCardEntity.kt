@@ -1,7 +1,5 @@
 package com.aos.goodideacard.database.enitiy
 
-import androidx.room.PrimaryKey
-
 /**
  * @param id
  * @param content

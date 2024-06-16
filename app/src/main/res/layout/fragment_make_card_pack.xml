@@ -8,7 +8,7 @@
     tools:background="@color/hint_color">
 
     <ImageView
-        android:id="@+id/make_card_deck_btn_close"
+        android:id="@+id/make_card_pack_btn_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/icon_type_tv_description"
+                android:id="@+id/make_card_pack_tv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
@@ -67,7 +67,7 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/icon_type_tv_description">
+                app:layout_constraintTop_toBottomOf="@id/make_card_pack_tv_description">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,11 +82,11 @@
                         android:text="@string/card_pack_name" />
 
                     <EditText
-                        android:id="@+id/add_memo_et_title"
+                        android:id="@+id/make_card_pack_et_name"
                         style="@style/custom_edit_text_view_max_line_1"
                         android:hint="card deck name"
                         android:imeOptions="actionNext"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </LinearLayout>
 
                 <View style="@style/division_horiz_weak_line" />
@@ -104,7 +104,7 @@
                         android:text="@string/card_pack_description" />
 
                     <EditText
-                        android:id="@+id/add_memo_et_title2"
+                        android:id="@+id/make_card_pack_et_description"
                         style="@style/custom_edit_text_view_max_line_1"
                         android:hint="card deck name"
                         android:imeOptions="actionNext"
@@ -112,17 +112,14 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/setting_category_btn_insert"
+                    android:id="@+id/make_card_pack_btn_make"
                     style="@style/button_app_them_radius_10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="24dp"
                     android:paddingVertical="8dp"
                     android:text="@string/make" />
-
             </LinearLayout>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

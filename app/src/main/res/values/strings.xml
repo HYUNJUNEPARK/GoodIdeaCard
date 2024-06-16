@@ -3,16 +3,6 @@
     <string name="app_name_dev">Good Idea Card.dev</string>
     <string name="app_name_rel">Good Idea Card.rel</string>
 
-    <!--noun-->
-    <string name="setting">Setting</string>
-    <string name="language">Language</string>
-    <string name="make_my_card">Make My Cards</string>
-    <string name="background">Background</string>
-    <string name="default_">Default</string>
-    <string name="user_settings">User Settings</string>
-    <string name="korean" translatable="false">한국어</string>
-    <string name="english" translatable="false">English</string>
-    <string name="system_default_language">Default System Language</string>
 
     <!--good Idea-->
     <string name="card_1_main_content">The three elements of persuasion\n\nEthos,\nPathos,\nand Logos.</string>
@@ -196,6 +186,18 @@
     <string name="card_50_main_content">card_50_content</string>
     <string name="card_50_sub_content">card_50_sub_content</string>
     <string name="card_50_sub_content_type" />
+
+
+    <!--noun-->
+    <string name="setting">Setting</string>
+    <string name="language">Language</string>
+    <string name="make_my_card_pack">Make My Card Pack</string>
+    <string name="background">Background</string>
+    <string name="default_">Default</string>
+    <string name="user_settings">User Settings</string>
+    <string name="korean" translatable="false">한국어</string>
+    <string name="english" translatable="false">English</string>
+    <string name="system_default_language">Default System Language</string>
 
     <!--msg-->
     <string name="msg_app_close_msg">Press \'Back\' again to exit.</string>

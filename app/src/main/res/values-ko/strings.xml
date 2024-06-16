@@ -4,15 +4,6 @@
     <string name="app_name_dev">좋은 생각 카드.dev</string>
     <string name="app_name_rel">좋은 생각 카드.rel</string>
 
-    <!--noun-->
-    <string name="setting">설정</string>
-    <string name="language">언어</string>
-    <string name="make_my_card">내 카드 만들기</string>
-    <string name="background">배경화면</string>
-    <string name="default_">기본</string>
-    <string name="user_settings">사용자 설정</string>
-    <string name="system_default_language">시스템 기본 언어</string>
-
     <!--good Idea-->
     <string name="card_1_main_content">설득의 3요소\n\n에토스\n파토스\n그리고\n로고스</string>
     <string name="card_1_sub_content" />
@@ -190,6 +181,17 @@
     <string name="card_50_main_content">card_50_content</string>
     <string name="card_50_sub_content">card_50_sub_content</string>
     <string name="card_50_sub_content_type" />
+
+
+    <!--noun-->
+    <string name="setting">설정</string>
+    <string name="language">언어</string>
+    <string name="make_my_card_pack">내 카드팩 만들기</string>
+    <string name="background">배경화면</string>
+    <string name="default_">기본</string>
+    <string name="user_settings">사용자 설정</string>
+    <string name="system_default_language">시스템 기본 언어</string>
+
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>

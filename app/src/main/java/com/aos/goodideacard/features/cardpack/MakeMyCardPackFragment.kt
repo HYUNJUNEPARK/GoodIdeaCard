@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.make
+package com.aos.goodideacard.features.cardpack
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable

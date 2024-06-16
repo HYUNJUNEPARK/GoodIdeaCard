@@ -3,9 +3,9 @@ package com.aos.goodideacard.database.enitiy
 import com.aos.goodideacard.enums.CardType
 
 /**
- * 기본 카드덱
+ * 기본 카드팩
  */
-data class DefaultCardDeckItem(
+data class DefaultPackCard(
     val id: Long,
     val embeddedCardEntity: EmbeddedCardEntity,
 ) : CardEntityInterface {

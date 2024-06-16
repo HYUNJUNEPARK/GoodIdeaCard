@@ -16,9 +16,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
     private const val MAIN_DATABASE = "good_idea_db"
+
     const val COMBINED_CARD_TABLE = "good_idea_table_local_card"
+
     const val MY_CARD_TABLE = "good_idea_table_my_card"
-    const val DOWNLOAD_CARD_TABLE = "good_idea_table_download_card"
+    const val DOWNLOAD_CARD_PACK_TABLE = "good_idea_table_download_card_pack"
 
     @Provides
     @Singleton

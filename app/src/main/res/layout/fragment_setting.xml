@@ -43,7 +43,7 @@
             <TextView
                 android:id="@+id/make_my_card"
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
-                android:text="@string/make_my_card"
+                android:text="@string/make_my_card_pack"
                 app:drawableStartCompat="@drawable/ic_cards_24dp_day_night" />
 
             <View style="@style/division_horiz_weak_line" />

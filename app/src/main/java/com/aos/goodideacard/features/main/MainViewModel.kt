@@ -10,8 +10,8 @@ import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.database.enitiy.CardEntityInterface
 import com.aos.goodideacard.database.enitiy.EmbeddedCardEntity
 import com.aos.goodideacard.database.enitiy.MergedCardDeckItem
-import com.aos.goodideacard.database.enitiy.DefaultCardDeckItem
-import com.aos.goodideacard.database.enitiy.UserCardDeckItem
+import com.aos.goodideacard.database.enitiy.DefaultPackCard
+import com.aos.goodideacard.database.enitiy.UserCardPackEntity
 import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.features.base.BaseViewModel
 import com.aos.goodideacard.repository.CardRepository
@@ -44,7 +44,7 @@ class MainViewModel @Inject constructor(
             _cardList.postValue(localCards)
         }
 
-        val defaultCardDeck = createDefaultDeck(context)
+        val defaultCardDeck = createDefaultPack(context)
         val userCardDeck = cardRepository.getAllFromUserCardDeck()
 
         val mergedCardDeck = mergeCardDecks(
@@ -87,12 +87,12 @@ class MainViewModel @Inject constructor(
     }
 
     /**
-     * string.xml 리스트에서 기본 카드덱을 생성한다.
+     * string.xml 리스트에서 기본 카드팩을 생성한다.
      *
      * @param context string resource 가져올 때 사용
      */
     @SuppressLint("DiscouragedApi")
-    private fun createDefaultDeck(context: Context): List<DefaultCardDeckItem> {
+    private fun createDefaultPack(context: Context): List<DefaultPackCard> {
         /**
           val cardResources = mapOf(
                1 to Pair(R.string.idea_1_content, R.string.idea_1_whose)
@@ -106,13 +106,13 @@ class MainViewModel @Inject constructor(
             )
         }
 
-        val cardList = mutableListOf<DefaultCardDeckItem>()
+        val cardList = mutableListOf<DefaultPackCard>()
         for (i in 1..AppConst.TOTAL_CARD_50) {
             val resources = cardResources[i]
 
             if (resources != null) {
                 cardList.add(
-                    DefaultCardDeckItem(
+                    DefaultPackCard(
                         id = i.toLong(),
                         EmbeddedCardEntity(
                             content = context.getString(resources.first),
@@ -133,8 +133,8 @@ class MainViewModel @Inject constructor(
      *
      */
     private fun mergeCardDecks(
-        defaultCardDeck: List<DefaultCardDeckItem>,
-        userCardDeck:List<UserCardDeckItem>
+        defaultCardDeck: List<DefaultPackCard>,
+        userCardDeck:List<UserCardPackEntity>
     ): List<MergedCardDeckItem> {
         fun convertToMergedCardDeckItem(entity: CardEntityInterface): MergedCardDeckItem {
             return MergedCardDeckItem(
