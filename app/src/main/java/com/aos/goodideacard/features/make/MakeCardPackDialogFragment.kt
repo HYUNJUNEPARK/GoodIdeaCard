@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.databinding.FragmentMakeCardDeckBinding
+import com.aos.goodideacard.databinding.FragmentMakeCardPackBinding
 import com.aos.goodideacard.features.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class MakeCardDeckDialogFragment: BaseDialogFragment() {
-    private var _binding: FragmentMakeCardDeckBinding? = null
+class MakeCardPackDialogFragment: BaseDialogFragment() {
+    private var _binding: FragmentMakeCardPackBinding? = null
     private val binding get() = _binding!!
 
     //private var iconType: String? = null
@@ -28,7 +28,7 @@ class MakeCardDeckDialogFragment: BaseDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("${javaClass.simpleName} onCreateView()")
-        _binding = FragmentMakeCardDeckBinding.inflate(inflater, container, false)
+        _binding = FragmentMakeCardPackBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -48,7 +48,7 @@ class MakeCardDeckDialogFragment: BaseDialogFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = MakeCardDeckDialogFragment().apply {
+        fun newInstance() = MakeCardPackDialogFragment().apply {
             setStyle(STYLE_NO_TITLE, R.style.FullScreenDialogThemeTransparent)
 
             arguments = Bundle().apply {

@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.PopupWindow
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentMakeMyCardBinding
@@ -85,7 +84,7 @@ class MakeMyCardFragment : BaseFragment() {
         wm.updateViewLayout(container, lp)
 
         popupView.findViewById<ConstraintLayout>(R.id.popup_items_layout_make_card_deck).setOnClickListener {
-            MakeCardDeckDialogFragment.newInstance().show(requireActivity().supportFragmentManager, null)
+            MakeCardPackDialogFragment.newInstance().show(requireActivity().supportFragmentManager, null)
             popupWindow.dismiss()
         }
     }
