@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/adapter_card_pack_name"
+        style="@style/text_standard_size_bold_day_night"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Card Pack Name" />
+
+    <TextView
+        android:id="@+id/adapter_card_pack_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:text="@tools:sample/lorem/random" />
+
+    <View
+        style="@style/division_horiz_line"
+        android:layout_marginTop="15dp" />
+</LinearLayout>

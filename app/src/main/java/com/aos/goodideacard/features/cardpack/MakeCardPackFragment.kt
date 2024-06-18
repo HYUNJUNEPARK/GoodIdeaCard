@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.PopupWindow
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -25,6 +26,17 @@ class MakeCardPackFragment : BaseFragment() {
 
     private val viewModel: CardPackViewModel by viewModels()
 
+    private val cardPackAdapter: CardPackAdapter by lazy {
+        CardPackAdapter(
+            onItemClick =  { cardPack ->
+                Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
+            },
+            onItemLongClick = { cardPack ->
+                Toast.makeText(requireContext(), "Long Clicked", Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMakeCardPackBinding.inflate(inflater, container, false)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
@@ -34,12 +46,16 @@ class MakeCardPackFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.makeCardPackRecyclerView.adapter = cardPackAdapter
+
         binding.makeMyCardFab.setOnClickListener {
             makeCardFabAction(it)
         }
 
         viewModel.cardPacks.observe(viewLifecycleOwner) { cardPacks ->
             Timber.e("cardPacks : $cardPacks")
+            binding.makeMyCardEmpty.visibility = if (cardPacks.isNullOrEmpty()) View.VISIBLE else View.GONE
+            cardPackAdapter.submitList(cardPacks)
         }
 
     }

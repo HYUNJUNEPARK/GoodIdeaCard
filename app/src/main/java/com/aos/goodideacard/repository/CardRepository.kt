@@ -11,5 +11,4 @@ interface CardRepository {
     suspend fun createCardPack(cardPack: CardPackEntity)
     suspend fun getCardPacks(): List<CardPackEntity>
     suspend fun clearPacks()
-
 }
