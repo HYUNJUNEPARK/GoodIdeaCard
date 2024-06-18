@@ -30,6 +30,12 @@
         <item name="android:background">@color/day_night_gray_d1d1d1_gray_424141</item>
     </style>
 
+    <style name="division_vert_line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/day_night_gray_d1d1d1_gray_424141</item>
+    </style>
+
     <style name="scroll_view_match_pad_14dp">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -98,5 +104,24 @@
         <item name="android:textSelectHandleLeft">@drawable/custom_edit_text_handler_left</item>
         <item name="android:textSelectHandleRight">@drawable/custom_edit_text_handler_right</item>
     </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+    </style>
+
+    <style name="button_borderless" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/button_text_size_14dp</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
+    </style>
+
+    <style name="text_standard_size_margin_horiz_18dp_day_night">
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+        <item name="android:layout_marginHorizontal">18dp</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
+    </style>
+
 
 </resources>

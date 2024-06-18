@@ -17,6 +17,12 @@ interface CardPackDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun create(data: CardPackEntity)
 
+    @Transaction
+    suspend fun createAndRefresh(data: CardPackEntity): List<CardPackEntity> {
+        create(data)
+        return getAll()
+    }
+
     @Query("SELECT * FROM ${DatabaseModule.CARD_PACK_TABLE}")
     suspend fun getAll(): List<CardPackEntity>
 
@@ -26,12 +32,13 @@ interface CardPackDao {
     @Delete
     suspend fun delete(data: CardPackEntity)
 
+    suspend fun deleteAndRefresh(data: CardPackEntity): List<CardPackEntity> {
+        delete(data)
+        return getAll()
+    }
+
     @Update
     suspend fun update(data: CardPackEntity)
 
-    @Transaction
-    suspend fun createAndRefresh(data: CardPackEntity): List<CardPackEntity> {
-        create(data)
-        return getAll()
-    }
+
 }

@@ -30,7 +30,6 @@
     <color name="day_night_white_ffffffff_black_ff000000">@color/white_ffffffff</color> <!--background-->
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/white_ffffffff</color> <!--button background-->
     <color name="day_night_white_f3f2f2_gray_d1d1d1">@color/white_f3f2f2</color> <!--button stroke-->
-
     <color name="day_night_white_fafafa_back_1c1c1c">@color/white_fafafa</color> <!--division weak line-->
-
+    <color name="day_night_white_ffffffff_black_191919">@color/white_ffffffff</color> <!-- dialog background -->
 </resources>

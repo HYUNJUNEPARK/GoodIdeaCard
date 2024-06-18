@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/two_button_dialog_tv_title"
+        style="@style/text_standard_size_bold_pad_vert_10dp_day_night"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="알림" />
+
+    <View
+        android:id="@+id/two_button_dialog_tv_division_line"
+        style="@style/division_horiz_line" />
+
+    <TextView
+        android:id="@+id/two_button_dialog_tv_content"
+        style="@style/text_standard_size_margin_horiz_18dp_day_night"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        tools:gravity="center"
+        tools:text="@tools:sample/lorem" />
+
+    <View style="@style/division_horiz_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/two_button_dialog_btn_left"
+            style="@style/button_borderless"
+            tools:text="닫기" />
+
+        <View style="@style/division_vert_line" />
+
+        <Button
+            android:id="@+id/two_button_dialog_btn_right"
+            style="@style/button_borderless"
+            tools:text="등록하기" />
+    </LinearLayout>
+</LinearLayout>

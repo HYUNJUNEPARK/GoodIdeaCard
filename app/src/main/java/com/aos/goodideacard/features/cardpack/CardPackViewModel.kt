@@ -1,7 +1,5 @@
 package com.aos.goodideacard.features.cardpack
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.aos.goodideacard.database.enitiy.CardPackEntity
 import com.aos.goodideacard.datastore.AppDataStoreManager
@@ -11,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -54,6 +51,11 @@ class CardPackViewModel @Inject constructor(
         Timber.d("Create CardPack : $cardPack")
 
         val newCardPacks = cardRepository.createCardPackAndRefresh(cardPack)
+        _cardPacks.value = newCardPacks
+    }
+
+    fun deleteCardPack(cardPack: CardPackEntity) = viewModelScope.launch(Dispatchers.IO) {
+        val newCardPacks = cardRepository.deleteCardPackAndRefresh(cardPack)
         _cardPacks.value = newCardPacks
     }
 }

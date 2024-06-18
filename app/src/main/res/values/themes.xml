@@ -27,4 +27,19 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="DialogTheme" parent="android:Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:background">@drawable/background_square_white_black</item>
+    </style>
+
+    <style name="text_standard_size_bold_pad_vert_10dp_day_night">
+        <item name="android:textSize">@dimen/standard_text_size_12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
