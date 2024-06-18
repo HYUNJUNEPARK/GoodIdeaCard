@@ -16,6 +16,7 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentMakeCardPackBinding
 import com.aos.goodideacard.features.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MakeCardPackFragment : BaseFragment() {
@@ -36,6 +37,11 @@ class MakeCardPackFragment : BaseFragment() {
         binding.makeMyCardFab.setOnClickListener {
             makeCardFabAction(it)
         }
+
+        viewModel.cardPacks.observe(viewLifecycleOwner) { cardPacks ->
+            Timber.e("cardPacks : $cardPacks")
+        }
+
     }
 
     override fun onDestroyView() {

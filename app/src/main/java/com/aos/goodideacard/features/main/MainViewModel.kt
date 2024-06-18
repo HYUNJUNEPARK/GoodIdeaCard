@@ -39,7 +39,7 @@ class MainViewModel @Inject constructor(
 
     fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
         val defaultCardPack = createDefaultPack(context)
-        val myCardPack = cardRepository.getMyCardPack()
+        val myCardPack = cardRepository.getMyCards()
 
         val mergedCardDeck = mergeCardPacks(
             defaultCardPack = defaultCardPack,

@@ -5,15 +5,12 @@ import androidx.room.RoomDatabase
 import com.aos.goodideacard.database.dao.MyCardDao
 import com.aos.goodideacard.database.enitiy.MyCardEntity
 
-/**
- * 아이디/비밀번호, 웹사이트 링크를 저장하는 데이터베이스
- */
 @Database(
     entities = [MyCardEntity::class],
     version = 1,
     exportSchema = false
 )
-abstract class AppDatabase: RoomDatabase() {
-    abstract fun userCardDao(): MyCardDao
+abstract class MyCardDatabase: RoomDatabase() {
+    abstract fun myCardDao(): MyCardDao
 }
 
