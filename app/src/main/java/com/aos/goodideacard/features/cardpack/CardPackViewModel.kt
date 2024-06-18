@@ -24,7 +24,7 @@ class CardPackViewModel @Inject constructor(
     }
 
     private val _cardPacks = MutableStateFlow<List<CardPackEntity>>(emptyList())
-    val cardPacks: StateFlow<List<CardPackEntity>> get() = _cardPacks //.asStateFlow()
+    val cardPacks: StateFlow<List<CardPackEntity>> get() = _cardPacks
 
     private fun getCardPacks() = viewModelScope.launch(Dispatchers.IO) {
         val cardPacks = cardRepository.getCardPacks()

@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aos.goodideacard.database.enitiy.CardPackEntity
 import com.aos.goodideacard.databinding.AdapterCardPackBinding
 
-class CardPackAdapter(
+class CardPackMakeAdapter(
     private val onItemClick:(CardPackEntity) -> Unit,
     private val onItemLongClick: (CardPackEntity) -> Unit
-): ListAdapter<CardPackEntity, CardPackAdapter.ViewHolder>(diffUtil) {
+): ListAdapter<CardPackEntity, CardPackMakeAdapter.ViewHolder>(diffUtil) {
     inner class ViewHolder(private val binding: AdapterCardPackBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CardPackEntity) = with(binding) {
             adapterCardPackName.text = item.name
@@ -28,12 +28,12 @@ class CardPackAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardPackAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardPackMakeAdapter.ViewHolder {
         val binding = AdapterCardPackBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CardPackAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CardPackMakeAdapter.ViewHolder, position: Int) {
         holder.bind(currentList[position])
     }
 

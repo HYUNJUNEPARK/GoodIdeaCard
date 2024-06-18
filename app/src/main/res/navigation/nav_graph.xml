@@ -47,9 +47,17 @@
     </fragment>
     <fragment
         android:id="@+id/MakeMyCardFragment"
-        android:name="com.aos.goodideacard.features.cardpack.MakeCardPackFragment"
+        android:name="com.aos.goodideacard.features.cardpack.CardPackMakeFragment"
         android:label="fragment_make_my_card"
-        tools:layout="@layout/fragment_make_card_pack" />
+        tools:layout="@layout/fragment_card_pack_make" >
+        <action
+            android:id="@+id/action_MakeMyCardFragment_to_cardPackDetailFragment"
+            app:destination="@id/cardPackDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
+    </fragment>
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.aos.goodideacard.features.setting.LanguageFragment"
@@ -60,4 +68,9 @@
         android:name="com.aos.goodideacard.features.setting.BackgroundFragment"
         android:label="fragment_background"
         tools:layout="@layout/fragment_background" />
+    <fragment
+        android:id="@+id/cardPackDetailFragment"
+        android:name="com.aos.goodideacard.features.cardpack.CardPackDetailFragment"
+        android:label="fragment_card_pack_detail"
+        tools:layout="@layout/fragment_card_pack_detail" />
 </navigation>

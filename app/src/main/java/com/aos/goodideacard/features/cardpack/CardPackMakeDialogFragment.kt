@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.databinding.DialogFragmentMakeCardPackBinding
+import com.aos.goodideacard.databinding.DialogFragmentCardPackMakeBinding
 import com.aos.goodideacard.features.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class MakeCardPackDialogFragment: BaseDialogFragment() {
-    private var _binding: DialogFragmentMakeCardPackBinding? = null
+class CardPackMakeDialogFragment: BaseDialogFragment() {
+    private var _binding: DialogFragmentCardPackMakeBinding? = null
     private val binding get() = _binding!!
 
     /**
@@ -25,7 +25,7 @@ class MakeCardPackDialogFragment: BaseDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("${javaClass.simpleName} onCreateView()")
-        _binding = DialogFragmentMakeCardPackBinding.inflate(inflater, container, false)
+        _binding = DialogFragmentCardPackMakeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -61,7 +61,7 @@ class MakeCardPackDialogFragment: BaseDialogFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = MakeCardPackDialogFragment().apply {
+        fun newInstance() = CardPackMakeDialogFragment().apply {
             setStyle(STYLE_NO_TITLE, R.style.FullScreenDialogThemeTransparent)
         }
     }

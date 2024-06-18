@@ -47,87 +47,87 @@
 
     <string name="card_11_main_content">If you don\'t start,\nyou will never find the way.</string>
     <string name="card_11_sub_content">Zig Ziglar</string>
-    <string name="card_11_sub_content_type" translatable="false"/>
+    <string name="card_11_sub_content_type" translatable="false" />
 
     <string name="card_12_main_content">The die is cast</string>
     <string name="card_12_sub_content">Julius caesar</string>
-    <string name="card_12_sub_content_type" translatable="false"/>
+    <string name="card_12_sub_content_type" translatable="false" />
 
     <string name="card_13_main_content">If you don\'t live as you think,\nyou will think as you live.</string>
     <string name="card_13_sub_content">Paul Valéry</string>
-    <string name="card_13_sub_content_type" translatable="false"/>
+    <string name="card_13_sub_content_type" translatable="false" />
 
     <string name="card_14_main_content">Never, never, never give up.</string>
     <string name="card_14_sub_content">Winston Churchill</string>
-    <string name="card_14_sub_content_type" translatable="false"/>
+    <string name="card_14_sub_content_type" translatable="false" />
 
     <string name="card_15_main_content">Life can only\nbe understood backwards;\nbut it must be lived forwards.</string>
     <string name="card_15_sub_content">Søren Kierkegaard</string>
-    <string name="card_15_sub_content_type" translatable="false"/>
+    <string name="card_15_sub_content_type" translatable="false" />
 
     <string name="card_16_main_content">I fear not the man\nwho has practiced\n10,000 kicks once,\n\nbut I fear the man\nwho has practiced\none kick 10,000 times.</string>
     <string name="card_16_sub_content">Bruce Lee</string>
-    <string name="card_16_sub_content_type" translatable="false"/>
+    <string name="card_16_sub_content_type" translatable="false" />
 
     <string name="card_17_main_content">The future depends on\nwhat we do in the present.</string>
     <string name="card_17_sub_content">Mahatma Gandhi</string>
-    <string name="card_17_sub_content_type" translatable="false"/>
+    <string name="card_17_sub_content_type" translatable="false" />
 
     <string name="card_18_main_content">This Too Shall Pass.</string>
-    <string name="card_18_sub_content" translatable="false"/>
-    <string name="card_18_sub_content_type" translatable="false"/>
+    <string name="card_18_sub_content" translatable="false" />
+    <string name="card_18_sub_content_type" translatable="false" />
 
     <string name="card_19_main_content">Know thyself.</string>
     <string name="card_19_sub_content">Socrates</string>
-    <string name="card_19_sub_content_type" translatable="false"/>
+    <string name="card_19_sub_content_type" translatable="false" />
 
     <string name="card_20_main_content">If the wind will not serve,\ntake to the oars.</string>
     <string name="card_20_sub_content">Latin Proverb</string>
-    <string name="card_20_sub_content_type" translatable="false"/>
+    <string name="card_20_sub_content_type" translatable="false" />
 
     <string name="card_21_main_content">It ain’t over till it’s over.</string>
-    <string name="card_21_sub_content" translatable="false"/>
-    <string name="card_21_sub_content_type" translatable="false"/>
+    <string name="card_21_sub_content" translatable="false" />
+    <string name="card_21_sub_content_type" translatable="false" />
 
     <string name="card_22_main_content">Age is no guarantee of maturity.</string>
     <string name="card_22_sub_content">Lawana Blackwell</string>
-    <string name="card_22_sub_content_type" translatable="false"/>
+    <string name="card_22_sub_content_type" translatable="false" />
 
     <string name="card_23_main_content">It is better to light a candle\nthan curse the darkness.</string>
     <string name="card_23_sub_content">Confucius</string>
-    <string name="card_23_sub_content_type" translatable="false"/>
+    <string name="card_23_sub_content_type" translatable="false" />
 
     <string name="card_24_main_content">What does not kill me\nmakes me stronger.</string>
     <string name="card_24_sub_content">Friedrich Nietzsche</string>
-    <string name="card_24_sub_content_type" translatable="false"/>
+    <string name="card_24_sub_content_type" translatable="false" />
 
     <string name="card_25_main_content" translatable="false">No pain no gain.</string>
-    <string name="card_25_sub_content" translatable="false"/>
-    <string name="card_25_sub_content_type" translatable="false"/>
+    <string name="card_25_sub_content" translatable="false" />
+    <string name="card_25_sub_content_type" translatable="false" />
 
     <string name="card_26_main_content">Sometimes the right path is\nnot the easiest one.</string>
-    <string name="card_26_sub_content" translatable="false"/>
-    <string name="card_26_sub_content_type" translatable="false"/>
+    <string name="card_26_sub_content" translatable="false" />
+    <string name="card_26_sub_content_type" translatable="false" />
 
     <string name="card_27_main_content">Better late than never.</string>
-    <string name="card_27_sub_content" translatable="false"/>
-    <string name="card_27_sub_content_type" translatable="false"/>
+    <string name="card_27_sub_content" translatable="false" />
+    <string name="card_27_sub_content_type" translatable="false" />
 
     <string name="card_28_main_content">Every wall is a door. </string>
-    <string name="card_28_sub_content" translatable="false"/>
-    <string name="card_28_sub_content_type" translatable="false"/>
+    <string name="card_28_sub_content" translatable="false" />
+    <string name="card_28_sub_content_type" translatable="false" />
 
     <string name="card_29_main_content">We can give advice,\nbut we cannot give conduct.</string>
-    <string name="card_29_sub_content" translatable="false"/>
-    <string name="card_29_sub_content_type" translatable="false"/>
+    <string name="card_29_sub_content" translatable="false" />
+    <string name="card_29_sub_content_type" translatable="false" />
 
     <string name="card_30_main_content">You will never know\nuntil you try.</string>
-    <string name="card_30_sub_content" translatable="false"/>
-    <string name="card_30_sub_content_type" translatable="false"/>
+    <string name="card_30_sub_content" translatable="false" />
+    <string name="card_30_sub_content_type" translatable="false" />
 
     <string name="card_31_main_content">There are better starters\nthan me but I’m a strong finisher.</string>
     <string name="card_31_sub_content">Usain Bolt</string>
-    <string name="card_31_sub_content_type" translatable="false"/>
+    <string name="card_31_sub_content_type" translatable="false" />
 
     <string name="card_32_main_content">card_32_content</string>
     <string name="card_32_sub_content">card_32_sub_content</string>
@@ -218,6 +218,8 @@
     <string name="cancel">Canel</string>
     <string name="delete">Delete</string>
     <string name="modify">Modify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
