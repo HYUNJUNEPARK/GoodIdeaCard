@@ -7,7 +7,7 @@ import com.aos.goodideacard.enums.SubContentType
 
 object AppUtil {
     /**
-     * 하단 컨텐츠가 speaker 인 경우 '- speaker -' 포맷과 Gravity.END 를 Pair 로 반환 ex. - 이소룡 -
+     * 하단 컨텐츠가 person 인 경우 '- speaker -' 포맷과 Gravity.END 를 Pair 로 반환 ex. - 이소룡 -
      * 하단 컨텐츠가 description 인 경우 'description' 포맷과 Gravity.CENTER 를 Pair 로 반환
      *
      * @param subContent

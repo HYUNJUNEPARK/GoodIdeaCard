@@ -16,7 +16,7 @@ import javax.inject.Singleton
 object DatabaseModule {
     private const val MAIN_DATABASE = "good_idea_db"
 
-    const val MY_CARD_PACK_TABLE = "good_idea_table_my_card_pack"
+    const val MY_CARD_TABLE = "good_idea_table_my_card"
 
     @Provides
     @Singleton

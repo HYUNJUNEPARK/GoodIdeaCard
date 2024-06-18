@@ -11,8 +11,8 @@ import com.aos.goodideacard.model.CommonCardContent
 /**
  * 사용자 등록 카드팩
  */
-@Entity(tableName = DatabaseModule.MY_CARD_PACK_TABLE)
-data class MyCardPackEntity(
+@Entity(tableName = DatabaseModule.MY_CARD_TABLE)
+data class MyCardEntity(
     @PrimaryKey val id: Long,
     @Embedded val commonCardContent: CommonCardContent,
 ) : CardPackInterface {

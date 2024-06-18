@@ -47,9 +47,9 @@
     </fragment>
     <fragment
         android:id="@+id/MakeMyCardFragment"
-        android:name="com.aos.goodideacard.features.cardpack.MakeMyCardPackFragment"
+        android:name="com.aos.goodideacard.features.cardpack.MakeCardPackFragment"
         android:label="fragment_make_my_card"
-        tools:layout="@layout/fragment_make_my_card" />
+        tools:layout="@layout/fragment_make_card_pack" />
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.aos.goodideacard.features.setting.LanguageFragment"

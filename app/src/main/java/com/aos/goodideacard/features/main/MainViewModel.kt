@@ -9,7 +9,7 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.model.CommonCardContent
 import com.aos.goodideacard.model.DefaultCardPackModel
-import com.aos.goodideacard.database.enitiy.MyCardPackEntity
+import com.aos.goodideacard.database.enitiy.MyCardEntity
 import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.enums.CardPackType
 import com.aos.goodideacard.features.base.BaseViewModel
@@ -39,13 +39,12 @@ class MainViewModel @Inject constructor(
 
     fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
         val defaultCardPack = createDefaultPack(context)
-        val myCardPack = cardRepository.getAllFromMyCardPack()
+        val myCardPack = cardRepository.getMyCardPack()
 
         val mergedCardDeck = mergeCardPacks(
             defaultCardPack = defaultCardPack,
-            myCardPackEntity = myCardPack
+            myCardPack = myCardPack
         )
-
 
         //마지막 카드를 처음 위치로 설정
         if (cardPosition == null) cardPosition = defaultCardPack.size - 1
@@ -121,15 +120,15 @@ class MainViewModel @Inject constructor(
     }
 
     /**
-     * 기본 카드덱 + 사용자 카드덱 + 다운로드 카드덱 -> 통합 카드덱
+     * 기본 카드덱 + 사용자 카드팩 + 다운로드 카드팩 -> 통합 카드팩
      *
      * @param defaultCardPack 기본 카드덱 from string.xml
-     * @param myCardPackEntity 사용자 저장 카드덱 from database
+     * @param myCardPack 사용자 저장 카드덱 from database
      *
      */
     private fun mergeCardPacks(
         defaultCardPack: List<DefaultCardPackModel>,
-        myCardPackEntity: List<MyCardPackEntity>
+        myCardPack: List<MyCardEntity>
     ): List<CardPackModel> {
         fun convertToModel(cardPack: CardPackInterface): CardPackModel {
             return CardPackModel(
@@ -140,10 +139,10 @@ class MainViewModel @Inject constructor(
             )
         }
 
-        Timber.d("기본 카드덱 : $defaultCardPack")
-        Timber.d("사용자 카드덱 : $myCardPackEntity")
+        Timber.d("기본 카드팩 : $defaultCardPack")
+        Timber.d("사용자 카드팩 : $myCardPack")
 
-        val mergedCardDeck = (defaultCardPack + myCardPackEntity).let { interfaceList ->
+        val mergedCardDeck = (defaultCardPack + myCardPack).let { interfaceList ->
             interfaceList.map { convertToModel(it) }
         }
 

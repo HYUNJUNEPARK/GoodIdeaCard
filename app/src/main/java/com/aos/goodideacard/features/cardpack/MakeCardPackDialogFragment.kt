@@ -7,19 +7,25 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.databinding.FragmentMakeCardPackBinding
+import com.aos.goodideacard.databinding.DialogFragmentMakeCardPackBinding
 import com.aos.goodideacard.features.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
 class MakeCardPackDialogFragment: BaseDialogFragment() {
-    private var _binding: FragmentMakeCardPackBinding? = null
+    private var _binding: DialogFragmentMakeCardPackBinding? = null
     private val binding get() = _binding!!
+
+    /**
+     * Bundle로 callback 파라미터를 설정하면 앱 최소화 시
+     * java.lang.RuntimeException: Parcelable encountered IOException writing serializable object 발생
+     */
+    private var cardPackData: ((Pair<String, String?>) -> Unit)? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("${javaClass.simpleName} onCreateView()")
-        _binding = FragmentMakeCardPackBinding.inflate(inflater, container, false)
+        _binding = DialogFragmentMakeCardPackBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,30 +35,30 @@ class MakeCardPackDialogFragment: BaseDialogFragment() {
         binding.makeCardPackBtnClose.setOnClickListener { dismiss() }
 
         binding.makeCardPackBtnMake.setOnClickListener {
-            val packName = binding.makeCardPackEtName.text.toString()
-            if (packName.isEmpty()) {
-                Toast.makeText(requireContext(), "카드팩 이름을 입력해주새요.", Toast.LENGTH_SHORT).show()
+            val name = binding.makeCardPackEtName.text.toString()
+            if (name.isEmpty()) {
+                Toast.makeText(requireContext(), getString(R.string.msg_input_card_pack_name), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val packDescription = binding.makeCardPackEtDescription.text.toString()
+            val description = binding.makeCardPackEtDescription.text.toString().ifEmpty { null }
 
-//            val cardPack = CardPackEntity(
-//                id = System.currentTimeMillis(),
-//                packName = packName,
-//                description = packDescription,
-//                count = 0
-//            )
-
-            //Timber.d("cardPack : $cardPack")
-
-
+            returnCallback(Pair(name, description))
+            dismiss()
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun setCallback(callback: (Pair<String, String?>) -> Unit) {
+        cardPackData = callback
+    }
+
+    private fun returnCallback(value: Pair<String, String?>) {
+        cardPackData?.invoke(value)
     }
 
     companion object {

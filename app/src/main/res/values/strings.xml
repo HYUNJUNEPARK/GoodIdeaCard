@@ -214,6 +214,7 @@
     <string name="card_pack_name">Card Pack Name</string>
     <string name="card_pack_description">Card Pack Description</string>
     <string name="make">Make</string>
+    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
 
 
 </resources>

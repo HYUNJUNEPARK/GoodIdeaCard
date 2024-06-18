@@ -10,17 +10,22 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.PopupWindow
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
-import com.aos.goodideacard.databinding.FragmentMakeMyCardBinding
+import com.aos.goodideacard.databinding.FragmentMakeCardPackBinding
 import com.aos.goodideacard.features.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class MakeMyCardPackFragment : BaseFragment() {
-    private var _binding: FragmentMakeMyCardBinding? = null
+@AndroidEntryPoint
+class MakeCardPackFragment : BaseFragment() {
+    private var _binding: FragmentMakeCardPackBinding? = null
     private val binding get() = _binding!!
 
+    private val viewModel: CardPackViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentMakeMyCardBinding.inflate(inflater, container, false)
+        _binding = FragmentMakeCardPackBinding.inflate(inflater, container, false)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         return binding.root
     }
@@ -84,7 +89,12 @@ class MakeMyCardPackFragment : BaseFragment() {
         wm.updateViewLayout(container, lp)
 
         popupView.findViewById<ConstraintLayout>(R.id.popup_items_layout_make_card_deck).setOnClickListener {
-            MakeCardPackDialogFragment.newInstance().show(requireActivity().supportFragmentManager, null)
+            MakeCardPackDialogFragment.newInstance().apply {
+                setCallback { cardPack ->
+                    viewModel.createMyCardPack(name = cardPack.first, description = cardPack.second) //카드팩 생성
+                }
+            }.show(requireActivity().supportFragmentManager, null)
+
             popupWindow.dismiss()
         }
     }

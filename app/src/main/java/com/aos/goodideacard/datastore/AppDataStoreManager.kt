@@ -11,6 +11,7 @@ import com.aos.goodideacard.enums.Language
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
+import java.util.UUID
 
 /**
  * 사용자 설정을 저장하는 DataStore
@@ -19,15 +20,17 @@ class AppDataStoreManager(private val context: Context) {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "pref_settings")
 
     private val appThemeKey = intPreferencesKey("appThemeKey")
+    private val uuidKey = stringPreferencesKey("uuidKey")
     private val languageKey = stringPreferencesKey("languageKey")
-//    private val iconTypeKey = intPreferencesKey("iconTypeKey")
+
+    //    private val iconTypeKey = intPreferencesKey("iconTypeKey")
 //    private val iconTypeSettingHistoryKey = booleanPreferencesKey("iconTypeHistoryKey")
 //    private val pinKey = stringPreferencesKey("pinKey")
 //    private val authTypeKey = intPreferencesKey("authTypeKey")
 //    private val securityStrengthKey = booleanPreferencesKey("securityStrengthKey")
 //    private val screenShotKey = booleanPreferencesKey("screenShotKey")
 //    private val browserConnectDialogKey = booleanPreferencesKey("browserConnectDialogKey")
-//    private val uuidKey = stringPreferencesKey("uuidKey")
+
 //    private val introPageSettingKey = booleanPreferencesKey("readGuidePageKey")
 //    private val lockStageDataKey = stringPreferencesKey("unlockTimeKey")
 //    private val authTryCountKey = intPreferencesKey("authTryCountKey")
@@ -64,6 +67,42 @@ class AppDataStoreManager(private val context: Context) {
         }
     }
 
+    /**
+     * 카드팩 아이디 생성에 사용되는 앱 고유 uuid
+     */
+    suspend fun getUUID(): String {
+        val uuid = context.dataStore.data.map { preferences ->
+            preferences[uuidKey]
+        }.first()
+
+        val newUUID = if (uuid.isNullOrEmpty()) {
+            val randomUUID = UUID.randomUUID().toString()
+            Timber.i("UUID 생성 : $randomUUID")
+
+            context.dataStore.edit { preferences ->
+                preferences[uuidKey] = randomUUID
+            }
+
+            randomUUID
+        } else {
+            Timber.i("기존 UUID 로드 : $uuid")
+            uuid
+        }
+
+        return newUUID
+    }
+
+    /**
+     * DataStore 초기화
+     */
+    suspend fun clear() {
+        Timber.e("DataStore 초기화(유저 설정 삭제)")
+        context.dataStore.edit { preference ->
+            preference.clear()
+        }
+    }
+
+
 //    /**
 //     * 사용자 테마 설정 데이터(시스템, 라이트, 다크모드)
 //     */
@@ -89,15 +128,7 @@ class AppDataStoreManager(private val context: Context) {
 //        }
 //    }
 
-    /**
-     * DataStore 초기화
-     */
-    suspend fun clear() {
-        Timber.e("DataStore 초기화(유저 설정 삭제)")
-        context.dataStore.edit { preference ->
-            preference.clear()
-        }
-    }
+
 
 
 
@@ -229,30 +260,7 @@ class AppDataStoreManager(private val context: Context) {
 //    }
 
 
-//    /**
-//     * KeyAlias 로 사용되는 UUID 생성
-//     */
-//    suspend fun getUUID(): String {
-//        val uuid = context.dataStore.data.map { preferences ->
-//            preferences[uuidKey]
-//        }.first()
-//
-//        val newUUID = if (uuid.isNullOrEmpty()) {
-//            val randomUUID = UUID.randomUUID().toString()
-//            Timber.i("UUID 생성 : $randomUUID")
-//
-//            context.dataStore.edit { preferences ->
-//                preferences[uuidKey] = randomUUID
-//            }
-//
-//            randomUUID
-//        } else {
-//            Timber.i("기존 UUID 로드 : $uuid")
-//            uuid
-//        }
-//
-//        return newUUID
-//    }
+
 //
 //    /**
 //     * 앱 인트로 페이지 읽음

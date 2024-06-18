@@ -170,5 +170,5 @@
     <string name="card_pack_name">카드팩 이름</string>
     <string name="card_pack_description">카드팩 설명</string>
     <string name="make">만들기</string>
-
+    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
 </resources>
