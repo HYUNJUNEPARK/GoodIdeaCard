@@ -85,11 +85,11 @@ dependencies {
     // Module
     implementation(project(":cardstackview")) //custom cardstackview cf. origin:https://github.com/yuyakaido/CardStackView
 
-    // Timber
-    implementation(libs.timber) //https://github.com/JakeWharton/timber
+    // Timber, https://github.com/JakeWharton/timber
+    implementation(libs.timber)
 
-    // Lottie
-    implementation (libs.lottie) //https://github.com/airbnb/lottie-android/releases
+    // Lottie, https://github.com/airbnb/lottie-android/releases
+    implementation (libs.lottie)
 
     // Room Database
     implementation(libs.androidx.room.ktx)
@@ -102,4 +102,8 @@ dependencies {
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
+
+    // Moshi, https://github.com/square/moshi
+    implementation (libs.moshi)
+    implementation (libs.moshi.kotlin)
 }

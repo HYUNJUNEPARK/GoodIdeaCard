@@ -30,6 +30,15 @@ class CardPackMakeFragment : BaseFragment() {
     private val cardPackMakeAdapter: CardPackMakeAdapter by lazy {
         CardPackMakeAdapter(
             onItemClick =  { cardPack->
+
+
+                //
+
+
+
+                //
+
+
                 val cardPackIdBundle = bundleOf(KeyConst.CARD_PACK_ID_BUNDLE_KEY to cardPack.id)
                 findNavController().navigate(R.id.action_MakeMyCardFragment_to_cardPackDetailFragment, cardPackIdBundle)
             },
