@@ -14,7 +14,7 @@ class CardRepositoryImpl @Inject constructor(
     override suspend fun getMyCards(): List<MyCardEntity> = myCardDao.getAll()
     override suspend fun clearMyCards() = myCardDao.clear()
 
-    override suspend fun createCardPack(cardPack: CardPackEntity) = cardPackDao.create(cardPack)
+    override suspend fun createCardPackAndRefresh(cardPack: CardPackEntity): List<CardPackEntity> = cardPackDao.createAndRefresh(cardPack)
     override suspend fun getCardPacks(): List<CardPackEntity> = cardPackDao.getAll()
     override suspend fun clearPacks() = cardPackDao.clear()
 }

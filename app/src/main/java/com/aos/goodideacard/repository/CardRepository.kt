@@ -8,7 +8,7 @@ interface CardRepository {
     suspend fun getMyCards(): List<MyCardEntity>
     suspend fun clearMyCards()
 
-    suspend fun createCardPack(cardPack: CardPackEntity)
+    suspend fun createCardPackAndRefresh(cardPack: CardPackEntity): List<CardPackEntity>
     suspend fun getCardPacks(): List<CardPackEntity>
     suspend fun clearPacks()
 }

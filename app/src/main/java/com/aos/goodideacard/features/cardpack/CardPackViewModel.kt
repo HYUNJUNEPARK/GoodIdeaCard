@@ -50,7 +50,7 @@ class CardPackViewModel @Inject constructor(
 
         Timber.d("Create CardPack : $cardPack")
 
-        cardRepository.createCardPack(cardPack)
-        //TODO 로컬 DB 에 저장
+        val newCardPacks = cardRepository.createCardPackAndRefresh(cardPack)
+        _cardPacks.postValue(newCardPacks)
     }
 }

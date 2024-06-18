@@ -15,13 +15,14 @@
         android:layout_marginHorizontal="15dp"
         android:ellipsize="end"
         android:maxLines="1"
-        tools:text="Card Pack Name" />
+        tools:text="@tools:sample/lorem" />
 
     <TextView
         android:id="@+id/adapter_card_pack_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="3"
         android:textSize="12sp"

@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
 import com.aos.goodideacard.database.enitiy.CardPackEntity
 import com.aos.goodideacard.database.enitiy.MyCardEntity
@@ -27,4 +28,10 @@ interface CardPackDao {
 
     @Update
     suspend fun update(data: CardPackEntity)
+
+    @Transaction
+    suspend fun createAndRefresh(data: CardPackEntity): List<CardPackEntity> {
+        create(data)
+        return getAll()
+    }
 }
