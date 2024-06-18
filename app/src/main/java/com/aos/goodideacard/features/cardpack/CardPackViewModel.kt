@@ -9,6 +9,9 @@ import com.aos.goodideacard.features.base.BaseViewModel
 import com.aos.goodideacard.repository.CardRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -23,13 +26,13 @@ class CardPackViewModel @Inject constructor(
         getCardPacks()
     }
 
-    private val _cardPacks = MutableLiveData<List<CardPackEntity>>()
-    val cardPacks: LiveData<List<CardPackEntity>> get() = _cardPacks
+    private val _cardPacks = MutableStateFlow<List<CardPackEntity>>(emptyList())
+    val cardPacks: StateFlow<List<CardPackEntity>> get() = _cardPacks //.asStateFlow()
 
-    fun getCardPacks() = viewModelScope.launch(Dispatchers.IO) {
+    private fun getCardPacks() = viewModelScope.launch(Dispatchers.IO) {
         val cardPacks = cardRepository.getCardPacks()
         Timber.d("CardPacks : $cardPacks")
-        _cardPacks.postValue(cardPacks)
+        _cardPacks.value = cardPacks
     }
 
     /**
@@ -51,6 +54,6 @@ class CardPackViewModel @Inject constructor(
         Timber.d("Create CardPack : $cardPack")
 
         val newCardPacks = cardRepository.createCardPackAndRefresh(cardPack)
-        _cardPacks.postValue(newCardPacks)
+        _cardPacks.value = newCardPacks
     }
 }
