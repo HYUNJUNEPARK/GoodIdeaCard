@@ -16,6 +16,7 @@ import com.aos.goodideacard.database.enitiy.CardPackEntity
 import com.aos.goodideacard.databinding.FragmentCardPackMakeBinding
 import com.aos.goodideacard.features.base.BaseFragment
 import com.aos.goodideacard.features.dialog.TwoButtonsDialog
+import com.aos.goodideacard.util.JsonUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -29,18 +30,14 @@ class CardPackMakeFragment : BaseFragment() {
 
     private val cardPackMakeAdapter: CardPackMakeAdapter by lazy {
         CardPackMakeAdapter(
-            onItemClick =  { cardPack->
-
-
-                //
-
-
-
-                //
-
-
-                val cardPackIdBundle = bundleOf(KeyConst.CARD_PACK_ID_BUNDLE_KEY to cardPack.id)
-                findNavController().navigate(R.id.action_MakeMyCardFragment_to_cardPackDetailFragment, cardPackIdBundle)
+            onItemClick =  { cardPack-> //클릭된 카드팩 데이터를 직렬화한 후 Bundle에 담아 fragment에 전달
+                val cardPackString = JsonUtil.serialize(cardPack)
+                if (cardPackString.isNullOrEmpty()) {
+                    Toast.makeText(requireContext(), getString(R.string.error_message), Toast.LENGTH_SHORT).show()
+                    return@CardPackMakeAdapter
+                }
+                val cardPackBundle = bundleOf(KeyConst.CARD_PACK_BUNDLE_KEY to cardPackString)
+                findNavController().navigate(R.id.action_MakeMyCardFragment_to_cardPackDetailFragment, cardPackBundle)
             },
             onItemLongClick = { cardPack ->
                 cardPackItemLongClickEventHandler(cardPack)
