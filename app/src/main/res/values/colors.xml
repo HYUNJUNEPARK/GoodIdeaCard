@@ -20,12 +20,13 @@
     <color name="purple_ffbb86fc">#FFBB86FC</color>
     <color name="gray_818181">#818181</color>
     <color name="brown_453A37">#453A37</color>
+    <color name="green_80f0a5">#80F0A5</color> <!-- icon R:128 G:240 B:165-->
+    <color name="red_f4582d">#F4582D</color>
 
     <color name="hint_color">@color/gray_818181</color>
 
     <!--day/night mode-->
     <color name="day_night_black_ff000000_white_ffffffff">@color/black_ff000000</color>
-    <color name="day_night_mode_white_ffffffff_black_191919">@color/white_ffffffff</color>
     <color name="day_night_gray_d1d1d1_gray_424141">@color/gray_d1d1d1</color> <!--division line-->
     <color name="day_night_white_ffffffff_black_ff000000">@color/white_ffffffff</color> <!--background-->
     <color name="day_night_white_ffffffff_gray_3a3a3a">@color/white_ffffffff</color> <!--button background-->

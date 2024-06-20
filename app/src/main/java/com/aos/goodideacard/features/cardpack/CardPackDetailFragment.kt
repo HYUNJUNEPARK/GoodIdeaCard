@@ -29,12 +29,33 @@ class CardPackDetailFragment : BaseFragment() {
         val cardPack = JsonUtil.deserialize<CardPackEntity>(cardPackString)
 
         binding.cardPackDetailTitle.text = cardPack?.name
-        Toast.makeText(requireContext(), "${cardPack?.id}", Toast.LENGTH_SHORT).show()
 
+
+        binding.cardPackDetailFab.setOnClickListener {
+            PopupMenu().cardPackDetailFabAction(this, it) { action ->
+                fabActionHandler(action)
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun fabActionHandler(action: PopupMenu.FabAction) {
+        Toast.makeText(requireContext(), "$action", Toast.LENGTH_SHORT).show()
+
+        when(action) {
+            PopupMenu.FabAction.ADD -> {
+
+            }
+            PopupMenu.FabAction.SHARE -> {
+
+            }
+            PopupMenu.FabAction.CANCEL -> {
+
+            }
+        }
     }
 }

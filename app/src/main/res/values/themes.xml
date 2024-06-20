@@ -26,7 +26,7 @@
     <style name="FullScreenDialogThemeTransparent" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:statusBarColor">@color/day_night_mode_white_ffffffff_black_191919</item>
+        <item name="android:statusBarColor">@color/day_night_white_ffffffff_black_191919</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="colorAccent">@color/app_theme</item>
     </style>
@@ -35,7 +35,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
-        <item name="android:background">@drawable/background_square_white_black</item>
+        <item name="android:background">@drawable/bg_square_rad_8dp_white_black</item>
         <item name="colorAccent">@color/app_theme</item>
     </style>
 

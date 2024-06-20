@@ -180,4 +180,6 @@
     <string name="restart">재시작</string>
     <string name="inquiry">문의하기</string>
     <string name="msg_error_2">같은 문제가 반복되나요?</string>
+    <string name="share_card_packs">카드팩 공유하기</string>
+    <string name="make_card">카드 추가하기</string>
 </resources>
