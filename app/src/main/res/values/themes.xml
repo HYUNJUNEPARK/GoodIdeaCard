@@ -9,6 +9,9 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
 
+        <!-- EditText 등 기본 컴포넌트 색상 적용 -->
+        <item name="colorAccent">@color/app_theme</item>
+
         <!-- Default background color setting cf. 설정 안하면, 뷰에 기본적으로 연보라색이 들어가게 됨-->
         <item name="android:colorBackground">@color/white_ffffffff</item>
     </style>
@@ -25,6 +28,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:statusBarColor">@color/day_night_mode_white_ffffffff_black_191919</item>
         <item name="android:backgroundDimEnabled">true</item>
+        <item name="colorAccent">@color/app_theme</item>
     </style>
 
     <style name="DialogTheme" parent="android:Theme.Holo.Light.Dialog.NoActionBar">
@@ -32,6 +36,7 @@
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
         <item name="android:background">@drawable/background_square_white_black</item>
+        <item name="colorAccent">@color/app_theme</item>
     </style>
 
     <style name="text_standard_size_bold_pad_vert_10dp_day_night">
