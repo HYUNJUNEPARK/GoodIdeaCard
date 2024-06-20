@@ -53,6 +53,7 @@
         <TextView
             android:id="@+id/error_tv"
             android:textSize="12dp"
+            android:paddingHorizontal="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@tools:sample/lorem/random" />

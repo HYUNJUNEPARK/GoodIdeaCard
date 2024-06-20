@@ -23,7 +23,7 @@ interface CardPackDao {
         return getAll()
     }
 
-    @Query("SELECT * FROM ${DatabaseModule.CARD_PACK_TABLE}")
+    @Query("SELECT * FROM ${DatabaseModule.CARD_PACK_TABLE} ORDER BY name COLLATE NOCASE ASC")
     suspend fun getAll(): List<CardPackEntity>
 
     @Query("DELETE FROM ${DatabaseModule.CARD_PACK_TABLE}")
