@@ -26,19 +26,19 @@
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:background="@color/day_night_white_ffffffff_black_ff000000"
                     android:layout_height="wrap_content"
+                    android:background="@color/day_night_white_ffffffff_black_ff000000"
                     app:navigationIcon="@drawable/ic_arrow_point_left_24_day_night">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="@string/setting" />
+                        android:text="@string/setting"
+                        android:textStyle="bold" />
                 </com.google.android.material.appbar.MaterialToolbar>
             </com.google.android.material.appbar.AppBarLayout>
 
-            <View style="@style/division_horiz_toolbar_bottom_line"/>
+            <View style="@style/division_horiz_toolbar_bottom_line" />
 
             <TextView
                 android:id="@+id/make_my_card"
@@ -61,6 +61,16 @@
                 style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
                 android:text="@string/language"
                 app:drawableStartCompat="@drawable/ic_language_24dp_day_night" />
+
+            <View style="@style/division_horiz_weak_line" />
+
+            <TextView
+                android:id="@+id/app_crash"
+                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
+                android:text="[BEBUG] App Crash"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_bulb_24dp_day_night"
+                tools:visibility="visible" />
 
             <View style="@style/division_horiz_weak_line" />
 

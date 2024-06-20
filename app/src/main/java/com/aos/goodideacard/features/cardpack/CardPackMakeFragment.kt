@@ -63,6 +63,8 @@ class CardPackMakeFragment : BaseFragment() {
                         name = cardPack.first,
                         description = cardPack.second
                     )
+                    Toast.makeText(requireContext(),
+                        getString(R.string.msg_success_making_cardpack), Toast.LENGTH_SHORT).show()
                 }
             }.show(requireActivity().supportFragmentManager, null)
         }

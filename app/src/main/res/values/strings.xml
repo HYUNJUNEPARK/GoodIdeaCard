@@ -221,6 +221,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="error_message">Error Message</string>
-
+    <string name="msg_success_making_cardpack">카드팩 추가 메시지</string>
+    <string name="msg_error_1">An unexpected error has occurred.\nIf the issue persists, please contact the developer\n\nicanbee.official@gmail.com</string>
+    <string name="restart">Restart</string>
+    <string name="inquiry">Inquiry</string>
+    <string name="msg_error_2">Does the same problem keep happening?</string>
+    <string name="support_email"  translatable="false">icanbee.official@gmail.com</string>
 
 </resources>

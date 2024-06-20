@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title">
         <item name="android:background">?attr/selectableItemBackground</item>
         <item name="android:paddingHorizontal">14dp</item>
@@ -123,5 +124,14 @@
         <item name="android:textColor">@color/day_night_black_ff000000_white_ffffffff</item>
     </style>
 
+
+    <style name="default_button_text_12dp_black">
+        <item name="android:textSize">12dp</item>
+        <item name="android:backgroundTint">@color/app_theme</item>
+        <item name="android:textColor">@color/white_ffffffff</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
 
 </resources>

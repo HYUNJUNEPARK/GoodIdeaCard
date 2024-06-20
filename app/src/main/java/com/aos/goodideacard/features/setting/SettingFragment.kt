@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.aos.goodideacard.BuildConfig
 import com.aos.goodideacard.R
 import com.aos.goodideacard.databinding.FragmentSettingBinding
 import com.aos.goodideacard.features.base.BaseFragment
@@ -30,6 +31,12 @@ class SettingFragment : BaseFragment() {
     }
 
     private fun setClickListeners() = with(binding) {
+        if (BuildConfig.DEBUG) {
+            binding.appCrash.apply {
+                visibility = View.VISIBLE
+                setOnClickListener { throw IllegalArgumentException("Test Crash") }
+            }
+        }
         makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_makeMyCardFragment) }
         appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
         appBackground.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_backgroundFragment) }
