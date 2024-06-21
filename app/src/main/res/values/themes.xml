@@ -5,7 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/white_ffffffff</item>
+        <item name="android:statusBarColor">@android:color/white</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
 
@@ -13,7 +13,7 @@
         <item name="colorAccent">@color/app_theme</item>
 
         <!-- Default background color setting cf. 설정 안하면, 뷰에 기본적으로 연보라색이 들어가게 됨-->
-        <item name="android:colorBackground">@color/white_ffffffff</item>
+        <item name="android:colorBackground">@android:color/white</item>
     </style>
 
     <style name="Theme.GoodIdeaCard" parent="Base.Theme.GoodIdeaCard" />
