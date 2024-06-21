@@ -227,7 +227,7 @@
     <string name="restart">Restart</string>
     <string name="inquiry">Inquiry</string>
     <string name="msg_error_2">Does the same problem keep happening?</string>
-    <string name="support_email"  translatable="false">icanbee.official@gmail.com</string>
+    <string name="support_email" translatable="false">icanbee.official@gmail.com</string>
     <string name="share_card_packs">Share Card Packs</string>
     <string name="make_card">Make Card</string>
 

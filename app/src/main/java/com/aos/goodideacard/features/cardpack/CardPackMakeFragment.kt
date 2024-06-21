@@ -1,80 +1,48 @@
 package com.aos.goodideacard.features.cardpack
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
-import com.aos.goodideacard.consts.KeyConst
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.FragmentCardPackMakeBinding
-import com.aos.goodideacard.features.base.BaseFragment
-import com.aos.goodideacard.features.dialog.TwoButtonsDialog
-import com.aos.goodideacard.util.JsonUtil
+import com.aos.goodideacard.features.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
-class CardPackMakeFragment : BaseFragment() {
+class CardPackMakeFragment: BaseDialogFragment() {
     private var _binding: FragmentCardPackMakeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CardPackViewModel by viewModels()
-
-    private val cardPackMakeAdapter: CardPackMakeAdapter by lazy {
-        CardPackMakeAdapter(
-            onItemClick =  { cardPack-> //클릭된 카드팩 데이터를 직렬화한 후 Bundle에 담아 fragment에 전달
-                val cardPackString = JsonUtil.serialize(cardPack)
-                if (cardPackString.isNullOrEmpty()) {
-                    Toast.makeText(requireContext(), getString(R.string.error_message), Toast.LENGTH_SHORT).show()
-                    return@CardPackMakeAdapter
-                }
-                val cardPackBundle = bundleOf(KeyConst.CARD_PACK_BUNDLE_KEY to cardPackString)
-                findNavController().navigate(R.id.action_MakeMyCardFragment_to_cardPackDetailFragment, cardPackBundle)
-            },
-            onItemLongClick = { cardPack ->
-                cardPackItemLongClickEventHandler(cardPack)
-            }
-        )
-    }
+    /**
+     * Bundle로 callback 파라미터를 설정하면 앱 최소화 시
+     * java.lang.RuntimeException: Parcelable encountered IOException writing serializable object 발생
+     */
+    private var cardPackData: ((Pair<String, String?>) -> Unit)? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("${javaClass.simpleName} onCreateView()")
         _binding = FragmentCardPackMakeBinding.inflate(inflater, container, false)
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.makeCardPackRecyclerView.adapter = cardPackMakeAdapter
+        binding.makeCardPackBtnClose.setOnClickListener { dismiss() }
 
-        binding.makeMyCardFab.setOnClickListener {
-            CardPackMakeDialogFragment.newInstance().apply {
-                setCallback { cardPack ->
-                    viewModel.createMyCardPack(
-                        name = cardPack.first,
-                        description = cardPack.second
-                    )
-                    Toast.makeText(requireContext(),
-                        getString(R.string.msg_success_making_cardpack), Toast.LENGTH_SHORT).show()
-                }
-            }.show(requireActivity().supportFragmentManager, null)
-        }
-
-        lifecycleScope.launch {
-            viewModel.cardPacks.collect { cardPacks ->
-                Timber.e("cardPacks : $cardPacks")
-                binding.makeMyCardEmpty.visibility = if (cardPacks.isEmpty()) View.VISIBLE else View.GONE
-                cardPackMakeAdapter.submitList(cardPacks)
+        binding.makeCardPackBtnMake.setOnClickListener {
+            val name = binding.makeCardPackEtName.text.toString().ifEmpty {
+                Toast.makeText(requireContext(), getString(R.string.msg_input_card_pack_name), Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+            val description = binding.makeCardPackEtDescription.text.toString().ifEmpty { null }
+
+            returnCallback(Pair(name, description))
+            dismiss()
         }
     }
 
@@ -83,38 +51,18 @@ class CardPackMakeFragment : BaseFragment() {
         _binding = null
     }
 
-    private fun cardPackItemLongClickEventHandler(cardPack: CardPackEntity) {
-        val menuArray = R.array.alert_dialog_card_pack
-        val menuList = requireContext().resources.getStringArray(menuArray)
+    fun setCallback(callback: (Pair<String, String?>) -> Unit) {
+        cardPackData = callback
+    }
 
-        val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle).apply {
-            setTitle(cardPack.name)
-            setItems(menuList) { /*dialogInterface*/_, idx ->
-                when(idx) {
-                    0 -> { //수정
-                        Toast.makeText(requireContext(), "수정 ", Toast.LENGTH_SHORT).show()
-//                        val bookmarkData = data.copy(isBookmarked = !isBookmarked)
-//                        groupViewModel.updateGroupAndRefresh(bookmarkData)
-//
-//                        val msg = if (isBookmarked) R.string.msg_cancel_bookmark else R.string.msg_enroll_bookmark
-//                        Toast.makeText(requireContext(), requireContext().getString(msg), Toast.LENGTH_SHORT).show()
-                    }
-                    1 -> {
-                        TwoButtonsDialog(
-                            context = requireContext(),
-                            content = R.string.delete,
-                            rightButtonText = R.string.delete,
-                            leftButtonText = R.string.cancel,
-                            rightButtonFun = { viewModel.deleteCardPack(cardPack) },
-                            contentTextGravityCenter = true
-                        ).show()
-                    }
-                    2 -> {}
-                    else -> Timber.e("Not handling this idx : $idx")
-                }
-            }
+    private fun returnCallback(value: Pair<String, String?>) {
+        cardPackData?.invoke(value)
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = CardPackMakeFragment().apply {
+            setStyle(STYLE_NO_TITLE, R.style.FullScreenDialogThemeTransparent)
         }
-        val dialog = alertDialogBuilder.create()
-        dialog.show()
     }
 }

@@ -18,10 +18,10 @@
 
     <style name="Theme.GoodIdeaCard" parent="Base.Theme.GoodIdeaCard" />
 
-    <style name="Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:navigationBarColor">@color/app_theme</item>
-    </style>
+<!--    <style name="Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="android:windowFullscreen">true</item>-->
+<!--        <item name="android:navigationBarColor">@color/app_theme</item>-->
+<!--    </style>-->
 
     <style name="FullScreenDialogThemeTransparent" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowIsFloating">false</item>

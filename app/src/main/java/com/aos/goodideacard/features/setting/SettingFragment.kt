@@ -37,7 +37,7 @@ class SettingFragment : BaseFragment() {
                 setOnClickListener { throw IllegalArgumentException("Test Crash") }
             }
         }
-        makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_makeMyCardFragment) }
+        makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_cardPackListFragment) }
         appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
         appBackground.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_backgroundFragment) }
     }

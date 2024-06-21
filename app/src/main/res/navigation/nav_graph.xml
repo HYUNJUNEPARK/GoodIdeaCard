@@ -24,8 +24,8 @@
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" >
         <action
-            android:id="@+id/action_settingFragment_to_makeMyCardFragment"
-            app:destination="@id/MakeMyCardFragment"
+            android:id="@+id/action_settingFragment_to_cardPackListFragment"
+            app:destination="@id/CardPackListFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
@@ -46,13 +46,13 @@
             app:popExitAnim="@anim/to_right"/>
     </fragment>
     <fragment
-        android:id="@+id/MakeMyCardFragment"
-        android:name="com.aos.goodideacard.features.cardpack.CardPackMakeFragment"
-        android:label="fragment_make_my_card"
-        tools:layout="@layout/fragment_card_pack_make" >
+        android:id="@+id/CardPackListFragment"
+        android:name="com.aos.goodideacard.features.cardpack.CardPackListFragment"
+        android:label="fragment_card_pack_list"
+        tools:layout="@layout/fragment_card_pack_list" >
         <action
-            android:id="@+id/action_MakeMyCardFragment_to_cardPackDetailFragment"
-            app:destination="@id/cardPackDetailFragment"
+            android:id="@+id/action_cardPackListFragment_to_cardListFragment"
+            app:destination="@id/cardListFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
@@ -69,8 +69,8 @@
         android:label="fragment_background"
         tools:layout="@layout/fragment_background" />
     <fragment
-        android:id="@+id/cardPackDetailFragment"
-        android:name="com.aos.goodideacard.features.cardpack.CardPackDetailFragment"
-        android:label="fragment_card_pack_detail"
-        tools:layout="@layout/fragment_card_pack_detail" />
+        android:id="@+id/cardListFragment"
+        android:name="com.aos.goodideacard.features.card.CardListFragment"
+        android:label="fragment_card_List"
+        tools:layout="@layout/fragment_card_list" />
 </navigation>
