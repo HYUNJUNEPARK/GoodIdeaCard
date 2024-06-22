@@ -28,7 +28,7 @@ class CardPackViewModel @Inject constructor(
 
     private fun getCardPacks() = viewModelScope.launch(Dispatchers.IO) {
         val cardPacks = cardRepository.getCardPacks()
-        Timber.d("CardPacks : $cardPacks")
+        Timber.i("getCardPacks : $cardPacks")
         _cardPacks.value = cardPacks
     }
 
@@ -36,7 +36,7 @@ class CardPackViewModel @Inject constructor(
      * @param name 카드팩 이름
      * @param description 카드팩 설명
      */
-    fun createMyCardPack(
+    fun createCardPack(
         name: String,
         description: String?
     ) = viewModelScope.launch(Dispatchers.IO) {
@@ -47,8 +47,7 @@ class CardPackViewModel @Inject constructor(
             name = name,
             description = description
         )
-
-        Timber.d("Create CardPack : $cardPack")
+        Timber.i("createCardPack : $cardPack")
 
         val newCardPacks = cardRepository.createCardPackAndRefresh(cardPack)
         _cardPacks.value = newCardPacks

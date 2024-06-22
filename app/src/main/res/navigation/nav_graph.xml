@@ -9,54 +9,54 @@
         android:id="@+id/mainFragment"
         android:name="com.aos.goodideacard.features.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_settingFragment"
             app:destination="@id/settingFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"/>
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.aos.goodideacard.features.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_settingFragment_to_cardPackListFragment"
             app:destination="@id/CardPackListFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"/>
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_settingFragment_to_languageFragment"
             app:destination="@id/languageFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"/>
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_settingFragment_to_backgroundFragment"
             app:destination="@id/backgroundFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"/>
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/CardPackListFragment"
         android:name="com.aos.goodideacard.features.cardpack.CardPackListFragment"
         android:label="fragment_card_pack_list"
-        tools:layout="@layout/fragment_card_pack_list" >
+        tools:layout="@layout/fragment_card_pack_list">
         <action
             android:id="@+id/action_cardPackListFragment_to_cardListFragment"
             app:destination="@id/cardListFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"/>
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/languageFragment"
@@ -72,5 +72,18 @@
         android:id="@+id/cardListFragment"
         android:name="com.aos.goodideacard.features.card.CardListFragment"
         android:label="fragment_card_List"
-        tools:layout="@layout/fragment_card_list" />
+        tools:layout="@layout/fragment_card_list">
+        <action
+            android:id="@+id/action_cardListFragment_to_cardAddFragment"
+            app:destination="@id/cardAddFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardAddFragment"
+        android:name="com.aos.goodideacard.features.card.CardAddFragment"
+        android:label="fragment_card_add"
+        tools:layout="@layout/fragment_card_add" />
 </navigation>

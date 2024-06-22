@@ -8,7 +8,6 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import com.aos.goodideacard.database.enitiy.CardPackEntity
-import com.aos.goodideacard.database.enitiy.MyCardEntity
 import com.aos.goodideacard.di.DatabaseModule
 
 @Dao

@@ -1,11 +1,12 @@
 package com.aos.goodideacard.repository
 
 import com.aos.goodideacard.database.enitiy.CardPackEntity
-import com.aos.goodideacard.database.enitiy.MyCardEntity
+import com.aos.goodideacard.database.enitiy.CardEntity
 
 interface CardRepository {
-    suspend fun createMyCard(myCard: MyCardEntity)
-    suspend fun getMyCards(): List<MyCardEntity>
+//    suspend fun createCard(card: CardEntity)
+    suspend fun createCardAndRefresh(card: CardEntity): List<CardEntity>
+    suspend fun getCards(cardPackId: String): List<CardEntity>
     suspend fun clearMyCards()
 
     suspend fun createCardPackAndRefresh(cardPack: CardPackEntity): List<CardPackEntity>

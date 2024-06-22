@@ -43,7 +43,7 @@ class MainFragment : BaseFragment() {
 
     private val viewModel: MainViewModel by viewModels()
 
-    private val cardItemAdapter = CardItemAdapter()
+    private val mainAdapter = MainAdapter()
     private lateinit var cardStackManager : CardStackLayoutManager
 
     override fun onAttach(context: Context) {
@@ -141,7 +141,7 @@ class MainFragment : BaseFragment() {
             CoroutineScope(Dispatchers.Main).launch {
                 binding.lottieLoading.playAnimation()
 
-                cardItemAdapter.submitList(null)
+                mainAdapter.submitList(null)
                 delay(1000)
                 viewModel.shuffleCard()
 
@@ -172,7 +172,7 @@ class MainFragment : BaseFragment() {
         }
 
         binding.cardStackView.apply {
-            adapter = cardItemAdapter
+            adapter = mainAdapter
             layoutManager = cardStackManager
         }
     }
@@ -180,7 +180,7 @@ class MainFragment : BaseFragment() {
     private fun observeLiveData() {
         viewModel.cardList.observe(viewLifecycleOwner) { goodIdeas ->
             Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
-            cardItemAdapter.submitList(goodIdeas)
+            mainAdapter.submitList(goodIdeas)
             binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
         }
 

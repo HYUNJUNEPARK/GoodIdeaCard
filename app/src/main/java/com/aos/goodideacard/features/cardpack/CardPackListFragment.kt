@@ -59,19 +59,17 @@ class CardPackListFragment : BaseFragment() {
         binding.makeMyCardFab.setOnClickListener {
             CardPackMakeFragment.newInstance().apply {
                 setCallback { cardPack ->
-                    viewModel.createMyCardPack(
+                    viewModel.createCardPack(
                         name = cardPack.first,
                         description = cardPack.second
                     )
-                    Toast.makeText(requireContext(),
-                        getString(R.string.msg_success_making_cardpack), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.msg_success_add_card_pack), Toast.LENGTH_SHORT).show()
                 }
             }.show(requireActivity().supportFragmentManager, null)
         }
 
         lifecycleScope.launch {
             viewModel.cardPacks.collect { cardPacks ->
-                Timber.e("cardPacks : $cardPacks")
                 binding.makeMyCardEmpty.visibility = if (cardPacks.isEmpty()) View.VISIBLE else View.GONE
                 cardPackListAdapter.submitList(cardPacks)
             }

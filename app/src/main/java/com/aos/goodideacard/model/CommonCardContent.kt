@@ -5,10 +5,10 @@ package com.aos.goodideacard.model
  *
  * @param cardPackId
  * @param content
- * @param whose
+ * @param subContent
  */
 open class CommonCardContent (
-    val cardPackId: Int,
+    val cardPackId: String,
     val content: String,
-    val whose: String
+    val subContent: String
 )

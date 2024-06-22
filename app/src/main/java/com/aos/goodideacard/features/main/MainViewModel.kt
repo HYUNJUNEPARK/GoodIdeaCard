@@ -9,7 +9,7 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.model.CommonCardContent
 import com.aos.goodideacard.model.DefaultCardPackModel
-import com.aos.goodideacard.database.enitiy.MyCardEntity
+import com.aos.goodideacard.database.enitiy.CardEntity
 import com.aos.goodideacard.enums.CardAction
 import com.aos.goodideacard.enums.CardPackType
 import com.aos.goodideacard.features.base.BaseViewModel
@@ -39,11 +39,12 @@ class MainViewModel @Inject constructor(
 
     fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
         val defaultCardPack = createDefaultPack(context)
-        val myCardPack = cardRepository.getMyCards()
 
+//        val myCardPack = cardRepository.getCards()
+//
         val mergedCardDeck = mergeCardPacks(
             defaultCardPack = defaultCardPack,
-            myCardPack = myCardPack
+            myCardPack = emptyList()
         )
 
         //마지막 카드를 처음 위치로 설정
@@ -108,9 +109,9 @@ class MainViewModel @Inject constructor(
                     DefaultCardPackModel(
                         id = i.toLong(),
                         CommonCardContent(
-                            cardPackId = CardPackType.DEFAULT.code,
+                            cardPackId = CardPackType.DEFAULT.name,
                             content = context.getString(resources.first),
-                            whose = context.getString(resources.second)
+                            subContent = context.getString(resources.second)
                         )
                     )
                 )
@@ -128,14 +129,14 @@ class MainViewModel @Inject constructor(
      */
     private fun mergeCardPacks(
         defaultCardPack: List<DefaultCardPackModel>,
-        myCardPack: List<MyCardEntity>
+        myCardPack: List<CardEntity>
     ): List<CardPackModel> {
         fun convertToModel(cardPack: CardPackInterface): CardPackModel {
             return CardPackModel(
                 cardId = cardPack.cardId,
                 cardPackId = cardPack.cardPackId,
                 content = cardPack.content,
-                whose = cardPack.whose
+                whose = cardPack.subContent
             )
         }
 

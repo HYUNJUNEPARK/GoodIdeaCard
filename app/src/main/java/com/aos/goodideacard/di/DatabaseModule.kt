@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.aos.goodideacard.database.CardPackDatabase
 import com.aos.goodideacard.database.MyCardDatabase
 import com.aos.goodideacard.database.dao.CardPackDao
-import com.aos.goodideacard.database.dao.MyCardDao
+import com.aos.goodideacard.database.dao.CardDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,11 +16,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
-    private const val MY_CARD_DATABASE = "good_idea_db_my_card"
-    private const val CARD_PACK_DATABASE = "good_idea_db_my_card_pack"
+    private const val CARD_DATABASE = "good_idea_db_card"
+    private const val CARD_PACK_DATABASE = "good_idea_db_card_pack"
 
-    const val MY_CARD_TABLE = "good_idea_table_my_card"
-    const val CARD_PACK_TABLE = "good_idea_table_pack"
+    const val CARD_TABLE = "good_idea_table_card"
+    const val CARD_PACK_TABLE = "good_idea_table_card_pack"
 
     @Provides
     @Singleton
@@ -28,7 +28,7 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context = context,
             klass = MyCardDatabase::class.java,
-            name = MY_CARD_DATABASE
+            name = CARD_DATABASE
         ).build()
     }
 
@@ -44,7 +44,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun myCardDao(myCardDatabase: MyCardDatabase): MyCardDao {
+    fun myCardDao(myCardDatabase: MyCardDatabase): CardDao {
         return myCardDatabase.myCardDao()
     }
 
