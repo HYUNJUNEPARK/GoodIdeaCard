@@ -227,7 +227,7 @@
     <string name="msg_error_2">Does the same problem keep happening?</string>
     <string name="support_email" translatable="false">icanbee.official@gmail.com</string>
     <string name="share_card_packs">Share Card Packs</string>
-    <string name="add_card">카드 추가하기</string>
+    <string name="add_card">Add Card</string>
     <string name="msg_input_content">내용을 입력해주세요.</string>
     <string name="add">Add</string>
     <string name="format_card_pack">Card Pack : %1$s</string>

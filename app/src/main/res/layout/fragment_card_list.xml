@@ -47,11 +47,8 @@
 
     <ImageView
         android:id="@+id/card_pack_detail_fab"
-        android:layout_width="62dp"
-        android:layout_height="62dp"
+        style="@style/default_fab_size_62dp"
         android:layout_margin="20dp"
-        android:background="@drawable/bg_oval_app_theme"
-        android:padding="8dp"
         android:src="@drawable/ic_cards_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
