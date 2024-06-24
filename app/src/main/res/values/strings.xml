@@ -97,114 +97,106 @@
     <string name="card_31_main_content">There are better starters\nthan me but I’m a strong finisher.</string>
     <string name="card_31_sub_content">- Usain Bolt -</string>
 
+    <string name="card_32_main_content">Success begins\nwith self-belief.</string>
+    <string name="card_32_sub_content">- Norman Vincent Peale -</string>
 
+    <string name="card_33_main_content">Love is giving\nwithout conditions.</string>
+    <string name="card_33_sub_content">- Mother Teresa -</string>
 
+    <string name="card_34_main_content">Love heals all things</string>
+    <string name="card_34_sub_content">Oprah Winfrey</string>
 
+    <string name="card_35_main_content">Effort is the mother of luck.</string>
+    <string name="card_35_sub_content">- Thomas Jefferson -</string>
 
-    <string name="card_32_main_content">card_32_content</string>
-    <string name="card_32_sub_content">card_32_sub_content</string>
+    <string name="card_36_main_content">Happiness is\na part of the journey.</string>
+    <string name="card_36_sub_content">- Roy Goodman -</string>
 
-    <string name="card_33_main_content">card_33_content</string>
-    <string name="card_33_sub_content">card_33_sub_content</string>
+    <string name="card_37_main_content">Wherever you go,\ngo with all your heart.</string>
+    <string name="card_37_sub_content">- Confucius -</string>
 
-    <string name="card_34_main_content">card_34_content</string>
-    <string name="card_34_sub_content">card_34_sub_content</string>
+    <string name="card_38_main_content">Whatever the mind can conceive and believe,\nit can achieve.</string>
+    <string name="card_38_sub_content">- Napoleon Hill -</string>
 
-    <string name="card_35_main_content">card_35_content</string>
-    <string name="card_35_sub_content">card_35_sub_content</string>
+    <string name="card_39_main_content">Be faithful in small things\nbecause it is in them that your strength lies.</string>
+    <string name="card_39_sub_content">- Mother Teresa -</string>
 
-    <string name="card_36_main_content">card_36_content</string>
-    <string name="card_36_sub_content">card_36_sub_content</string>
+    <string name="card_40_main_content">Dream as if you\'ll live forever,\nlive as if you\'ll die today.</string>
+    <string name="card_40_sub_content">- James Dean -</string>
 
-    <string name="card_37_main_content">card_37_content</string>
-    <string name="card_37_sub_content">card_37_sub_content</string>
+    <string name="card_41_main_content">Great spirits have always encountered violent opposition from mediocre minds.</string>
+    <string name="card_41_sub_content">- Albert Einstein -</string>
 
-    <string name="card_38_main_content">card_38_content</string>
-    <string name="card_38_sub_content">card_38_sub_content</string>
+    <string name="card_42_main_content">Success is doing what you love.</string>
+    <string name="card_42_sub_content">- Tony Robbins -</string>
 
-    <string name="card_39_main_content">card_39_content</string>
-    <string name="card_39_sub_content">card_39_sub_content</string>
+    <string name="card_43_main_content">It is better to fail in originality\nthan to succeed in imitation.</string>
+    <string name="card_43_sub_content">- Herman Melville -</string>
 
-    <string name="card_40_main_content">card_40_content</string>
-    <string name="card_40_sub_content">card_40_sub_content</string>
+    <string name="card_44_main_content">The harder the struggle,\nthe sweeter the success.</string>
+    <string name="card_44_sub_content">- Albert Einstein -</string>
 
-    <string name="card_41_main_content">card_41_content</string>
-    <string name="card_41_sub_content">card_41_sub_content</string>
+    <string name="card_45_main_content">It was the best of times,\nit was the worst of times.</string>
+    <string name="card_45_sub_content">- Charles Dickens -</string>
 
-    <string name="card_42_main_content">card_42_content</string>
-    <string name="card_42_sub_content">card_42_sub_content</string>
+    <string name="card_46_main_content">Tough times never last,\nbut tough people do.</string>
+    <string name="card_46_sub_content">- Robert H. Schuller -</string>
 
-    <string name="card_43_main_content">card_43_content</string>
-    <string name="card_43_sub_content">card_43_sub_content</string>
+    <string name="card_47_main_content">Pain is temporary.\nQuitting lasts forever.</string>
+    <string name="card_47_sub_content">- Lance Armstrong -</string>
 
-    <string name="card_44_main_content">card_44_content</string>
-    <string name="card_44_sub_content">card_44_sub_content</string>
+    <string name="card_48_main_content">With great power comes great responsibility</string>
+    <string name="card_48_sub_content" translatable="false" />
 
-    <string name="card_45_main_content">card_45_content</string>
-    <string name="card_45_sub_content">card_45_sub_content</string>
+    <string name="card_49_main_content">Don’t invest in\nwhat you don’t understand.</string>
+    <string name="card_49_sub_content">- Warren Buffett -</string>
 
-    <string name="card_46_main_content">card_46_content</string>
-    <string name="card_46_sub_content">card_46_sub_content</string>
-
-    <string name="card_47_main_content">card_47_content</string>
-    <string name="card_47_sub_content">card_47_sub_content</string>
-
-    <string name="card_48_main_content">card_48_content</string>
-    <string name="card_48_sub_content">card_48_sub_content</string>
-
-    <string name="card_49_main_content">card_49_content</string>
-    <string name="card_49_sub_content">card_49_sub_content</string>
-
-    <string name="card_50_main_content">card_50_content</string>
-    <string name="card_50_sub_content">card_50_sub_content</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="card_50_main_content">When you invest,\nalways understand the value of the asset.</string>
+    <string name="card_50_sub_content">- Warren Buffett -</string>
 
     <!--noun-->
+    <string name="support_email" translatable="false">icanbee.official@gmail.com</string>
     <string name="setting">Setting</string>
     <string name="language">Language</string>
     <string name="add_card_pack">Add Card Pack</string>
     <string name="background">Background</string>
     <string name="default_">Default</string>
     <string name="user_settings">User Settings</string>
-    <string name="korean" translatable="false">한국어</string>
-    <string name="english" translatable="false">English</string>
-    <string name="system_default_language">Default System Language</string>
+    <string name="theme_system">System Mode</string>
+    <string name="theme_dark_mode">Dark Mode</string>
+    <string name="theme_light_mode">Light Mode</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="modify">Modify</string>
+    <string name="restart">Restart</string>
+    <string name="inquiry">Inquiry</string>
+    <string name="share_card_packs">Share Card Packs</string>
+    <string name="add_card">Add Card</string>
+    <string name="add">Add</string>
 
     <!--msg-->
     <string name="msg_app_close_msg">Press \'Back\' again to exit.</string>
     <string name="msg_last_card">Here is the last card.\nPlease shuffle the cards</string>
-    <string name="msg_language_guide">If your preferred language is not added under \'Settings > General management > Language\',\nthe feature might not function properly.</string>
+    <string name="msg_success_add_card">카드가 추가되었습니다.</string>
+    <string name="msg_input_content">내용을 입력해주세요.</string>
+    <string name="msg_error_1">An unexpected error has occurred.\nIf the issue persists, please contact the developer\n\nicanbee.official@gmail.com</string>
+    <string name="msg_error_2">Does the same problem keep happening?</string>
+    <string name="msg_error">Error Message</string>
+    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
+    <string name="msg_success_add_card_pack">카드팩 추가 메시지</string>
 
     <!--format-->
     <string name="format_splash_sub_content">- %1$s -</string>
     <string name="format_main_content">card_%1$s_main_content</string>
     <string name="format_sub_content">card_%1$s_sub_content</string>
     <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
-
+    <string name="format_card_pack">Card Pack : %1$s</string>
     <string name="card_pack_name">Card Pack Name</string>
     <string name="card_pack_description">Card Pack Description</string>
-    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete">Delete</string>
-    <string name="modify">Modify</string>
 
-    <string name="error_message">Error Message</string>
-    <string name="msg_success_add_card_pack">카드팩 추가 메시지</string>
-    <string name="msg_error_1">An unexpected error has occurred.\nIf the issue persists, please contact the developer\n\nicanbee.official@gmail.com</string>
-    <string name="restart">Restart</string>
-    <string name="inquiry">Inquiry</string>
-    <string name="msg_error_2">Does the same problem keep happening?</string>
-    <string name="support_email" translatable="false">icanbee.official@gmail.com</string>
-    <string name="share_card_packs">Share Card Packs</string>
-    <string name="add_card">Add Card</string>
-    <string name="msg_input_content">내용을 입력해주세요.</string>
-    <string name="add">Add</string>
-    <string name="format_card_pack">Card Pack : %1$s</string>
-    <string name="msg_success_add_card">카드가 추가되었습니다.</string>
+    <!--NEW-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="theme_system">System Mode</string>
-    <string name="theme_dark_mode">Dark Mode</string>
-    <string name="theme_light_mode">Light Mode</string>
+
 </resources>

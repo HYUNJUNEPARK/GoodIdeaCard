@@ -33,7 +33,7 @@ class CardPackListFragment : BaseFragment() {
             onItemClick =  { cardPack-> //클릭된 카드팩 데이터를 직렬화한 후 Bundle에 담아 fragment에 전달
                 val cardPackString = JsonUtil.serialize(cardPack)
                 if (cardPackString.isNullOrEmpty()) {
-                    Toast.makeText(requireContext(), getString(R.string.error_message), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.msg_error), Toast.LENGTH_SHORT).show()
                     return@CardPackListAdapter
                 }
                 val cardPackBundle = bundleOf(KeyConst.CARD_PACK_BUNDLE_KEY to cardPackString)

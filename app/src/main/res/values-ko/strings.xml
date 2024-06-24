@@ -83,62 +83,61 @@
     <string name="card_31_main_content">나보다 시작이 나은\n선수들이 있겠지만,\n나는 끝이 강한 선수다.</string>
     <string name="card_31_sub_content">- 우사인 볼트 -</string>
 
-    <string name="card_32_main_content">card_32_content</string>
-    <string name="card_32_sub_content">card_32_sub_content</string>
+    <string name="card_32_main_content">성공은 자신을 믿는 데서 시작된다.</string>
+    <string name="card_32_sub_content">- 노먼 빈센트 필 -</string>
 
-    <string name="card_33_main_content">card_33_content</string>
-    <string name="card_33_sub_content">card_33_sub_content</string>
+    <string name="card_33_main_content">사랑은 조건 없이 주는 것이다.</string>
+    <string name="card_33_sub_content">- 마더 테레사 -</string>
 
-    <string name="card_34_main_content">card_34_content</string>
-    <string name="card_34_sub_content">card_34_sub_content</string>
+    <string name="card_34_main_content">사랑은 모든 것을 치유한다.</string>
+    <string name="card_34_sub_content">- 오프라 윈프리 -</string>
 
-    <string name="card_35_main_content">card_35_content</string>
-    <string name="card_35_sub_content">card_35_sub_content</string>
+    <string name="card_35_main_content">노력은 행운의 어머니이다.</string>
+    <string name="card_35_sub_content">- 토마스 제퍼슨 -</string>
 
-    <string name="card_36_main_content">card_36_content</string>
-    <string name="card_36_sub_content">card_36_sub_content</string>
+    <string name="card_36_main_content">행복은 여행의 일부분이다.</string>
+    <string name="card_36_sub_content">- 로이 굿맨 -</string>
 
-    <string name="card_37_main_content">card_37_content</string>
-    <string name="card_37_sub_content">card_37_sub_content</string>
+    <string name="card_37_main_content">만족함이 있는 곳에 천국이 있다.</string>
+    <string name="card_37_sub_content">- 공자 -</string>
 
-    <string name="card_38_main_content">card_38_content</string>
-    <string name="card_38_sub_content">card_38_sub_content</string>
+    <string name="card_38_main_content">생각은 현실이 된다.</string>
+    <string name="card_38_sub_content">- 나폴레온 힐 -</string>
 
-    <string name="card_39_main_content">card_39_content</string>
-    <string name="card_39_sub_content">card_39_sub_content</string>
+    <string name="card_39_main_content">작은 일에 충실한 것이\n큰 일을 하는 비결이다.</string>
+    <string name="card_39_sub_content">- 마더 테레사 -</string>
 
-    <string name="card_40_main_content">card_40_content</string>
-    <string name="card_40_sub_content">card_40_sub_content</string>
+    <string name="card_40_main_content">언젠가는 죽을 것처럼 살아라.</string>
+    <string name="card_40_sub_content">- 제임스 딘 -</string>
 
-    <string name="card_41_main_content">card_41_content</string>
-    <string name="card_41_sub_content">card_41_sub_content</string>
+    <string name="card_41_main_content">모든 위대한 변화는\n저항에서 시작된다.</string>
+    <string name="card_41_sub_content">- 알버트 아인슈타인 -</string>
 
-    <string name="card_42_main_content">card_42_content</string>
-    <string name="card_42_sub_content">card_42_sub_content</string>
+    <string name="card_42_main_content">성공은 자신이\n사랑하는 것을 하는 것이다.</string>
+    <string name="card_42_sub_content">- 콘훌리어스 테너 -</string>
 
-    <string name="card_43_main_content">card_43_content</string>
-    <string name="card_43_sub_content">card_43_sub_content</string>
+    <string name="card_43_main_content">작은 일에 충실한 것이\n큰 일을 할 수 있는 비결이다.</string>
+    <string name="card_43_sub_content">- 헤르만 멜빌 -</string>
 
-    <string name="card_44_main_content">card_44_content</string>
-    <string name="card_44_sub_content">card_44_sub_content</string>
+    <string name="card_44_main_content">힘든 시기가 길어질수록,\n성공의 달콤함도 더 커진다.</string>
+    <string name="card_44_sub_content">- 알버트 아인슈타인 -</string>
 
-    <string name="card_45_main_content">card_45_content</string>
-    <string name="card_45_sub_content">card_45_sub_content</string>
+    <string name="card_45_main_content">인생의 가장 어두운 순간이야말로 빛을 보기 직전이다.</string>
+    <string name="card_45_sub_content">- 찰스 디킨스 -</string>
 
-    <string name="card_46_main_content">card_46_content</string>
-    <string name="card_46_sub_content">card_46_sub_content</string>
+    <string name="card_46_main_content">힘든 시기는\n영원히 지속되진 않는다.\n그러나 강한 사람은 지속된다.</string>
+    <string name="card_46_sub_content">- 로버트 슐러 -</string>
 
-    <string name="card_47_main_content">card_47_content</string>
-    <string name="card_47_sub_content">card_47_sub_content</string>
+    <string name="card_47_main_content">고통은 일시적이지만,\n포기는 영원하다.</string>
+    <string name="card_47_sub_content">- 랜스 암스트롱 -</string>
 
-    <string name="card_48_main_content">card_48_content</string>
-    <string name="card_48_sub_content">card_48_sub_content</string>
+    <string name="card_48_main_content">큰 힘에는 큰 책임이 따른다.</string>
 
-    <string name="card_49_main_content">card_49_content</string>
-    <string name="card_49_sub_content">card_49_sub_content</string>
+    <string name="card_49_main_content">당신이 알고 있지 않은 것에\n투자하지 마라.</string>
+    <string name="card_49_sub_content">- 워렌 버핏 -</string>
 
-    <string name="card_50_main_content">card_50_content</string>
-    <string name="card_50_sub_content">card_50_sub_content</string>
+    <string name="card_50_main_content">당신이 투자할 때는 언제나\n그 자산의 가치를 파악하라.</string>
+    <string name="card_50_sub_content">- 워렌 버핏 -</string>
 
 
     <!--noun-->
@@ -148,41 +147,40 @@
     <string name="background">배경화면</string>
     <string name="default_">기본</string>
     <string name="user_settings">사용자 설정</string>
-    <string name="system_default_language">시스템 기본 언어</string>
-
+    <string name="theme_system">시스템 설정 모드</string>
+    <string name="theme_dark_mode">다크 모드</string>
+    <string name="theme_light_mode">라이트 모드</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
+    <string name="modify">수정</string>
+    <string name="restart">재시작</string>
+    <string name="inquiry">문의하기</string>
+    <string name="share_card_packs">카드팩 공유하기</string>
+    <string name="add_card">카드 추가하기</string>
+    <string name="add">추가하기</string>
 
     <!--msg-->
     <string name="msg_app_close_msg">\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.</string>
     <string name="msg_last_card">마지막 카드입니다.\n카드를 섞은 후 다시 뽑아주세요.</string>
-    <string name="msg_language_guide">\'설정 > 일반 > 언어\'에 사용자 설정 언어가 추가되어 있지 않다면,\n해당 기능이 정상적으로 동작하지 않을 수 있습니다.</string>
-
+    <string name="msg_success_add_card">카드가 추가되었습니다.</string>
+    <string name="msg_input_content">내용을 입력해주세요.</string>
+    <string name="msg_error_1">예상치 못한 오류가 발생했습니다.\n해당 문제가 지속되는 경우 개발자에게 문의해주세요.\n\nicanbee.official@gmail.com</string>
+    <string name="msg_error_2">같은 문제가 반복되나요?</string>
+    <string name="msg_error">Error Message</string>
+    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
+    <string name="msg_success_add_card_pack">카드팩 추가 메시지</string>
 
     <!--format-->
     <string name="format_splash_sub_content">- %1$s -</string>
     <string name="format_main_content">card_%1$s_main_content</string>
     <string name="format_sub_content">card_%1$s_sub_content</string>
     <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
+    <string name="format_card_pack">카드팩 : %1$s</string>
 
     <string name="card_pack_name">카드팩 이름</string>
     <string name="card_pack_description">카드팩 설명</string>
-    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
-    <string name="cancel">취소</string>
-    <string name="delete">삭제</string>
-    <string name="modify">수정</string>
-    <string name="error_message">Error Message</string>
-    <string name="msg_success_add_card_pack">카드팩 추가 메시지</string>
-    <string name="msg_error_1">예상치 못한 오류가 발생했습니다.\n해당 문제가 지속되는 경우 개발자에게 문의해주세요.\n\nicanbee.official@gmail.com</string>
-    <string name="restart">재시작</string>
-    <string name="inquiry">문의하기</string>
-    <string name="msg_error_2">같은 문제가 반복되나요?</string>
-    <string name="share_card_packs">카드팩 공유하기</string>
-    <string name="add_card">카드 추가하기</string>
-    <string name="msg_input_content">내용을 입력해주세요.</string>
-    <string name="add">추가하기</string>
-    <string name="format_card_pack">카드팩 : %1$s</string>
-    <string name="msg_success_add_card">카드가 추가되었습니다.</string>
+    <!--NEW-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="theme_system">시스템 설정 모드</string>
-    <string name="theme_dark_mode">다크 모드</string>
-    <string name="theme_light_mode">라이트 모드</string>
+
 </resources>
