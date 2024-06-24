@@ -13,7 +13,6 @@ import com.aos.goodideacard.datastore.AppDataStoreManager
 import com.aos.goodideacard.enums.Language
 import com.aos.goodideacard.features.main.MainActivity
 import com.aos.goodideacard.features.base.BaseActivity
-import com.aos.goodideacard.util.AppUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -81,25 +80,12 @@ class SplashActivity : BaseActivity() {
         val range = (1..AppConst.TOTAL_CARD_50)
         val cardId = range.random()
 
-        val mainContentString = getString(
-            resources.getIdentifier(getString(R.string.format_main_content, cardId.toString()), "string", packageName)
-        ) //getString(R.string.card_1_main_content)
-        splashMainContent.text = mainContentString
+        val mainContentString = getString(resources.getIdentifier(getString(R.string.format_main_content, cardId.toString()), "string", packageName))
+        splashMainContent.text = mainContentString //getString(R.string.card_1_main_content)
 
-        val subContentString = getString(
-            resources.getIdentifier(this@SplashActivity.getString(R.string.format_sub_content, cardId.toString()), "string", packageName)
-        ) //getString(R.string.card_1_sub_content)
+        val subContentString = getString(resources.getIdentifier(this@SplashActivity.getString(R.string.format_sub_content, cardId.toString()), "string", packageName))
 
-        val subContentType = getString(
-            resources.getIdentifier(this@SplashActivity.getString(R.string.format_sub_content_type, cardId.toString()), "string", packageName)
-        ) //getString(R.string.card_1_sub_content_type)
-
-        val subContent = AppUtil.trimWhoseData(
-            this@SplashActivity,
-            subContentString,
-            subContentType
-        )
-        splashSubContent.text = subContent.second
+        splashSubContent.text = subContentString //getString(R.string.card_1_sub_content)
     }
 
     private fun applyLanguageSetting() = CoroutineScope(Dispatchers.Main).launch {

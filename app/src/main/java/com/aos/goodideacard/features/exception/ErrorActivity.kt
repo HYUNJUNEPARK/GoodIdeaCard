@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aos.goodideacard.BuildConfig
+import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivityErrorBinding
 import com.aos.goodideacard.features.splash.SplashActivity
@@ -47,7 +48,9 @@ class ErrorActivity : AppCompatActivity() {
 
         binding.errorBtnRestart.setOnClickListener { onRestartButtonClicked() }
 
-        binding.errorBtnInquiry.setOnClickListener { AppUtil.sendEmail(this) }
+        binding.errorBtnInquiry.setOnClickListener {
+            AppUtil.sendEmail(this, arrayOf(getString(R.string.support_email)))
+        }
     }
 
     private fun onRestartButtonClicked() {
