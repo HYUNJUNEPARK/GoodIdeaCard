@@ -10,5 +10,8 @@
         <item name="android:windowLightStatusBar">false</item>
 
         <item name="android:colorBackground">@android:color/black</item>
+
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@android:color/black</item>
     </style>
 </resources>

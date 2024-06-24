@@ -2,6 +2,7 @@ package com.aos.goodideacard.features.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,12 +10,12 @@ import androidx.activity.enableEdgeToEdge
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivitySplashBinding
-import com.aos.goodideacard.datastore.AppDataStoreManager
 import com.aos.goodideacard.features.base.BaseActivity
 import com.aos.goodideacard.features.main.MainActivity
+import com.aos.goodideacard.util.Extension.colorString
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
-import javax.inject.Inject
+
 
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
@@ -22,9 +23,6 @@ class SplashActivity : BaseActivity() {
     private lateinit var binding: ActivitySplashBinding
     private lateinit var handler: Handler
     private lateinit var runnable: Runnable
-
-    @Inject
-    lateinit var appDataStoreManager: AppDataStoreManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +32,8 @@ class SplashActivity : BaseActivity() {
         setContentView(binding.root)
 
         initSplashContent()
-
-        //TODO 시스템 언어랑 사용자 언어가 다를 때 UI가 부자연스러움 cf. 깜박이면서 글자가 바뀜
-        //applyLanguageSetting()
-
         initHandler()
+        applyNavigationBarColor()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -78,17 +73,8 @@ class SplashActivity : BaseActivity() {
         splashSubContent.text = subContentString //getString(R.string.card_1_sub_content)
     }
 
-//    private fun applyLanguageSetting() = CoroutineScope(Dispatchers.Main).launch {
-//        if (blocKActivityResumeAction) return@launch
-//
-//        blocKActivityResumeAction = true
-//
-//        val language = withContext(Dispatchers.IO) {
-//            appDataStoreManager.getLanguage()
-//        }
-//
-//        if (language == Language.DEFAULT) return@launch //언어 설정이 기본 설정인 경우 사용자 언어 세팅을 할 필요가 없음
-//
-//        changeLanguage(language)
-//    }
+    private fun applyNavigationBarColor() {
+        val colorString = (R.color.app_theme).colorString(this)
+        window.navigationBarColor = Color.parseColor(colorString)
+    }
 }

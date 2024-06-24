@@ -14,14 +14,12 @@
 
         <!-- Default background color setting cf. 설정 안하면, 뷰에 기본적으로 연보라색이 들어가게 됨-->
         <item name="android:colorBackground">@android:color/white</item>
+
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@android:color/white</item>
     </style>
 
     <style name="Theme.GoodIdeaCard" parent="Base.Theme.GoodIdeaCard" />
-
-<!--    <style name="Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">-->
-<!--        <item name="android:windowFullscreen">true</item>-->
-<!--        <item name="android:navigationBarColor">@color/app_theme</item>-->
-<!--    </style>-->
 
     <style name="FullScreenDialogThemeTransparent" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowIsFloating">false</item>
