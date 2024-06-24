@@ -56,13 +56,20 @@
 
             <View style="@style/division_horiz_weak_line" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/app_language"-->
-<!--                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"-->
-<!--                android:text="@string/language"-->
-<!--                app:drawableStartCompat="@drawable/ic_language_24dp_day_night" />-->
+            <TextView
+                android:id="@+id/download_card_deck"
+                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
+                android:text="@string/card_deck_download"
+                app:drawableStartCompat="@drawable/ic_download_24dp_day_night" />
 
-<!--            <View style="@style/division_horiz_weak_line" />-->
+            <View style="@style/division_horiz_weak_line" />
+
+            <TextView
+                android:id="@+id/select_card_deck" style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
+                android:text="@string/select_card_deck"
+                app:drawableStartCompat="@drawable/ic_checklist_24dp_day_night" />
+
+            <View style="@style/division_horiz_weak_line" />
 
             <TextView
                 android:id="@+id/app_crash"
