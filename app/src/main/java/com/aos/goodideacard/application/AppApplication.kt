@@ -6,15 +6,17 @@ import com.aos.goodideacard.BuildConfig
 import com.aos.goodideacard.datastore.AppDataStoreManager
 import com.aos.goodideacard.features.exception.AppExceptionHandler
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
 @HiltAndroidApp
 class AppApplication: Application() {
-    //TODO 깔끔하게 바꿀 것!
-    companion object {
-        var blocKActivityResumeAction = false
-    }
+    //이 범위 내에서 시작된 모든 코루틴은 애플리케이션이 살아 있는 동안 실행되고, 애플리케이션이 종료될 때 취소
+    private val applicationScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
 
     @Inject
     lateinit var appDataStoreManager: AppDataStoreManager
@@ -25,7 +27,7 @@ class AppApplication: Application() {
         if (BuildConfig.DEBUG) Timber.plant(CustomDebugTree())
 
         setCrashHandler()
-        observeLiveData()
+        observeAppBackground()
     }
 
     class CustomDebugTree: Timber.DebugTree() {
@@ -38,11 +40,11 @@ class AppApplication: Application() {
         Thread.setDefaultUncaughtExceptionHandler(AppExceptionHandler(this))
     }
 
-    private fun observeLiveData() {
-        //사용자 테마 코드 적용
-        appDataStoreManager.appThemeLiveData.observeForever { themeCode ->
-            AppCompatDelegate.setDefaultNightMode(themeCode)
+    private fun observeAppBackground() {
+        applicationScope.launch {
+            appDataStoreManager.background.collect { themeCode ->
+                AppCompatDelegate.setDefaultNightMode(themeCode)
+            }
         }
     }
-
 }

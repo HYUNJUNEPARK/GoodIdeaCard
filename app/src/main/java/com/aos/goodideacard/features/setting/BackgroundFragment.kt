@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
-import com.aos.goodideacard.application.AppApplication
 import com.aos.goodideacard.databinding.FragmentBackgroundBinding
 import com.aos.goodideacard.datastore.AppDataStoreManager
 import com.aos.goodideacard.enums.BackgroundType
@@ -36,17 +36,19 @@ class BackgroundFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appDataStoreManager.appThemeLiveData.observe(viewLifecycleOwner) { themeCode ->
-            try {
-                when(themeCode) {
-                    AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM ->  binding.themeOsSetting.isChecked = true //시스템 설정 모드
-                    AppCompatDelegate.MODE_NIGHT_YES -> binding.themeDarkMode.isChecked = true //다크 모드
-                    AppCompatDelegate.MODE_NIGHT_NO -> binding.themeLightMode.isChecked = true //라이트 모드
+        lifecycleScope.launch {
+            appDataStoreManager.background.collect { code ->
+                try {
+                    when(code) {
+                        AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM ->  binding.themeOsSetting.isChecked = true //시스템 설정 모드
+                        AppCompatDelegate.MODE_NIGHT_YES -> binding.themeDarkMode.isChecked = true //다크 모드
+                        AppCompatDelegate.MODE_NIGHT_NO -> binding.themeLightMode.isChecked = true //라이트 모드
+                    }
+                    onRadioButtonClickedListener()
+                } catch (e: Exception) {
+                    //binding NPE 발생 : Fragment 라이프 사이클과 LiveData LifeCycleOwner 와 미세한 싱크 차이로 인해 간헐적으로 발생하는 것으로 추정
+                    Timber.e("Exception:RadioButtonCheck:${e.message}")
                 }
-                onRadioButtonClickedListener()
-            } catch (e: Exception) {
-                //binding NPE 발생 : Fragment 라이프 사이클과 LiveData LifeCycleOwner 와 미세한 싱크 차이로 인해 간헐적으로 발생하는 것으로 추정
-                Timber.e("Exception:RadioButtonCheck:${e.message}")
             }
         }
     }
@@ -58,8 +60,6 @@ class BackgroundFragment : BaseFragment() {
 
     private fun onRadioButtonClickedListener() {
         binding.themeRadioGroup.setOnCheckedChangeListener { /*radioGroup*/_, radioButtonId ->
-            AppApplication.blocKActivityResumeAction = true
-
             val appThem = when(radioButtonId) {
                 R.id.theme_os_setting -> BackgroundType.SYSTEM //시스템 설정 모드
                 R.id.theme_dark_mode -> BackgroundType.DARK //다크 모드
@@ -68,7 +68,7 @@ class BackgroundFragment : BaseFragment() {
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                appDataStoreManager.saveAppTheme(appThem)
+                appDataStoreManager.saveBackground(appThem)
             }
         }
     }
