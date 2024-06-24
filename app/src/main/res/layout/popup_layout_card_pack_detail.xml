@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
-                android:text="@string/share_card_packs"
+                android:text="@string/share_card_deck"
                 app:layout_constraintBottom_toBottomOf="@id/popup_items_iv_share"
                 app:layout_constraintStart_toEndOf="@id/popup_items_iv_share"
                 app:layout_constraintTop_toTopOf="@id/popup_items_iv_share" />

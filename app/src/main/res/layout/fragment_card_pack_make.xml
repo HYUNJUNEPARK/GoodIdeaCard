@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="@string/add_card_pack"
+                android:text="@string/add_card_deck"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -79,12 +79,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
-                        android:text="@string/card_pack_name" />
+                        android:text="@string/card_deck_name" />
 
                     <EditText
                         android:id="@+id/make_card_pack_et_name"
                         style="@style/custom_edit_text_view_max_line_1"
-                        android:hint="card deck name"
+                        android:hint="@string/msg_input_card_deck_name"
                         android:imeOptions="actionNext"
                         android:inputType="text" />
                 </LinearLayout>
@@ -101,12 +101,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
-                        android:text="@string/card_pack_description" />
+                        android:text="@string/card_deck_description" />
 
                     <EditText
                         android:id="@+id/make_card_pack_et_description"
                         style="@style/custom_edit_text_view_max_line_1"
-                        android:hint="card deck name"
+                        android:hint="@string/msg_input_card_deck_description"
                         android:imeOptions="actionNext"
                         android:inputType="text" />
                 </LinearLayout>

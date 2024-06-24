@@ -36,7 +36,7 @@ class CardPackMakeFragment: BaseDialogFragment() {
 
         binding.makeCardPackBtnMake.setOnClickListener {
             val name = binding.makeCardPackEtName.text.toString().ifEmpty {
-                Toast.makeText(requireContext(), getString(R.string.msg_input_card_pack_name), Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.msg_input_card_deck_name), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val description = binding.makeCardPackEtDescription.text.toString().ifEmpty { null }

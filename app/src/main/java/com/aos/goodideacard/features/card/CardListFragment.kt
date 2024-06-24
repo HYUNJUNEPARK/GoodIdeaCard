@@ -47,7 +47,7 @@ class CardListFragment : BaseFragment() {
             return
         }
 
-        binding.cardPackDetailTitle.text = getString(R.string.format_card_pack, cardPack.name)
+        binding.cardPackDetailTitle.text = getString(R.string.format_card_deck, cardPack.name)
 
         cardPackId = cardPack.id
 

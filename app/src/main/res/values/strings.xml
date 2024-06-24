@@ -158,7 +158,7 @@
     <string name="support_email" translatable="false">icanbee.official@gmail.com</string>
     <string name="setting">Setting</string>
     <string name="language">Language</string>
-    <string name="add_card_pack">Add Card Pack</string>
+    <string name="add_card_deck">Add Card Deck</string>
     <string name="background">Background</string>
     <string name="default_">Default</string>
     <string name="user_settings">User Settings</string>
@@ -170,29 +170,28 @@
     <string name="modify">Modify</string>
     <string name="restart">Restart</string>
     <string name="inquiry">Inquiry</string>
-    <string name="share_card_packs">Share Card Packs</string>
+    <string name="share_card_deck">Share Card Deck</string>
     <string name="add_card">Add Card</string>
     <string name="add">Add</string>
 
     <!--msg-->
     <string name="msg_app_close_msg">Press \'Back\' again to exit.</string>
     <string name="msg_last_card">Here is the last card.\nPlease shuffle the cards</string>
-    <string name="msg_success_add_card">카드가 추가되었습니다.</string>
-    <string name="msg_input_content">내용을 입력해주세요.</string>
+    <string name="msg_success_add_card">A card has been added.</string>
+    <string name="msg_input_content">Please enter the content.</string>
     <string name="msg_error_1">An unexpected error has occurred.\nIf the issue persists, please contact the developer\n\nicanbee.official@gmail.com</string>
     <string name="msg_error_2">Does the same problem keep happening?</string>
     <string name="msg_error">Error Message</string>
-    <string name="msg_input_card_pack_name">카드팩 이름을 입력해주세요.</string>
-    <string name="msg_success_add_card_pack">카드팩 추가 메시지</string>
+    <string name="msg_input_card_deck_name">Please enter the card deck name.</string>
+    <string name="msg_success_add_card_deck">The card deck has been added.</string>
+    <string name="msg_input_card_deck_description">Please enter the card deck description</string>
 
     <!--format-->
-    <string name="format_splash_sub_content">- %1$s -</string>
-    <string name="format_main_content">card_%1$s_main_content</string>
-    <string name="format_sub_content">card_%1$s_sub_content</string>
-    <string name="format_sub_content_type">card_%1$s_sub_content_type</string>
-    <string name="format_card_pack">Card Pack : %1$s</string>
-    <string name="card_pack_name">Card Pack Name</string>
-    <string name="card_pack_description">Card Pack Description</string>
+    <string name="format_main_content" translatable="false">card_%1$s_main_content</string>
+    <string name="format_sub_content" translatable="false">card_%1$s_sub_content</string>
+    <string name="format_card_deck">Card Deck : %1$s</string>
+    <string name="card_deck_name">Card Deck Name (*required)</string>
+    <string name="card_deck_description">Card Deck Description</string>
 
     <!--NEW-->
     <!-- TODO: Remove or change this placeholder text -->
