@@ -4,13 +4,20 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
+import com.aos.goodideacard.enums.BackgroundType
 import com.aos.goodideacard.enums.Language
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
+import java.io.IOException
 import java.util.UUID
 
 /**
@@ -21,7 +28,7 @@ class AppDataStoreManager(private val context: Context) {
 
     private val appThemeKey = intPreferencesKey("appThemeKey")
     private val uuidKey = stringPreferencesKey("uuidKey")
-    private val languageKey = stringPreferencesKey("languageKey")
+    //private val languageKey = stringPreferencesKey("languageKey")
 
     //    private val iconTypeKey = intPreferencesKey("iconTypeKey")
 //    private val iconTypeSettingHistoryKey = booleanPreferencesKey("iconTypeHistoryKey")
@@ -39,33 +46,33 @@ class AppDataStoreManager(private val context: Context) {
     /**
      * 사용자 언어 설정
      */
-    suspend fun getLanguage(): Language {
-        val lang = context.dataStore.data.map { preferences ->
-            preferences[languageKey] ?: Language.DEFAULT.value
-        }.first()
+//    suspend fun getLanguage(): Language {
+//        val lang = context.dataStore.data.map { preferences ->
+//            preferences[languageKey] ?: Language.DEFAULT.value
+//        }.first()
+//
+//        val language = when(lang) {
+//            Language.DEFAULT.value -> Language.DEFAULT
+//            Language.KOREAN.value -> Language.KOREAN
+//            Language.ENGLISH.value -> Language.ENGLISH
+//            else -> {
+//                Timber.e("Exception:Not handling this language type($lang)")
+//                Language.DEFAULT
+//            }
+//        }
+//
+//        Timber.i("사용자 언어 설정 로드 : $language")
+//        return language
+//    }
 
-        val language = when(lang) {
-            Language.DEFAULT.value -> Language.DEFAULT
-            Language.KOREAN.value -> Language.KOREAN
-            Language.ENGLISH.value -> Language.ENGLISH
-            else -> {
-                Timber.e("Exception:Not handling this language type($lang)")
-                Language.DEFAULT
-            }
-        }
-
-        Timber.i("사용자 언어 설정 로드 : $language")
-        return language
-    }
-
-    suspend fun saveLanguage(language: Language) {
-        val lang = language.value
-
-        context.dataStore.edit { preferences ->
-            Timber.i("사용자 언어 설정 저장 : $lang")
-            preferences[languageKey] = lang
-        }
-    }
+//    suspend fun saveLanguage(language: Language) {
+//        val lang = language.value
+//
+//        context.dataStore.edit { preferences ->
+//            Timber.i("사용자 언어 설정 저장 : $lang")
+//            preferences[languageKey] = lang
+//        }
+//    }
 
     /**
      * 카드팩 아이디 생성에 사용되는 앱 고유 uuid
@@ -103,30 +110,30 @@ class AppDataStoreManager(private val context: Context) {
     }
 
 
-//    /**
-//     * 사용자 테마 설정 데이터(시스템, 라이트, 다크모드)
-//     */
-//    val appThemeLiveData: LiveData<Int> = context.dataStore.data
-//        .catch {exception ->
-//            if (exception is IOException) {
-//                emit(emptyPreferences())
-//            } else {
-//                Timber.e("Exception(appTheme):$exception")
-//                throw exception
-//            }
-//        }
-//        .map { preference ->
-//            preference[appThemeKey] ?: AppThemCode.SYSTEM.code //기본 값 : '시스템 설정 모드'
-//        }
-//        .distinctUntilChanged()
-//        .asLiveData()
-//
-//    suspend fun saveAppTheme(code: AppThemCode) {
-//        Timber.i("사용자 테마 설정 저장 : $code")
-//        context.dataStore.edit { preference ->
-//            preference[appThemeKey] = code.code
-//        }
-//    }
+    /**
+     * 사용자 테마 설정 데이터(시스템, 라이트, 다크모드)
+     */
+    val appThemeLiveData: LiveData<Int> = context.dataStore.data
+        .catch {exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                Timber.e("Exception(appTheme):$exception")
+                throw exception
+            }
+        }
+        .map { preference ->
+            preference[appThemeKey] ?: BackgroundType.SYSTEM.code //기본 값 : '시스템 설정 모드'
+        }
+        .distinctUntilChanged()
+        .asLiveData()
+
+    suspend fun saveAppTheme(code: BackgroundType) {
+        Timber.i("사용자 테마 설정 저장 : $code")
+        context.dataStore.edit { preference ->
+            preference[appThemeKey] = code.code
+        }
+    }
 
 
 

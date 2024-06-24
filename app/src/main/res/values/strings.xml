@@ -204,4 +204,7 @@
     <string name="format_card_pack">Card Pack : %1$s</string>
     <string name="msg_success_add_card">카드가 추가되었습니다.</string>
 
+    <string name="theme_system">System Mode</string>
+    <string name="theme_dark_mode">Dark Mode</string>
+    <string name="theme_light_mode">Light Mode</string>
 </resources>

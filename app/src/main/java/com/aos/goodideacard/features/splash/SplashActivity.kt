@@ -23,11 +23,6 @@ class SplashActivity : BaseActivity() {
     private lateinit var handler: Handler
     private lateinit var runnable: Runnable
 
-    //TODO 깔끔하게 바꿀 것!
-    companion object {
-        var blocKActivityResumeAction = false
-    }
-
     @Inject
     lateinit var appDataStoreManager: AppDataStoreManager
 

@@ -8,6 +8,12 @@ import timber.log.Timber
 
 @HiltAndroidApp
 class AppApplication: Application() {
+    //TODO 깔끔하게 바꿀 것!
+    companion object {
+        var blocKActivityResumeAction = false
+    }
+
+
     override fun onCreate() {
         super.onCreate()
 

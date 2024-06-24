@@ -181,4 +181,8 @@
     <string name="add">추가하기</string>
     <string name="format_card_pack">카드팩 : %1$s</string>
     <string name="msg_success_add_card">카드가 추가되었습니다.</string>
+
+    <string name="theme_system">시스템 설정 모드</string>
+    <string name="theme_dark_mode">다크 모드</string>
+    <string name="theme_light_mode">라이트 모드</string>
 </resources>

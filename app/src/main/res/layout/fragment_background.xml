@@ -32,4 +32,30 @@
 
     <View style="@style/division_horiz_toolbar_bottom_line" />
 
+    <LinearLayout
+        android:padding="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/theme_radio_group"
+            style="@style/group_radio_ori_vert">
+
+            <RadioButton
+                android:id="@+id/theme_os_setting"
+                style="@style/radio_btn_app_theme_standard_size"
+                android:text="@string/theme_system" />
+
+            <RadioButton
+                android:id="@+id/theme_light_mode"
+                style="@style/radio_btn_app_theme_standard_size"
+                android:text="@string/theme_light_mode" />
+
+            <RadioButton
+                android:id="@+id/theme_dark_mode"
+                style="@style/radio_btn_app_theme_standard_size"
+                android:text="@string/theme_dark_mode" />
+        </RadioGroup>
+    </LinearLayout>
 </LinearLayout>

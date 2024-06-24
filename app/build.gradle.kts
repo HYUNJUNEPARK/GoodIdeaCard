@@ -104,4 +104,7 @@ dependencies {
     // Moshi, https://github.com/square/moshi
     implementation (libs.moshi)
     implementation (libs.moshi.kotlin)
+
+    //TODO Flow
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.2")
 }

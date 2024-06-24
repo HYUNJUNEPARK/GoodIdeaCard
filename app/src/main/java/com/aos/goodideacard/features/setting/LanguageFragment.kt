@@ -46,16 +46,16 @@ class LanguageFragment : BaseFragment() {
     }
 
     private fun checkUserSettingOnRadioButton() = CoroutineScope(Dispatchers.IO).launch {
-        val language = appDataStoreManager.getLanguage()
-
-        withContext(Dispatchers.Main) {
-            when(language) {
-                Language.DEFAULT -> binding.languageBtnSystemLanguage.isChecked = true
-                Language.KOREAN -> binding.languageBtnKorean.isChecked = true
-                Language.ENGLISH -> binding.languageBtnEnglish.isChecked = true
-            }
-            onRadioButtonClicked()
-        }
+//        val language = appDataStoreManager.getLanguage()
+//
+//        withContext(Dispatchers.Main) {
+//            when(language) {
+//                Language.DEFAULT -> binding.languageBtnSystemLanguage.isChecked = true
+//                Language.KOREAN -> binding.languageBtnKorean.isChecked = true
+//                Language.ENGLISH -> binding.languageBtnEnglish.isChecked = true
+//            }
+//            onRadioButtonClicked()
+//        }
     }
 
     private fun onRadioButtonClicked() {
@@ -71,7 +71,7 @@ class LanguageFragment : BaseFragment() {
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                appDataStoreManager.saveLanguage(language)
+                //appDataStoreManager.saveLanguage(language)
 
 //                withContext(Dispatchers.Main) {
 //                    Toast.makeText(requireContext(), "$language", Toast.LENGTH_SHORT).show()
