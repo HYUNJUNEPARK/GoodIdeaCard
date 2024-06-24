@@ -10,14 +10,9 @@ import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.databinding.ActivitySplashBinding
 import com.aos.goodideacard.datastore.AppDataStoreManager
-import com.aos.goodideacard.enums.Language
-import com.aos.goodideacard.features.main.MainActivity
 import com.aos.goodideacard.features.base.BaseActivity
+import com.aos.goodideacard.features.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -46,7 +41,7 @@ class SplashActivity : BaseActivity() {
         initSplashContent()
 
         //TODO 시스템 언어랑 사용자 언어가 다를 때 UI가 부자연스러움 cf. 깜박이면서 글자가 바뀜
-        applyLanguageSetting()
+        //applyLanguageSetting()
 
         initHandler()
     }
@@ -88,17 +83,17 @@ class SplashActivity : BaseActivity() {
         splashSubContent.text = subContentString //getString(R.string.card_1_sub_content)
     }
 
-    private fun applyLanguageSetting() = CoroutineScope(Dispatchers.Main).launch {
-        if (blocKActivityResumeAction) return@launch
-
-        blocKActivityResumeAction = true
-
-        val language = withContext(Dispatchers.IO) {
-            appDataStoreManager.getLanguage()
-        }
-
-        if (language == Language.DEFAULT) return@launch //언어 설정이 기본 설정인 경우 사용자 언어 세팅을 할 필요가 없음
-
-        changeLanguage(language)
-    }
+//    private fun applyLanguageSetting() = CoroutineScope(Dispatchers.Main).launch {
+//        if (blocKActivityResumeAction) return@launch
+//
+//        blocKActivityResumeAction = true
+//
+//        val language = withContext(Dispatchers.IO) {
+//            appDataStoreManager.getLanguage()
+//        }
+//
+//        if (language == Language.DEFAULT) return@launch //언어 설정이 기본 설정인 경우 사용자 언어 세팅을 할 필요가 없음
+//
+//        changeLanguage(language)
+//    }
 }

@@ -56,13 +56,13 @@
 
             <View style="@style/division_horiz_weak_line" />
 
-            <TextView
-                android:id="@+id/app_language"
-                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"
-                android:text="@string/language"
-                app:drawableStartCompat="@drawable/ic_language_24dp_day_night" />
+<!--            <TextView-->
+<!--                android:id="@+id/app_language"-->
+<!--                style="@style/text_match_wrap_standard_size_pad_14dp_20dp_day_night_setting_title"-->
+<!--                android:text="@string/language"-->
+<!--                app:drawableStartCompat="@drawable/ic_language_24dp_day_night" />-->
 
-            <View style="@style/division_horiz_weak_line" />
+<!--            <View style="@style/division_horiz_weak_line" />-->
 
             <TextView
                 android:id="@+id/app_crash"

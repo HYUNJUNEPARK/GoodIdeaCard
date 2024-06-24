@@ -38,7 +38,7 @@ class SettingFragment : BaseFragment() {
             }
         }
         makeMyCard.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_cardPackListFragment) }
-        appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
+//        appLanguage.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_languageFragment) }
         appBackground.setOnClickListener { findNavController().navigate(R.id.action_settingFragment_to_backgroundFragment) }
     }
 }

@@ -73,10 +73,10 @@ class LanguageFragment : BaseFragment() {
             CoroutineScope(Dispatchers.IO).launch {
                 appDataStoreManager.saveLanguage(language)
 
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(requireContext(), "$language", Toast.LENGTH_SHORT).show()
-                    (requireActivity() as MainActivity).changeLanguage(language)
-                }
+//                withContext(Dispatchers.Main) {
+//                    Toast.makeText(requireContext(), "$language", Toast.LENGTH_SHORT).show()
+//                    (requireActivity() as MainActivity).changeLanguage(language)
+//                }
             }
         }
     }
