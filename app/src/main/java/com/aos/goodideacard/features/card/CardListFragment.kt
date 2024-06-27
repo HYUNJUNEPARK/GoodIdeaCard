@@ -29,6 +29,10 @@ class CardListFragment : BaseFragment() {
 
     private val viewModel: CardViewModel by viewModels()
 
+    private val cardListAdapter: CardListAdapter by lazy {
+        CardListAdapter()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCardListBinding.inflate(inflater, container, false)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
@@ -53,16 +57,21 @@ class CardListFragment : BaseFragment() {
 
         viewModel.getCards(cardPackId!!)
 
+        binding.cardListRecyclerView.adapter = cardListAdapter
+
+
         //TODO 화면 다시 돌아오면 네번 호출됨 ....
         lifecycleScope.launch {
             viewModel.cards.collect {
                 Timber.e("cardListFragment : $it")
+                cardListAdapter.submitList(it)
             }
         }
 
 
 
-        binding.cardPackDetailFab.setOnClickListener {
+
+        binding.cardListFab.setOnClickListener {
             PopupMenu().cardPackDetailFabAction(this, it) { action ->
                 fabActionHandler(action)
             }

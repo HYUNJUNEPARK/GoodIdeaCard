@@ -38,17 +38,25 @@
         app:layout_constraintTop_toBottomOf="@id/appbar_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/card_list_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_underline" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar_underline"
+        app:spanCount="3"
+        tools:itemCount="4"
+        tools:listitem="@layout/adapter_card_list" />
 
     <ImageView
-        android:id="@+id/card_pack_detail_fab"
-        style="@style/default_fab_size_62dp"
+        android:id="@+id/card_list_fab"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
         android:layout_margin="20dp"
+        android:background="@drawable/bg_oval_app_theme"
+        android:padding="8dp"
         android:src="@drawable/ic_cards_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
