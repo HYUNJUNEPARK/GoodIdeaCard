@@ -8,13 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
 import com.aos.goodideacard.model.CommonCardContent
-import com.aos.goodideacard.model.DefaultCardPackModel
+import com.aos.goodideacard.model.DefaultCardDeckModel
 import com.aos.goodideacard.database.enitiy.CardEntity
 import com.aos.goodideacard.enums.CardAction
-import com.aos.goodideacard.enums.CardPackType
+import com.aos.goodideacard.enums.CardDeckType
 import com.aos.goodideacard.features.base.BaseViewModel
-import com.aos.goodideacard.model.CardPackInterface
-import com.aos.goodideacard.model.CardPackModel
+import com.aos.goodideacard.model.CardDeckInterface
+import com.aos.goodideacard.model.CardDeckModel
 import com.aos.goodideacard.repository.CardRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -31,24 +31,35 @@ class MainViewModel @Inject constructor(
 ): BaseViewModel() {
     var cardPosition: Int? = null
 
-    private var _cardList = MutableLiveData<List<CardPackModel>>()
-    val cardList: LiveData<List<CardPackModel>> get() = _cardList
+    private var _cardList = MutableLiveData<List<CardDeckModel>>()
+    val cardList: LiveData<List<CardDeckModel>> get() = _cardList
 
     private var _message = MutableLiveData<String?>()
     val message: LiveData<String?> get() = _message
 
     fun getCardDeck() = viewModelScope.launch(Dispatchers.IO) {
-        val defaultCardPack = createDefaultPack(context)
+        val defaultCardDeck = createDefaultDeck(context) //strings.xml 으로 만든 기본 카드덱
 
-//        val myCardPack = cardRepository.getCards()
-//
-        val mergedCardDeck = mergeCardPacks(
-            defaultCardPack = defaultCardPack,
-            myCardPack = emptyList()
+        val cardDeckIds = cardRepository.getCardDecks().map { it.id }
+
+        val userCardDecks:MutableList<List<CardEntity>> = arrayListOf()
+        cardDeckIds.forEach { id ->
+            Timber.e("CardDeck Id : $id")
+            val myCardDeck = cardRepository.getCards(id)
+            userCardDecks.add(myCardDeck)
+        }
+
+        val userCardDeck = userCardDecks.flatten()
+
+
+
+        val mergedCardDeck = mergeCardDecks(
+            defaultCardDeck = defaultCardDeck,
+            myCardDeck = userCardDeck
         )
 
         //마지막 카드를 처음 위치로 설정
-        if (cardPosition == null) cardPosition = defaultCardPack.size - 1
+        if (cardPosition == null) cardPosition = mergedCardDeck.size - 1
 
         //submit
         _cardList.postValue(mergedCardDeck)
@@ -86,7 +97,7 @@ class MainViewModel @Inject constructor(
      * @param context string resource 가져올 때 사용
      */
     @SuppressLint("DiscouragedApi")
-    private fun createDefaultPack(context: Context): List<DefaultCardPackModel> {
+    private fun createDefaultDeck(context: Context): List<DefaultCardDeckModel> {
         /**
           val cardResources = mapOf(
                1 to Pair(R.string.idea_1_content, R.string.idea_1_whose)
@@ -100,16 +111,16 @@ class MainViewModel @Inject constructor(
             )
         }
 
-        val cardList = mutableListOf<DefaultCardPackModel>()
+        val cardList = mutableListOf<DefaultCardDeckModel>()
         for (i in 1..AppConst.TOTAL_CARD_50) {
             val resources = cardResources[i]
 
             if (resources != null) {
                 cardList.add(
-                    DefaultCardPackModel(
+                    DefaultCardDeckModel(
                         id = i.toLong(),
                         CommonCardContent(
-                            cardPackId = CardPackType.DEFAULT.name,
+                            cardDeckId = CardDeckType.DEFAULT.name,
                             content = context.getString(resources.first),
                             subContent = context.getString(resources.second)
                         )
@@ -121,39 +132,42 @@ class MainViewModel @Inject constructor(
     }
 
     /**
-     * 기본 카드덱 + 사용자 카드팩 + 다운로드 카드팩 -> 통합 카드팩
+     * 기본 카드덱 + 사용자 카드덱 + 다운로드 카드덱 -> 통합 카드덱
      *
-     * @param defaultCardPack 기본 카드덱 from string.xml
-     * @param myCardPack 사용자 저장 카드덱 from database
+     * @param defaultCardDeck 기본 카드덱 from string.xml
+     * @param myCardDeck 사용자 저장 카드덱 from database
      *
      */
-    private fun mergeCardPacks(
-        defaultCardPack: List<DefaultCardPackModel>,
-        myCardPack: List<CardEntity>
-    ): List<CardPackModel> {
-        fun convertToModel(cardPack: CardPackInterface): CardPackModel {
-            return CardPackModel(
-                cardId = cardPack.cardId,
-                cardPackId = cardPack.cardPackId,
-                content = cardPack.content,
-                whose = cardPack.subContent
+    private fun mergeCardDecks(
+        defaultCardDeck: List<DefaultCardDeckModel>,
+        myCardDeck: List<CardEntity>
+    ): List<CardDeckModel> {
+        fun convertToModel(cardDeck: CardDeckInterface): CardDeckModel {
+            return CardDeckModel(
+                cardId = cardDeck.cardId,
+                cardDeckId = cardDeck.cardDeckId,
+                content = cardDeck.content,
+                subContent = cardDeck.subContent
             )
         }
 
-        Timber.d("기본 카드팩 : $defaultCardPack")
-        Timber.d("사용자 카드팩 : $myCardPack")
+        Timber.d("기본 카드팩 : $defaultCardDeck")
+        Timber.d("사용자 카드팩 : $myCardDeck")
 
-        val mergedCardDeck = (defaultCardPack + myCardPack).let { interfaceList ->
+        val mergedCardDeck = (defaultCardDeck + myCardDeck).let { interfaceList ->
             interfaceList.map { convertToModel(it) }
         }
 
-        return mergedCardDeck
+        mergedCardDeck.forEach { it ->
+            Timber.e("${it.content}")
+        }
+
+        return mergedCardDeck.shuffled()
     }
 
     /**
      * MainFragment 에서 이동했다가 돌아오는 경우 message 가 중복해서 띄워지는 현상 블럭
      */
-    fun clearMessage() {
-        _message.postValue(null)
-    }
+    fun clearMessage() = _message.postValue(null)
+
 }

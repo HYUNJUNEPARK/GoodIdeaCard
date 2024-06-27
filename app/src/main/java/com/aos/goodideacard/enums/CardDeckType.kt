@@ -1,7 +1,7 @@
 package com.aos.goodideacard.enums
 
-enum class CardPackType {
+enum class CardDeckType {
     DEFAULT,
-    My,
+    USER,
     DOWNLOAD
 }

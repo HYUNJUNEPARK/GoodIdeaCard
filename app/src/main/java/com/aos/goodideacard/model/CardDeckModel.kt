@@ -1,8 +1,8 @@
 package com.aos.goodideacard.model
 
-data class CardPackModel (
+data class CardDeckModel (
     val cardId: Long,
-    val cardPackId: String,
+    val cardDeckId: String,
     val content: String,
-    val whose: String,
+    val subContent: String,
 )

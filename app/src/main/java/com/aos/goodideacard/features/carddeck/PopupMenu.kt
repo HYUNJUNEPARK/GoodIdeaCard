@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.cardpack
+package com.aos.goodideacard.features.carddeck
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
@@ -16,7 +16,7 @@ class PopupMenu {
         ADD, SHARE, CANCEL
     }
 
-    fun cardPackDetailFabAction(
+    fun cardDeckDetailFabAction(
         fragment: Fragment,
         anchorView: View,
         action:(FabAction) -> Unit

@@ -120,32 +120,32 @@ class MainFragment : BaseFragment() {
         }
     }
 
-    private fun buttonClickListener() {
-        binding.btnRewind.setOnClickListener {
+    private fun buttonClickListener() = with(binding) {
+        btnRewind.setOnClickListener {
             if (!clickable()) return@setOnClickListener
-            binding.cardStackView.rewind()
+            cardStackView.rewind()
         }
 
-        binding.btnPick.setOnClickListener {
+        btnPick.setOnClickListener {
             if (!clickable()) return@setOnClickListener
 
             if (viewModel.cardList.value.isNullOrEmpty()) {
                 viewModel.getCardDeck()
             } else {
-                binding.cardStackView.pickCard()
+                cardStackView.pickCard()
             }
         }
 
-        binding.btnShuffle.setOnClickListener {
+        btnShuffle.setOnClickListener {
             if (!clickable()) return@setOnClickListener
             CoroutineScope(Dispatchers.Main).launch {
-                binding.lottieLoading.playAnimation()
+                lottieLoading.playAnimation()
 
                 mainAdapter.submitList(null)
                 delay(1000)
                 viewModel.shuffleCard()
 
-                binding.lottieLoading.cancelAnimation()
+                lottieLoading.cancelAnimation()
             }
         }
     }
@@ -179,7 +179,7 @@ class MainFragment : BaseFragment() {
 
     private fun observeLiveData() {
         viewModel.cardList.observe(viewLifecycleOwner) { goodIdeas ->
-            Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
+            //Timber.d("cardPosition : ${viewModel.cardPosition} \n Submit CardSet : $goodIdeas")
             mainAdapter.submitList(goodIdeas)
             binding.cardStackView.scrollToPosition(viewModel.cardPosition ?: 0)
         }

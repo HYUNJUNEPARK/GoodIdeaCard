@@ -1,22 +1,22 @@
 package com.aos.goodideacard.repository
 
-import com.aos.goodideacard.database.dao.CardPackDao
+import com.aos.goodideacard.database.dao.CardDeckDao
 import com.aos.goodideacard.database.dao.CardDao
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.database.enitiy.CardDeckEntity
 import com.aos.goodideacard.database.enitiy.CardEntity
 import javax.inject.Inject
 
 class CardRepositoryImpl @Inject constructor(
     private val cardDao: CardDao,
-    private val cardPackDao: CardPackDao
+    private val cardDeckDao: CardDeckDao
 ) : CardRepository {
 //    override suspend fun createCard(card: CardEntity) = cardDao.create(card)
     override suspend fun createCardAndRefresh(card: CardEntity): List<CardEntity> = cardDao.createAndRefresh(card)
-    override suspend fun getCards(cardPackId: String): List<CardEntity> = cardDao.getCards(cardPackId)
+    override suspend fun getCards(cardDeckId: String): List<CardEntity> = cardDao.getCards(cardDeckId)
     override suspend fun clearMyCards() = cardDao.clear()
 
-    override suspend fun createCardPackAndRefresh(cardPack: CardPackEntity): List<CardPackEntity> = cardPackDao.createAndRefresh(cardPack)
-    override suspend fun getCardPacks(): List<CardPackEntity> = cardPackDao.getAll()
-    override suspend fun clearPacks() = cardPackDao.clear()
-    override suspend fun deleteCardPackAndRefresh(cardPack: CardPackEntity): List<CardPackEntity> = cardPackDao.deleteAndRefresh(cardPack)
+    override suspend fun createCardDeckAndRefresh(cardDeck: CardDeckEntity): List<CardDeckEntity> = cardDeckDao.createAndRefresh(cardDeck)
+    override suspend fun getCardDecks(): List<CardDeckEntity> = cardDeckDao.getAll()
+    override suspend fun clearDecks() = cardDeckDao.clear()
+    override suspend fun deleteCardDeckAndRefresh(cardDeck: CardDeckEntity): List<CardDeckEntity> = cardDeckDao.deleteAndRefresh(cardDeck)
 }

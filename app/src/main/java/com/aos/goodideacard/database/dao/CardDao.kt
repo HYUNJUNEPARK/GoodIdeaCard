@@ -16,11 +16,11 @@ interface CardDao {
     @Transaction
     suspend fun createAndRefresh(card: CardEntity): List<CardEntity> {
         create(card)
-        return getCards(card.commonCardContent.cardPackId)
+        return getCards(card.commonCardContent.cardDeckId)
     }
 
-    @Query("SELECT * FROM ${DatabaseModule.CARD_TABLE} WHERE cardPackId == :cardPackId")
-    suspend fun getCards(cardPackId: String): List<CardEntity>
+    @Query("SELECT * FROM ${DatabaseModule.CARD_TABLE} WHERE cardDeckId == :deckId")
+    suspend fun getCards(deckId: String): List<CardEntity>
 
     @Query("DELETE FROM ${DatabaseModule.CARD_TABLE}")
     suspend fun clear()

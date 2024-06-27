@@ -4,8 +4,8 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.aos.goodideacard.di.DatabaseModule
-import com.aos.goodideacard.enums.CardPackType
-import com.aos.goodideacard.model.CardPackInterface
+import com.aos.goodideacard.enums.CardDeckType
+import com.aos.goodideacard.model.CardDeckInterface
 import com.aos.goodideacard.model.CommonCardContent
 
 /**
@@ -15,9 +15,9 @@ import com.aos.goodideacard.model.CommonCardContent
 data class CardEntity(
     @PrimaryKey val id: Long,
     @Embedded val commonCardContent: CommonCardContent,
-) : CardPackInterface {
+) : CardDeckInterface {
     override val cardId: Long get() = id
-    override val cardPackId: String get() = CardPackType.My.name
+    override val cardDeckId: String get() = CardDeckType.USER.name
     override val content: String get() = commonCardContent.content
     override val subContent: String get() = commonCardContent.subContent
 }

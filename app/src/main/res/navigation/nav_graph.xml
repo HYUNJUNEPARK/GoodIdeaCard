@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/CardPackListFragment"
-        android:name="com.aos.goodideacard.features.cardpack.CardPackListFragment"
+        android:name="com.aos.goodideacard.features.carddeck.CardPackListFragment"
         android:label="fragment_card_pack_list"
         tools:layout="@layout/fragment_card_pack_list">
         <action

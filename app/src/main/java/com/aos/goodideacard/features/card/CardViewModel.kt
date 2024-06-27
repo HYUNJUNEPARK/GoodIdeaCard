@@ -27,7 +27,7 @@ class CardViewModel @Inject constructor(
     }
 
     fun createCardAndRefresh(card: CardEntity)  = viewModelScope.launch(Dispatchers.IO) {
-        Timber.i("createCard : $card / packId : ${card.commonCardContent.cardPackId}")
+        Timber.i("createCard : $card / packId : ${card.commonCardContent.cardDeckId}")
         val newCards = cardRepository.createCardAndRefresh(card)
         _cards.value = newCards
     }

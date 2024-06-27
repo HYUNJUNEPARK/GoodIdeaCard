@@ -11,10 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.KeyConst
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.database.enitiy.CardDeckEntity
 import com.aos.goodideacard.databinding.FragmentCardListBinding
 import com.aos.goodideacard.features.base.BaseFragment
-import com.aos.goodideacard.features.cardpack.PopupMenu
+import com.aos.goodideacard.features.carddeck.PopupMenu
 import com.aos.goodideacard.util.JsonUtil
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -42,8 +42,8 @@ class CardListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cardPackString = arguments?.getString(KeyConst.CARD_PACK_BUNDLE_KEY)!!
-        val cardPack = JsonUtil.deserialize<CardPackEntity>(cardPackString)
+        val cardPackString = arguments?.getString(KeyConst.CARD_DECK_BUNDLE_KEY)!!
+        val cardPack = JsonUtil.deserialize<CardDeckEntity>(cardPackString)
 
         if (cardPack == null) {
             Timber.e("Exception : CardPackEntity is Null")
@@ -72,7 +72,7 @@ class CardListFragment : BaseFragment() {
 
 
         binding.cardListFab.setOnClickListener {
-            PopupMenu().cardPackDetailFabAction(this, it) { action ->
+            PopupMenu().cardDeckDetailFabAction(this, it) { action ->
                 fabActionHandler(action)
             }
         }

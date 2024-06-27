@@ -1,7 +1,7 @@
-package com.aos.goodideacard.features.cardpack
+package com.aos.goodideacard.features.carddeck
 
 import androidx.lifecycle.viewModelScope
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.database.enitiy.CardDeckEntity
 import com.aos.goodideacard.datastore.AppDataStoreManager
 import com.aos.goodideacard.features.base.BaseViewModel
 import com.aos.goodideacard.repository.CardRepository
@@ -14,47 +14,47 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class CardPackViewModel @Inject constructor(
+class CardDeckViewModel @Inject constructor(
     private val dataStoreManager: AppDataStoreManager,
     private val cardRepository: CardRepository
 ): BaseViewModel() {
 
     init {
-        getCardPacks()
+        getCardDecks()
     }
 
-    private val _cardPacks = MutableStateFlow<List<CardPackEntity>>(emptyList())
-    val cardPacks: StateFlow<List<CardPackEntity>> get() = _cardPacks
+    private val _cardDecks = MutableStateFlow<List<CardDeckEntity>>(emptyList())
+    val cardDecks: StateFlow<List<CardDeckEntity>> get() = _cardDecks
 
-    private fun getCardPacks() = viewModelScope.launch(Dispatchers.IO) {
-        val cardPacks = cardRepository.getCardPacks()
-        Timber.i("getCardPacks : $cardPacks")
-        _cardPacks.value = cardPacks
+    private fun getCardDecks() = viewModelScope.launch(Dispatchers.IO) {
+        val cardDecks = cardRepository.getCardDecks()
+        Timber.i("getCardDecks : $cardDecks")
+        _cardDecks.value = cardDecks
     }
 
     /**
      * @param name 카드팩 이름
      * @param description 카드팩 설명
      */
-    fun createCardPack(
+    fun createCardDeck(
         name: String,
         description: String?
     ) = viewModelScope.launch(Dispatchers.IO) {
         val id = dataStoreManager.getUUID() + "_" + System.currentTimeMillis()
 
-        val cardPack = CardPackEntity(
+        val cardDeck = CardDeckEntity(
             id = id,
             name = name,
             description = description
         )
-        Timber.i("createCardPack : $cardPack")
+        Timber.i("createCardDeck : $cardDeck")
 
-        val newCardPacks = cardRepository.createCardPackAndRefresh(cardPack)
-        _cardPacks.value = newCardPacks
+        val newCardDecks = cardRepository.createCardDeckAndRefresh(cardDeck)
+        _cardDecks.value = newCardDecks
     }
 
-    fun deleteCardPack(cardPack: CardPackEntity) = viewModelScope.launch(Dispatchers.IO) {
-        val newCardPacks = cardRepository.deleteCardPackAndRefresh(cardPack)
-        _cardPacks.value = newCardPacks
+    fun deleteCardDeck(cardDeck: CardDeckEntity) = viewModelScope.launch(Dispatchers.IO) {
+        val newCardDecks = cardRepository.deleteCardDeckAndRefresh(cardDeck)
+        _cardDecks.value = newCardDecks
     }
 }

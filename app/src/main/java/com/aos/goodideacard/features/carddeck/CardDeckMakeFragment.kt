@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.cardpack
+package com.aos.goodideacard.features.carddeck
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,25 +7,25 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.AppConst
-import com.aos.goodideacard.databinding.FragmentCardPackMakeBinding
+import com.aos.goodideacard.databinding.FragmentCardDeckMakeBinding
 import com.aos.goodideacard.features.base.BaseDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class CardPackMakeFragment: BaseDialogFragment() {
-    private var _binding: FragmentCardPackMakeBinding? = null
+class CardDeckMakeFragment: BaseDialogFragment() {
+    private var _binding: FragmentCardDeckMakeBinding? = null
     private val binding get() = _binding!!
 
     /**
      * Bundle로 callback 파라미터를 설정하면 앱 최소화 시
      * java.lang.RuntimeException: Parcelable encountered IOException writing serializable object 발생
      */
-    private var cardPackData: ((Pair<String, String?>) -> Unit)? = null
+    private var cardDeckData: ((Pair<String, String?>) -> Unit)? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         Timber.tag(AppConst.LOG_TAG_LIFE_CYCLE).i("${javaClass.simpleName} onCreateView()")
-        _binding = FragmentCardPackMakeBinding.inflate(inflater, container, false)
+        _binding = FragmentCardDeckMakeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -52,16 +52,16 @@ class CardPackMakeFragment: BaseDialogFragment() {
     }
 
     fun setCallback(callback: (Pair<String, String?>) -> Unit) {
-        cardPackData = callback
+        cardDeckData = callback
     }
 
     private fun returnCallback(value: Pair<String, String?>) {
-        cardPackData?.invoke(value)
+        cardDeckData?.invoke(value)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = CardPackMakeFragment().apply {
+        fun newInstance() = CardDeckMakeFragment().apply {
             setStyle(STYLE_NO_TITLE, R.style.FullScreenDialogThemeTransparent)
         }
     }

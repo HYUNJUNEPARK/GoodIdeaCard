@@ -1,4 +1,4 @@
-package com.aos.goodideacard.features.cardpack
+package com.aos.goodideacard.features.carddeck
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -12,7 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.aos.goodideacard.R
 import com.aos.goodideacard.consts.KeyConst
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.database.enitiy.CardDeckEntity
 import com.aos.goodideacard.databinding.FragmentCardPackListBinding
 import com.aos.goodideacard.features.base.BaseFragment
 import com.aos.goodideacard.features.dialog.TwoButtonsDialog
@@ -26,7 +26,7 @@ class CardPackListFragment : BaseFragment() {
     private var _binding: FragmentCardPackListBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CardPackViewModel by viewModels()
+    private val viewModel: CardDeckViewModel by viewModels()
 
     private val cardPackListAdapter: CardPackListAdapter by lazy {
         CardPackListAdapter(
@@ -36,11 +36,11 @@ class CardPackListFragment : BaseFragment() {
                     Toast.makeText(requireContext(), getString(R.string.msg_error), Toast.LENGTH_SHORT).show()
                     return@CardPackListAdapter
                 }
-                val cardPackBundle = bundleOf(KeyConst.CARD_PACK_BUNDLE_KEY to cardPackString)
+                val cardPackBundle = bundleOf(KeyConst.CARD_DECK_BUNDLE_KEY to cardPackString)
                 findNavController().navigate(R.id.action_cardPackListFragment_to_cardListFragment, cardPackBundle)
             },
             onItemLongClick = { cardPack ->
-                cardPackItemLongClickEventHandler(cardPack)
+                cardDeckItemLongClickEventHandler(cardPack)
             }
         )
     }
@@ -57,9 +57,9 @@ class CardPackListFragment : BaseFragment() {
         binding.makeCardPackRecyclerView.adapter = cardPackListAdapter
 
         binding.makeMyCardFab.setOnClickListener {
-            CardPackMakeFragment.newInstance().apply {
+            CardDeckMakeFragment.newInstance().apply {
                 setCallback { cardPack ->
-                    viewModel.createCardPack(
+                    viewModel.createCardDeck(
                         name = cardPack.first,
                         description = cardPack.second
                     )
@@ -69,7 +69,7 @@ class CardPackListFragment : BaseFragment() {
         }
 
         lifecycleScope.launch {
-            viewModel.cardPacks.collect { cardPacks ->
+            viewModel.cardDecks.collect { cardPacks ->
                 binding.makeMyCardEmpty.visibility = if (cardPacks.isEmpty()) View.VISIBLE else View.GONE
                 cardPackListAdapter.submitList(cardPacks)
             }
@@ -81,12 +81,12 @@ class CardPackListFragment : BaseFragment() {
         _binding = null
     }
 
-    private fun cardPackItemLongClickEventHandler(cardPack: CardPackEntity) {
+    private fun cardDeckItemLongClickEventHandler(cardDeck: CardDeckEntity) {
         val menuArray = R.array.alert_dialog_card_pack
         val menuList = requireContext().resources.getStringArray(menuArray)
 
         val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyAlertDialogStyle).apply {
-            setTitle(cardPack.name)
+            setTitle(cardDeck.name)
             setItems(menuList) { /*dialogInterface*/_, idx ->
                 when(idx) {
                     0 -> { //수정
@@ -103,7 +103,7 @@ class CardPackListFragment : BaseFragment() {
                             content = R.string.delete,
                             rightButtonText = R.string.delete,
                             leftButtonText = R.string.cancel,
-                            rightButtonFun = { viewModel.deleteCardPack(cardPack) },
+                            rightButtonFun = { viewModel.deleteCardDeck(cardDeck) },
                             contentTextGravityCenter = true
                         ).show()
                     }

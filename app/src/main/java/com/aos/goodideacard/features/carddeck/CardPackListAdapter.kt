@@ -1,19 +1,19 @@
-package com.aos.goodideacard.features.cardpack
+package com.aos.goodideacard.features.carddeck
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.aos.goodideacard.database.enitiy.CardPackEntity
+import com.aos.goodideacard.database.enitiy.CardDeckEntity
 import com.aos.goodideacard.databinding.AdapterCardPackBinding
 
 class CardPackListAdapter(
-    private val onItemClick:(CardPackEntity) -> Unit,
-    private val onItemLongClick: (CardPackEntity) -> Unit
-): ListAdapter<CardPackEntity, CardPackListAdapter.ViewHolder>(diffUtil) {
+    private val onItemClick:(CardDeckEntity) -> Unit,
+    private val onItemLongClick: (CardDeckEntity) -> Unit
+): ListAdapter<CardDeckEntity, CardPackListAdapter.ViewHolder>(diffUtil) {
     inner class ViewHolder(private val binding: AdapterCardPackBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: CardPackEntity) = with(binding) {
+        fun bind(item: CardDeckEntity) = with(binding) {
             adapterCardPackName.text = item.name
             adapterCardPackDescription.text = item.description
 
@@ -38,11 +38,11 @@ class CardPackListAdapter(
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<CardPackEntity>() {
-            override fun areItemsTheSame(oldItem: CardPackEntity, newItem: CardPackEntity): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<CardDeckEntity>() {
+            override fun areItemsTheSame(oldItem: CardDeckEntity, newItem: CardDeckEntity): Boolean {
                 return oldItem.id == newItem.id
             }
-            override fun areContentsTheSame(oldItem: CardPackEntity, newItem: CardPackEntity): Boolean {
+            override fun areContentsTheSame(oldItem: CardDeckEntity, newItem: CardDeckEntity): Boolean {
                 return oldItem == newItem
             }
         }
