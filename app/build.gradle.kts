@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -19,6 +22,19 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        val properties = Properties().apply {
+            load(FileInputStream("${rootDir}/local.properties"))
+        }
+
+        create("release") {
+            storeFile = file("../keystore/goodIdeaKey.jks")
+            keyAlias = "${properties["keyAlias"]}"
+            storePassword = "${properties["storePassword"]}"
+            keyPassword = "${properties["keyPassword"]}"
+        }
+    }
+
     buildTypes {
         debug {
             isMinifyEnabled = false
@@ -30,7 +46,7 @@ android {
             isMinifyEnabled = true
             isDebuggable = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("debug") //TODO Change signingConfig
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
